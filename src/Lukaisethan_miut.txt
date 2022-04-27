@@ -1,0 +1,130 @@
+Heissan!
+
+Eli alla olisi se tietokanta, minkä voit sitten pistää db.json tietokantaan.
+
+Koodi on jokseenkin sekavaa, mutta 
+yritin sitä kommentoida parhaani mukaan ja saada homman mahdollisimman selkeäksi tarkastajalle.
+Jos tulee jtn kysyttävää, niin discon kautta miut tavoittaa parhaiten. :)
+
+
+Asiakastietoja:
+
+
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "asiakkaat": [
+    {
+      "id": 1,
+      "name": "Jessamyn",
+      "address": "7 Bayside Pass",
+      "phonenumber": "133-748-7251"
+    },
+    {
+      "id": 2,
+      "name": "Lesya",
+      "address": "549 Forest Dale Crossing",
+      "phonenumber": "705-759-1117"
+    },
+    {
+      "id": 4,
+      "name": "Helge",
+      "address": "1 Bunker Hill Terrace",
+      "phonenumber": "224 828 5465"
+    }, {
+      "id": 5,
+      "name": "Willie",
+      "address": "255 Westport Drive",
+      "phonenumber": "794 656 0019"
+    }, {
+      "id": 6,
+      "name": "Norby",
+      "address": "68 Bunker Hill Plaza",
+      "phonenumber": "760 227 4025"
+    }, {
+      "id": 7,
+      "name": "Claude",
+      "address": "50 Continental Junction",
+      "phonenumber": "109 696 1511"
+    }, {
+      "id": 8,
+      "name": "Tybi",
+      "address": "792 Oriole Drive",
+      "phonenumber": "360 461 3970"
+    }, {
+      "id": 9,
+      "name": "Jaime",
+      "address": "19 Springview Parkway",
+      "phonenumber": "143 556 6949"
+    }, {
+      "id": 10,
+      "name": "Evan",
+      "address": "087 Pearson Circle",
+      "phonenumber": "814 822 0778"
+    }, {
+      "id": 11,
+      "name": "Darci",
+      "address": "022 Waywood Lane",
+      "phonenumber": "656 293 5501"
+    }, {
+      "id": 12,
+      "name": "Fanchon",
+      "address": "31007 Talmadge Center",
+      "phonenumber": "880 712 6953"
+    }, {
+      "id": 13,
+      "name": "Hans",
+      "address": "89963 Sherman Street",
+      "phonenumber": "993 817 1225"
+    }, {
+      "id": 14,
+      "name": "Aileen",
+      "address": "2627 School Lane",
+      "phonenumber": "324 385 7032"
+    }, {
+      "id": 15,
+      "name": "Elbertine",
+      "address": "43234 Glacier Hill Alley",
+      "phonenumber": "896 426 8577"
+    }, {
+      "id": 16,
+      "name": "Marlena",
+      "address": "0978 Amoth Place",
+      "phonenumber": "560 242 7895"
+    }, {
+      "id": 17,
+      "name": "Whitman",
+      "address": "034 Basil Court",
+      "phonenumber": "144 283 6176"
+    }, {
+      "id": 18,
+      "name": "Emanuele",
+      "address": "019 Nancy Parkway",
+      "phonenumber": "119 129 4876"
+    }, {
+      "id": 19,
+      "name": "Giustina",
+      "address": "75831 American Ash Avenue",
+      "phonenumber": "898 890 1163"
+    }, {
+      "id": 20,
+      "name": "Friedrich",
+      "address": "1863 Kropf Pass",
+      "phonenumber": "322 429 6210"
+    }]
+}
