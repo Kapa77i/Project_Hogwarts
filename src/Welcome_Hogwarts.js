@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Lucinda from './pictures/Lucinda Thomsonicle-Potus_signature-1.jpg';
-import Minerva from './pictures/Minerva_signature-1.jpg';
-import Logo from './pictures/Hogwarts-Logo-2.jpg';
+import Lucinda from './pictures/Lucinda Thomsonicle-Potus_signature-t.png';
+import Minerva from './pictures/Minerva_signature-t.png';
+import Logo from './pictures/Hogwarts-Logo.png';
 
 class Welcome_Hogwarts extends React.Component {
   render() {
