@@ -5,6 +5,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background-image: url('./pictures/parchment_1.jpg');
+   background-size:cover;
+   background-attachment:fixed;
 }
 
 code {
@@ -46,12 +50,6 @@ code {
   color: white;
 }
 
-/* #asiakasHaku{
-  margin: auto;
-  width: 50%;
-  text-align: left;
-  padding: 10px;
-} */
 
 nav{
   display: flex;
@@ -72,7 +70,8 @@ nav{
    margin: auto; 
    align-items: center;
    justify-content: center;
-   font-family:Georgia, 'Times New Roman', Times, serif;
+/*    font-family:Georgia, 'Times New Roman', Times, serif; */
+   
  }
 
  p{
@@ -110,3 +109,58 @@ a:hover {
 a:active {
   color: blue;
 } 
+
+ul.no-bullets {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+/*Welcome page's CSS*/
+
+#cont-acceptanceletter {
+  display: flex;
+  flex-direction: column;
+  /* border: 5px solid black;  */
+   text-align: center;
+   padding: 1em;
+   margin: auto; 
+   align-items: center;
+   justify-content: center;
+   font-family: fantasy, papyrus;
+   font-size: large;
+}
+
+#cont-al-2{
+  font-family: fantasy, papyrus;
+  font-size: large;
+}
+
+ol{
+  text-align: left;
+  margin-left: 190px;
+}
+
+li{
+  padding: 0.2em;
+  font-family: fantasy, papyrus;
+   font-size: large;
+}
+
+dl{
+  text-align: left;
+  margin-left: 220px;
+  
+}
+
+#cb{
+  padding: 1em;
+
+}
+
+p{
+  padding: 0.2em;
+  font-family: fantasy, papyrus;
+   font-size: large;
+}

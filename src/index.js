@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 import Asiakkaat from './Asiakkaat';
-import Etusivu from './Etusivu';
+import Welcome_Hogwarts from './Welcome_Hogwarts';
 import Yhteystiedot from './Yhteystiedot';
 
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
@@ -16,16 +16,19 @@ ReactDOM.render(
 
     <Router>
         <nav id="navi">
-          <Link to="/">Etusivu</Link>
-          <Link to="/asiakkaat">Asiakkaat</Link>
+          <Link to="/">Welcome to Hogwarts</Link>
+          <Link to="/asiakkaat">Books and equipments</Link>
           {/* <Link to="/yhteystiedot" id="asiakas"></Link> */}
         </nav>
 
+        
+
         <Routes>
-          <Route path="/" element={<Etusivu />}/>
+          <Route path="/" element={<Welcome_Hogwarts />}/>
           <Route exact path="/asiakkaat" element={<Asiakkaat />}/>
           <Route path="/asiakas/:id" element={<Yhteystiedot />}/>
         </Routes>
+
       </Router>
     <App />
   </React.StrictMode>,
