@@ -25,7 +25,7 @@ ReactDOM.render(
 
         <Routes>
           <Route path="/" element={<Welcome_Hogwarts />}/>
-          <Route exact path="/asiakkaat" element={<Asiakkaat />}/>
+          <Route exact path="/asiakkaat" element={<App />}/>
           <Route path="/asiakas/:id" element={<Yhteystiedot />}/>
         </Routes>
 
