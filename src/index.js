@@ -21,8 +21,6 @@ ReactDOM.render(
           {/* <Link to="/yhteystiedot" id="asiakas"></Link> */}
         </nav>
 
-        
-
         <Routes>
           <Route path="/" element={<Welcome_Hogwarts />}/>
           <Route exact path="/asiakkaat" element={<App />}/>
@@ -30,7 +28,6 @@ ReactDOM.render(
         </Routes>
 
       </Router>
-    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
