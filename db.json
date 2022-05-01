@@ -108,5 +108,26 @@
       "address": "1863 Kropf Pass",
       "phonenumber": "322 429 6210"
     }
+  ],
+  "wizards": [
+    {
+      "id": 1,
+      "name": "Harry Potter",
+      "address": "4 Privet Drive",
+      "uniform": {
+        "robes": "3 black robes",
+        "hat": "one black hat",
+        "gloves": "one dragonscale gloves",
+        "coat": "one black wintercoat",
+        "nametags": "Need a nametags"
+      },
+      "equipment": {
+        "eq.1": "Wand",
+        "eq.2": "Cauldron",
+        "eq.3": "Glass phials",
+        "eq.4": "brass scales"
+      },
+      "pet": "owl"
+    }
   ]
 }
