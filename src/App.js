@@ -1,12 +1,13 @@
 
 import './App.css';
 import Asiakkaat from './Asiakkaat';
+import Uniform from './Uniform';
 
 function App() {
   return (
     <div className="App">
-      
-      <Asiakkaat/>
+      <Uniform/>
+      {/* <Asiakkaat/> */}
     </div>
   );
 }

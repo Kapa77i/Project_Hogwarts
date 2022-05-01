@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import Asiakkaat from './Asiakkaat';
+//import Asiakkaat from './Asiakkaat';
 import Welcome_Hogwarts from './Welcome_Hogwarts';
 import Yhteystiedot from './Yhteystiedot';
 
