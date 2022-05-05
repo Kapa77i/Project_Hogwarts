@@ -127,7 +127,10 @@
         "eq.3": "Glass phials",
         "eq.4": "brass scales"
       },
-      "pet": "owl"
+      "pet": {
+        "name": "Wand",
+        "species": "Cauldron"
+      }
     }
   ]
 }
