@@ -25,7 +25,21 @@ code {
   margin: auto; 
   align-items: center;
   justify-content: center;
+  font-family: fantasy, papyrus;
 }
+
+#cont-application
+{
+  display: flex;
+  flex-direction: column;
+  /* border: 5px solid black;  */
+   text-align: center;
+   padding: 1em;
+   margin: auto; 
+   align-items: center;
+   justify-content: center;
+   font-family: fantasy, papyrus;
+ }
 
 #cont-2 {
   font-family:Georgia, 'Times New Roman', Times, serif;

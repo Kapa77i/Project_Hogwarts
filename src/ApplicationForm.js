@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Col, Modal, Row } from 'react-bootstrap'
+import { Button, Col, Modal, Row, Container } from 'react-bootstrap'
 import AppModaali from './AppModaali';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from "react-router-dom";
@@ -28,6 +28,12 @@ class Application extends React.Component {
             robes: "",
             hat: "",
             nametags: "",
+            wand: "",
+            cauldron: "",
+            phials: "",
+            brassscales: "",
+            petname: "",
+            petspecies: "",
             searchLoading: false,
             handleShow: false,
             handleClose: false
@@ -60,6 +66,17 @@ class Application extends React.Component {
     async addParameters(event) {
         console.log("Eventin nimi: " + event.target.name)
         if (event.target.value.length > 0) {
+
+            if (event.target.name === "nameInput") {
+                this.setState({ name: event.target.value });
+                this.name = [event.target.value];
+
+            }
+            if (event.target.name === "addressInput") {
+                this.setState({ address: [event.target.value] });
+                this.address = [event.target.value];
+            }
+
             if (event.target.name === "robesInput") {
                 this.setState({ robes: event.target.value });
                 this.robes = [event.target.value];
@@ -81,6 +98,33 @@ class Application extends React.Component {
             if (event.target.name === "nametagsInput") {
                 this.setState({ nametags: event.target.value });
                 this.nametags = [event.target.value];
+            }
+
+            if (event.target.name === "wandInput") {
+                this.setState({ wand: event.target.value });
+                this.wand = [event.target.value];
+            }
+
+            if (event.target.name === "cauldronInput") {
+                this.setState({ cauldron: event.target.value });
+                this.cauldron = [event.target.value];
+            }
+            if (event.target.name === "phialsInput") {
+                this.setState({ phials: event.target.value });
+                this.phials = [event.target.value];
+            }
+            if (event.target.name === "brassscalesInput") {
+                this.setState({ brassscalesInput: event.target.value });
+                this.brassscalesInput = [event.target.value];
+            }
+            if (event.target.name === "petsnameInput") {
+                this.setState({ petname: event.target.value });
+                this.petname = [event.target.value];
+            }
+
+            if (event.target.name === "speciesInput") {
+                this.setState({ species: event.target.value });
+                this.species = [event.target.value];
             };
 
 
@@ -138,28 +182,28 @@ class Application extends React.Component {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                wizards: {
-                    name: this.name,
-                    address: this.address,
-                    uniform: {
-                        hat: this.hat,
-                        gloves: this.gloves,
-                        coat: this.coat,
-                        robes: this.robes,
-                        nametags: this.nametags
-                    },
-                    equipment: {
-                        wand: this.wand,
-                        cauldron: this.cauldron,
-                        phials: this.phials,
-                        brassscales: this.brassscales
-                    },
-                    pet: {
-                        name: this.petname,
-                        species: this.species
-                    }
+                id: this.id,
+                name: this.name,
+                address: this.address,
+                uniform: {
+                    hat: this.hat,
+                    gloves: this.gloves,
+                    coat: this.coat,
+                    robes: this.robes,
+                    nametags: this.nametags
+                },
+                equipment: {
+                    wand: this.wand,
+                    cauldron: this.cauldron,
+                    phials: this.phials,
+                    brassscales: this.brassscales
+                },
+                pet: {
+                    name: this.petname,
+                    species: this.species
                 }
-            }),
+            }
+            ),
 
             //Tietojen päivitys näkyciin
         }).then((response) => {
@@ -205,29 +249,35 @@ class Application extends React.Component {
 
 
             return (
-                <div id="cont-2">
+                <div id="cont-application">
                     <div id="WizardNameInputFields">
                         <h3>Your Hogwarts application</h3>
                         <p>Give your fullname: </p>
                         <input
-                            name="robesInput"
+                            name="nameInput"
                             type="text"
-                            placeholder="robes..."
+                            placeholder="Your full name..."
                             //value={this.state.asiakasInput}
                             onChange={this.addParameters}
                         />
-
+                        <br />
+                        <br />
                         <p>Give your full address: </p>
                         <input
-                            name="hatInput"
+                            name="addressInput"
                             type="text"
-                            placeholder="hats..."
+                            placeholder="Your full address..."
                             //value={this.state.osoiteInput}
                             onChange={this.addParameters}
                         />
                     </div>
-                    <div id="UniformInputFields">
 
+
+
+                    <div id="UniformInputFields">
+                        <br />
+                        <br />
+                        <br />
                         <p>Next give your uniforms information</p>
                         <p>Robes:</p>
                         <input
@@ -273,8 +323,12 @@ class Application extends React.Component {
                             //value={this.state.osoiteInput}
                             onChange={this.addParameters}
                         />
-
-                        <p>Equipment:</p>
+                    </div>
+                    <div>
+                        <br />
+                        <br />
+                        <br />
+                        <p>Next inform us about your equipment</p>
 
                         <p>Wand:</p>
                         <input
@@ -295,15 +349,30 @@ class Application extends React.Component {
                             onChange={this.addParameters}
                         />
 
+                        <br />
+                        <br />
+                        <br />
+                        <br />
                         <p>Phials:</p>
 
                         <input
                             name="phialsInput"
-                            type="checkbox"
-                            placeholder="Glass or crystal phials..."
+                            type="radio"
+                            value="Glass Phials"
                             //value={this.state.osoiteInput}
                             onChange={this.addParameters}
-                        />
+                        /><p>Glass phials</p>
+
+                        <input
+                            name="phialsInput"
+                            type="radio"
+                            value="Crystal Phials"
+                            //value={this.state.osoiteInput}
+                            onChange={this.addParameters}
+                        /><p>Crystal phials</p>
+                        <br />
+                        <br />
+                        <br />
 
                         <p>Brass scales:</p>
                         <input
@@ -322,26 +391,44 @@ class Application extends React.Component {
                             //value={this.state.osoiteInput}
                             onChange={this.addParameters}
                         />
+                        <br />
+                        <br />
+                        <br />
+                        <p>Your pets species:</p>
                         <input
                             name="speciesInput"
-                            type="checkbox"
-                            placeholder="need of nametags"
+                            type="radio"
+                            value="Frog"
                             //value={this.state.osoiteInput}
                             onChange={this.addParameters}
-                        />
+                        /><p>Frog</p>
+                        <input
+                            name="speciesInput"
+                            type="radio"
+                            value="Owl"
+                            //value={this.state.osoiteInput}
+                            onChange={this.addParameters}
+                        /><p>Owl</p>
+                        <input
+                            name="speciesInput"
+                            type="radio"
+                            value="Cat"
+                            //value={this.state.osoiteInput}
+                            onChange={this.addParameters}
+                        /><p>Cat</p>
 
 
                         <br />
                         <br />
 
                     </div>
-                    <AppModaali />
+                    {/*  <AppModaali /> */}
 
                     {/*   <!-- Modaalinavausnappi --> */}
                     <Row className="mx-0">
                         <Button as={Col} variant="secondary" onClick={this.addUniform}>Send your application to school</Button>
                     </Row>
-                    <button type="button" class="btn btn-info btn-lg"
+                    {/*  <button type="button" class="btn btn-info btn-lg"
                         data-bs-toggle="modal" data-bs-target="#myModal">Open
                         Modal</button>
 
@@ -364,7 +451,7 @@ class Application extends React.Component {
                                 </Button>
                             </Modal.Footer>
                         </Modal>
-                    </>
+                    </> */}
 
                     {/*      <table>
             <thead>
