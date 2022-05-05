@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import { Button, Col, Modal, Row, Container } from 'react-bootstrap'
+import Logo from './pictures/Hogwarts-Logo-rb.png';
 import AppModaali from './AppModaali';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from "react-router-dom";
 var url = "http://localhost:5000/wizards";
+
 const delay = 3000;
 
 <script src="https://unpkg.com/react/umd/react.production.min.js" crossorigin></script>
@@ -249,8 +251,12 @@ class Application extends React.Component {
 
 
             return (
+
                 <div id="cont-application">
+                     <img src={Logo} height="250" width="250"  alt="Lucindas signature"/>
                     <div id="WizardNameInputFields">
+                    <br />
+                        <br />
                         <h3>Your Hogwarts application</h3>
                         <p>Give your fullname: </p>
                         <input

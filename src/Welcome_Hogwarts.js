@@ -8,8 +8,10 @@ class Welcome_Hogwarts extends React.Component {
     return (
       <div id="cont-acceptanceletter">
         <img src={Logo} height="250" width="250"  alt="Lucindas signature"/>
-
+        
         <div id="cont-al-1">
+        <br />
+          <br />
           <h1>HOGWARTS SCHOOL of WITCHCRAFT and WIZARDRY</h1>
           <h4>Headmaster: Albus Dumbledore
             (Order of Merlin, First Class, Grand Sorc., Chf. Warlock,

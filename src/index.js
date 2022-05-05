@@ -20,8 +20,9 @@ ReactDOM.render(
     <Router>
         <nav id="navi">
           <Link to="/">Welcome to Hogwarts</Link>
-          <Link to="/asiakkaat">Books and equipments</Link>
           <Link to="/ApplicationForm">Application</Link>
+          <Link to="/asiakkaat">Books and equipments</Link>
+          
           {/* <Link to="/yhteystiedot" id="asiakas"></Link> */}
         </nav>
 
