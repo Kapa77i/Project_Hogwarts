@@ -7,10 +7,12 @@ import ApplicationForm from './ApplicationForm';
 
 
 
+
 function App() {
   return (
     <div className="App">
-      <Uniform/>
+      {/* <TestiJuttuja/> */}
+      <Uniform/> 
       {/* <ApplicationForm/> */}
       {/* <Asiakkaat/> */}
     </div>

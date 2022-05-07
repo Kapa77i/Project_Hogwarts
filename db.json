@@ -21,6 +21,73 @@
         "name": "Wand",
         "species": "Cauldron"
       }
+    },
+    {
+      "id": 2,
+      "name": "Harry Potter",
+      "address": "4 Privet Drive",
+      "uniform": {
+        "robes": "3 black robes",
+        "hat": "one black hat",
+        "gloves": "one dragonscale gloves",
+        "coat": "one black wintercoat",
+        "nametags": "Need a nametags"
+      },
+      "equipment": {
+        "wand": "Wand",
+        "cauldron": "Cauldron",
+        "phials": "Glass phials",
+        "brassscales": "brass scales"
+      },
+      "pet": {
+        "name": "Wand",
+        "species": "Cauldron"
+      }
+    },
+    {
+      "name": [
+        "kok"
+      ],
+      "address": [
+        "oko"
+      ],
+      "uniform": {
+        "hat": [
+          "kok"
+        ],
+        "gloves": [
+          "o"
+        ],
+        "coat": [
+          "kok"
+        ],
+        "robes": [
+          "ko"
+        ],
+        "nametags": [
+          "ok"
+        ]
+      },
+      "equipment": {
+        "wand": [
+          "ok"
+        ],
+        "cauldron": [
+          "ok"
+        ],
+        "phials": [
+          "Glass Phials"
+        ]
+      },
+      "pet": {
+        "name": [
+          "ok"
+        ],
+        "species": [
+          "Frog"
+        ]
+      },
+      "id": 3
     }
   ]
 }
