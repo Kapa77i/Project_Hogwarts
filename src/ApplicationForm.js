@@ -16,12 +16,14 @@ class Application extends React.Component {
         super();
 
         this.addParameters = this.addParameters.bind(this);
-        this.addUniform = this.addUniform.bind(this);
+        this.addApplication = this.addApplication.bind(this);
         this.poista = this.poista.bind(this);
 
         //Datan käsittely tilamuuttujassa
         this.state = {
             data: null,
+
+            //welho
             id: "",
             name: "",
             address: "",
@@ -38,6 +40,15 @@ class Application extends React.Component {
             petspecies: "",
 
             //kirjat
+            
+                goshawk: "",
+                bagshot: "",
+                waffling: "",
+                switch: "",
+                spore: "",
+                jigger: "",
+                scamander: "",
+                trimble: "",
 
 
 
@@ -117,6 +128,43 @@ class Application extends React.Component {
                 this.nametags = [event.target.value];
             }
 
+
+            //Kirjat
+            if (event.target.name === "goshawkInput") {
+                this.setState({ nametags: event.target.value });
+                this.goshawkInput = [event.target.value];
+            }
+            if (event.target.name === "bagshotInput") {
+                this.setState({ nametags: event.target.value });
+                this.bagshotInput = [event.target.value];
+            }
+            if (event.target.name === "wafllingInput") {
+                this.setState({ nametags: event.target.value });
+                this.wafflingInput = [event.target.value];
+            }
+            if (event.target.name === "switchInput") {
+                this.setState({ nametags: event.target.value });
+                this.switchInput = [event.target.value];
+            }
+            if (event.target.name === "sporeInput") {
+                this.setState({ nametags: event.target.value });
+                this.sporeInput = [event.target.value];
+            }
+            if (event.target.name === "jiggerInput") {
+                this.setState({ nametags: event.target.value });
+                this.jiggerInput = [event.target.value];
+            }
+            if (event.target.name === "scamanderInput") {
+                this.setState({ nametags: event.target.value });
+                this.scamanderInput = [event.target.value];
+            }
+            if (event.target.name === "trimbleInput") {
+                this.setState({ nametags: event.target.value });
+                this.trimbleInput = [event.target.value];
+            }
+          
+    
+
             if (event.target.name === "wandInput") {
                 this.setState({ wand: event.target.value });
                 this.wand = [event.target.value];
@@ -134,11 +182,12 @@ class Application extends React.Component {
                 this.setState({ brassscalesInput: event.target.value });
                 this.brassscalesInput = [event.target.value];
             }
+
+
             if (event.target.name === "petsnameInput") {
                 this.setState({ petname: event.target.value });
                 this.petname = [event.target.value];
             }
-
             if (event.target.name === "speciesInput") {
                 this.setState({ species: event.target.value });
                 this.species = [event.target.value];
@@ -167,34 +216,8 @@ class Application extends React.Component {
     }
 
 
-    /* "wizards": [
-      {
-        "id": 1,
-        "name": "Harry Potter",
-        "address": "4 Privet Drive",
-        "uniform": {
-          "robes": "3 black robes",
-          "hat": "one black hat",
-          "gloves": "one dragonscale gloves",
-          "coat": "one black wintercoat",
-          "nametags": "Need a nametags"
-        },
-        "equipment": {
-          "eq.1": "Wand",
-          "eq.2": "Cauldron",
-          "eq.3": "Glass phials",
-          "eq.4": "brass scales"
-        },
-        "pet": {
-          "name": "Wand",
-          "species": "Cauldron"
-        }
-      }
-    ] */
 
-
-
-    async addUniform() {
+    async addApplication() {
         await fetch("http://localhost:5000/wizards", {
             method: "POST",
             headers: {
@@ -211,6 +234,16 @@ class Application extends React.Component {
                     robes: this.robes,
                     nametags: this.nametags
                 },
+                books: {
+                    goshawk: this.goshawk,
+                    bagshot: this.bagshot,
+                    waffling: this.waffling,
+                    switch: this.switch,
+                    spore: this.spore,
+                    jigger: this.jigger,
+                    scamander: this.scamander,
+                    trimble: this.trimble
+        },
                 equipment: {
                     wand: this.wand,
                     cauldron: this.cauldron,
@@ -221,11 +254,8 @@ class Application extends React.Component {
                     name: this.petname,
                     species: this.species
                 },
-                books: {
-                    
-                }
-            }
-            ),
+                
+        }),
 
             //Tietojen päivitys näkyciin
         }).then((response) => {
@@ -251,22 +281,7 @@ class Application extends React.Component {
                 </div>
             );
         } else if (this.state.data != null) {
-            //searchLoading data
-            let dataObjects = this.state.data.map((wizards) => {
-                //console.log("Tässä on wizard juttuja:")
-                //console.log("wizards.uniform: ",)
-                return (
-                    <tr key={wizards.id}>
-                        <td>{wizards.uniform.robes}</td>
-                        <td>{wizards.uniform.hat}</td>
-                        <td>{wizards.uniform.gloves}</td>
-                        <td>{wizards.uniform.coat}</td>
-                        <td>{wizards.uniform.nametags}</td>
-                        <td><button onClick={this.poista} id={wizards.id}>Delete</button></td>
-                    </tr>
-                );
-            }
-            );
+            
 
 
             return (
@@ -302,38 +317,43 @@ class Application extends React.Component {
                     <div id="UniformInputFields"><br /><br />~<br /><br />
                         <h3>Uniform</h3>
                         <h6>Next give us your uniforms information:</h6><br />
-                        <label for="robesInput">Robes:</label><br />
+                        <label for="robesInput">Plain work robes (black):</label><br />
                         <input
                             name="robesInput"
                             type="text"
-                            placeholder="robes..."
+                            placeholder="(quantity)"
                             //value={this.state.asiakasInput}
                             onChange={this.addParameters}
                         /><br /><br />
 
-                        <label for="hatInput">Hats:</label><br />
+                        <label for="hatInput">Plain pointed hat (black) for day wear:</label><br />
                         <input
                             name="hatInput"
                             type="text"
-                            placeholder="hats..."
+                            placeholder="(quantity)"
                             //value={this.state.osoiteInput}
                             onChange={this.addParameters}
                         /><br /><br />
 
-                        <label for="glovesInput">Gloves:</label><br />
-                        <input
-                            name="glovesInput"
-                            type="text"
-                            placeholder="gloves..."
-                            //value={this.state.osoiteInput}
-                            onChange={this.addParameters}
-                        /><br /><br />
+                        <label for="glovesInput">Pair of protective gloves:</label><br />
+          
+                            <input name="glovesInput" type="radio" value="From dragon hide" checked={this.state.speciesInput === "From dragon hide"}
+                                //value={this.state.osoiteInput}
+                                onChange={this.handleChange} /> <label for="From dragon hide">From dragon hides</label><br />
+                            
 
-                        <label for="coatInput">Coats:</label><br />
+                            <input name="glovesInput" type="radio" value="From erumpet hide" checked={this.state.speciesInput === "From erumpet hide"}
+                                //value={this.state.osoiteInput}
+                                onChange={this.handleChange} /> <label for="From erumpet hide">From erumpet hide</label><br />
+                            
+                            <br /><br />
+
+
+                        <label for="coatInput">Winter cloak (black, with silver fastenings):</label><br />
                         <input
                             name="coatInput"
                             type="text"
-                            placeholder="coats..."
+                            placeholder="(quantity)"
                             //value={this.state.osoiteInput}
                             onChange={this.addParameters}
                         /><br /><br />
@@ -466,7 +486,7 @@ class Application extends React.Component {
                         <input
                             name="brassscalesInput"
                             type="text"
-                            placeholder="Brass scales..."
+                            placeholder="(quantity)"
                             //value={this.state.osoiteInput}
                             onChange={this.addParameters}
                         />
@@ -509,10 +529,10 @@ class Application extends React.Component {
                         </div>
                     </div>
 
-{/* Katjan submit-buttoni: <Button as={Col} variant="secondary" onClick={this.addUniform}>Submit your order</Button> */}
+ {/* <Button as={Col} variant="secondary" onClick={this.addApplication}>Submit your order</Button> */}
 
 
-                    {/* <AppModaali tiedot={this.addUniform}/> */}
+                    {/* <AppModaali tiedot={this.addApplication}/> */}
 
 
 

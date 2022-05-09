@@ -1,15 +1,15 @@
 import React, { useState, useEffect, Component } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button, Col, Modal, Row, Container, Form } from 'react-bootstrap'
+import { Button, Col, Modal, Row, Container, Form, Table, Alert } from 'react-bootstrap';
+import './index.css';
 
 function Uniform(props) {
   const [uniformlist, setUniformlist] = useState([]);
-  const [name, setName] = useState([]);
-  const [address, setAddress] = useState([]);
-  const [params, setParams] = useState({ id: "", name: "", address: "", coat: "", gloves: "", robes: "", hat: "", nametags: "" });
-  const [loading, setLoading] = useState(false);
+  const [dbitem, setDbitems] = useState({ id: '', coat: '', gloves: '', robes: '', hat: '', nametags: '' });
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   const [show, setShow] = useState(false);
+  //const [searched, setSearched] = useState();
 
   const handleClose = () => {
     setShow(false)
@@ -19,163 +19,142 @@ function Uniform(props) {
   };
 
   //Määritellään urli, jota sitten päivitellään aina hakuehtojen yms mukaan
-  const url = "http://localhost:5000/wizards";
-  const delay = 2000;
+  const url = "http://localhost:5000/wizards?";
+  const delay = 1000;
 
   //Datan haku
   useEffect(() => {
-    async function fetchData() {
-      let response = await fetch(url);
-      let data = await response.json();
-      setUniformlist(data);
-    }
+    setTimeout(()=>{
+      fetchData().then(data =>{
+        setLoading(false)
+      });
+    }, delay)
+    
+  }, [uniformlist]);
 
-    fetchData();
-  }, []);
-
+  async function fetchData() {
+    let response = await fetch(url);
+    let data = await response.json();
+    setUniformlist(data);
+  }
 
   const searchDefine = (event) => {
     console.log("Tultiin seacrhDefinee")
     console.log("Eventid: " + event.target.id)
     if (event.target.value.length > 0) {
-      if (event.target.name === "name") {
-        console.log("Tultiin name: " + event.target.value)
-        setParams({
-          address: params.address,
-          name:
-            [
-              event.target.value.charAt(0).toUpperCase() +
-              event.target.value.slice(1),
-            ],
-          coat: params.coat,
-          gloves: params.gloves,
-          robes: params.robes,
-          hat: params.hat,
-          nametags: params.nametags
-        });
-      }
 
-      if (event.target.name === "address") {
-        console.log("Tultiin address: " + event.target.value)
-        setParams({
-          nimi: params.nimi,
-          osoite: [event.target.value],
-          coat: params.coat,
-          gloves: params.gloves,
-          robes: params.robes,
-          hat: params.hat,
-          nametags: params.nametags
-        });
-        
-      }
-
-      if (event.target.name === "address") {
-        console.log("Tultiin address: " + event.target.value)
-        setParams({
-          nimi: params.nimi,
-          osoite: [event.target.value],
-          coat: params.coat,
-          gloves: params.gloves,
-          robes: params.robes,
-          hat: params.hat,
-          nametags: params.nametags
-        });
-      }
+   /*    if(event.target.name === "id")
+      {
+        setSearched(
+          "id_like=" + [event.target.value]
+        )
+        console.log(searched)
+      } */
+     
       if (event.target.name === "coat") {
         console.log("Tultiin coat: " + event.target.value)
-        setParams({
-          coat: [event.target.value],
-          gloves: params.gloves,
-          robes: params.robes,
-          hat: params.hat,
-          nametags: params.nametags
-        });
-        
+        console.log("dbitem coat: " + dbitem.coat)
+        setDbitems({...dbitem, coat: [event.target.value],
+        })
+
       }
       if (event.target.name === "gloves") {
         console.log("Tultiin gloves: " + event.target.value)
-        setParams({
-          nimi: params.nimi,
-          osoite: params.address,
-          coat: params.coat,
+        setDbitems({...dbitem,
           gloves: [event.target.value],
-          robes: params.robes,
-          hat: params.hat,
-          nametags: params.nametags
-        });
+        })
       }
       if (event.target.name === "robes") {
         console.log("Tultiin robes: " + event.target.value)
-        setParams({
-          coat: params.coat,
-          gloves: params.gloves,
+        setDbitems({...dbitem,
           robes: [event.target.value],
-          hat: params.hat,
-          nametags: params.nametags
-        });
+        })
       }
       if (event.target.name === "hat") {
         console.log("Tultiin hat: " + event.target.value)
-        setParams({
-          coat: params.coat,
-          gloves: params.gloves,
-          robes: params.robes,
+        setDbitems({...dbitem,
           hat: [event.target.value],
-          nametags: params.nametags
-        });
+
+        })
       }
       if (event.target.name === "nametags") {
         console.log("Tultiin nametags: " + event.target.value)
-        setParams({
-          coat: params.coat,
-          gloves: params.gloves,
-          robes: params.robes,
-          hat: params.hat,
+        setDbitems({...dbitem,
           nametags: [event.target.value]
-        });
+        })
       }
 
     } else {
       console.log("Tultiin elseen")
-      setParams((prev) => ({ ...prev, [event.target.name]: "" }));
+      setDbitems((prev) => ({ ...prev, [event.target.name]: '' }));
     }
   };
 
-  const saveChanges = async () => {
-    console.log("Tultiin saveen: ")
-    console.log("Paramsid: " + params.id)
 
-    await fetch("http://localhost:5000/wizards/" + params.id, {
+  /* EDITOIDUN JUTUN SAVETUS */
+  const saveChanges = async (event) => {
+    event.preventDefault();
 
-      method: "PUT",
+    console.log("Tultiin saveen")
+    console.log("dbitemid: " + dbitem.id)
+    console.log("hat: " + dbitem.hat)
+    console.log("gloves: " + dbitem.gloves)
+    console.log("robes: " + dbitem.robes)
+
+
+     fetch(url + dbitem.id + "?", {
+
+      method: "PATCH",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        uniform: {
-          hat: params.hat,
-          gloves: params.gloves,
-          coat: params.coat,
-          robes: params.robes,
-          nametags: params.nametags
+        uniform: {...dbitem,
+          hat: dbitem.hat,
+          gloves: dbitem.gloves,
+          coat: dbitem.coat,
+          robes: dbitem.robes,
+          nametags: dbitem.nametags
         }
       }
       ),
-
       //Tietojen päivitys näkyciin
     }).then((response) => {
-      this.fetchData();
-      this.setState({
-        searchLoading: true
-      });
+      
+      /*   setLoading({
+        loading: false
+      })  */
+      
+      
+      setTimeout(()=>{
+        fetchData()
+        
+      })
     });
 
+    alert("You have succesfully updated uniform information")
+    clearInputs();
+
   }
-  /*     //Poisto
-      const delete = async (wizards.id) => {
+
+  const clearInputs = () => {
+    document.getElementById("robesInput").value = "";
+    document.getElementById("hatInput").value = "";
+    document.getElementById("glovesInput").value = "";
+    document.getElementById("coatInput").value = "";
+    document.getElementById("nametagsInput").value = "";
+  }
+     //Poisto
+      const deleteAll = (wizards) => {
         try{
-          await api.delet(`/wizards/${id}`);
-          const 
+          fetch(url + wizards.id, {
+            method:'DELETE',
+          }).then(() => {
+            fetchData();
+            setLoading({
+              loading: false
+            })
+          })
         }
   
         catch{
@@ -183,42 +162,52 @@ function Uniform(props) {
         }
   
   
-      }; */
+      }; 
 
-  //Päivitetään button-clickillä url
-  /*   const getData = async () => {
+      //Tämä ei jostain syystä toimi
+  //HAE NAPPULAN TOIMINTO
+    const getData = async () => {
+      console.log(document.getElementById("idSearch").value)
+      const searched = document.getElementById("idSearch").value;
       setLoading(true);
       setTimeout(() => {
         async function fetchData() {
-          let response = await fetch(url + "?" + params.name + params.address + params.coat + params.gloves + params.robes + params.hat + params.nametags);
-          console.log(url + "?" + params.name + params.address + params.coat + params.gloves + params.robes + params.hat + params.nametags);
+          let response = await fetch(url + "id="+ searched);
           let data = await response.json();
           setUniformlist(data);
-          setLoading(false);
+          
         }
+      })
+      console.log(uniformlist)
+      console.log(url + "id="+ searched);
   
-        fetchData();
-      }, delay);
-  
-  
-    }; */
+    }; 
 
+
+  /* EDIT NAPPULAN TOIMINTO */
   const handleUpdate = (oldData) => {
 
     console.log(oldData)
     document.getElementById("wizardsId").value = oldData.id;
     console.log(oldData.id)
-    setParams({
+    setDbitems({...dbitem,
       id: oldData.id
     });
-    console.log(params.id)
+    //console.log(dbitem.id)
     document.getElementById("robesInput").value = oldData.uniform.robes;
     document.getElementById("hatInput").value = oldData.uniform.hat;
     document.getElementById("glovesInput").value = oldData.uniform.gloves;
     document.getElementById("coatInput").value = oldData.uniform.coat;
     document.getElementById("nametagsInput").value = oldData.uniform.nametags;
-    /*  handleShow() */
-    /*  document.getElementById("robesModal") = oldData.robes; */
+
+    setDbitems({...dbitem,
+      id: [oldData.id],
+      robes: [oldData.uniform.robes],
+      hat: [oldData.uniform.hat],
+      gloves: [oldData.uniform.gloves],
+      coat:[oldData.uniform.coat],
+      nametags: [oldData.uniform.nametags] 
+    });
 
   }
 
@@ -227,69 +216,87 @@ function Uniform(props) {
   return (
 
     <div>
+     {/*  {loading && <div>Loading.... </div>} */}
       <div id="cont-2">
-        <Container id="searchInput" margin="3em">
-        <h2>Uniforms</h2>
-          <input
-            name="id"
+
+        {/* HAKUKENTTÄ */}
+        <Container id="searchInput" className="bsContaineri" margin="3em">
+          <h2>Uniforms</h2>
+
+          <Table striped bordered hover size="sm">
+            <tbody><tr><td><input
+            id="idSearch"
+            name="idSearch"
             type="text"
             placeholder="Wizard id"
             onChange={searchDefine}
-          />
-
-          <button /* onClick={getData} */ >Search</button>
+          /></td> 
+          <td><Button variant="light"  onClick={() => getData()} >Search</Button></td>
+          </tr>
+          </tbody> 
+          </Table>
         </Container>
 
-        <Container id="EditInputs">
 
-          <input id="wizardsId"
+
+{/* EDITOINTI KENTTÄ  */}
+        <Container id="EditInputs" className="bsContaineri">
+          <Table striped bordered hover size="sm">
+            <tbody>
+              <tr>
+                <td><input id="wizardsId"
             name="id"
             type="text"
             placeholder="id"
             hidden
           /* onChange={searchDefine} */
-          />
-          <input
+          /></td>
+                <td> <input
             id="robesInput"
             name="robes"
             type="text"
             placeholder="Robes"
             onChange={searchDefine}
-          />
-          <input
+          /></td>
+                <td><input
             id="hatInput"
             name="hat"
             type="text"
             placeholder="Hat..."
             onChange={searchDefine}
-          />
-          <input
+          /></td>
+                <td> <input
             id="glovesInput"
             name="gloves"
             type="text"
             placeholder="Gloves..."
             onChange={searchDefine}
-          />
-          <input
+          /></td>
+             
+                <td><input
             id="coatInput"
             name="coat"
             type="text"
             placeholder="Coat..."
             onChange={searchDefine}
-          />
-
+          /></td>
+                <td>
           <input
             id="nametagsInput"
             name="nametags"
             type="text"
             placeholder="Nametags..."
             onChange={searchDefine}
-          />
-
-          <Button onClick={saveChanges}>Save changes</Button>
+          /></td>
+                <td><Button variant="light" onClick={saveChanges}>Save changes</Button></td>
+            
+              
+              </tr>
+            </tbody>
+          </Table>
         </Container>
 
-        <div id="taulukko">
+        <div id="taulukko" className="bsContaineri">
           {loading ? (
             <div id="loading">Loading...</div>
 
@@ -316,15 +323,16 @@ function Uniform(props) {
                     <td>{wizards.uniform.gloves}</td>
                     <td>{wizards.uniform.coat}</td>
                     <td>{wizards.uniform.nametags}</td>
-                    <td><Button /* onClick={delete} */ id={wizards.id}>Delete</Button></td>
-                    <th><Button color="primary" onClick={() => handleUpdate(wizards)}>Edit</Button></th>
+                    <td><Button variant="outline-dark" onClick={() => handleUpdate(wizards)}>Edit</Button></td>
+                    <td><Button variant="dark" onClick={() => deleteAll(wizards)} id={wizards.id}>Delete</Button></td>
+                    
                   </tr>
                 );
               })}</tbody></table>
           ) : error === true ? (
-            <div id="loading">VIRHE! Ethän syötä erikoismerkkejä</div>
+            <div id="loading">ERROR</div>
           ) : (
-            <div id="loading">Annetuilla hakuehdoilla ei löytynyt dataa</div>
+            <div id="loading">Your search didn't made anything...</div>
           )}
         </div>
       </div>

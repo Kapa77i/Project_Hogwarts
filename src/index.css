@@ -183,3 +183,7 @@ p{
 input::placeholder {
     font-size: 10px;
 }
+
+.bsContaineri{
+  font-family: fantasy, papyrus;
+}

@@ -66,26 +66,45 @@
     },
     {
       "name": [
-        "kok"
+        "Elisa Alanko"
       ],
       "address": [
-        "oko"
+        "Kujala"
       ],
       "uniform": {
-        "hat": [
-          "kok"
-        ],
-        "gloves": [
-          "o"
+        "id": [
+          3
         ],
         "coat": [
-          "kok"
+          [
+            [
+              "kok"
+            ]
+          ]
+        ],
+        "gloves": [
+          [
+            "6"
+          ]
         ],
         "robes": [
-          "ko"
+          [
+            [
+              "ko"
+            ]
+          ]
+        ],
+        "hat": [
+          [
+            "6"
+          ]
         ],
         "nametags": [
-          "ok"
+          [
+            [
+              "ok"
+            ]
+          ]
         ]
       },
       "equipment": {
@@ -164,6 +183,46 @@
         "trimble": 1
       },
       "id": 4
+    },
+    {
+      "name": [
+        "Hermione Granger"
+      ],
+      "address": [
+        "8 Heathgate, Hampstead Garden Suburb, London"
+      ],
+      "uniform": {
+        "hat": [
+          "1"
+        ],
+        "gloves": [
+          "2"
+        ],
+        "coat": [
+          "1"
+        ],
+        "robes": [
+          "3"
+        ],
+        "nametags": [
+          "Yes"
+        ]
+      },
+      "books": {},
+      "equipment": {
+        "wand": [
+          "10¾\" long, made of vine wood, and possessed a dragon heartstring core"
+        ],
+        "cauldron": [
+          "Black cauldron"
+        ]
+      },
+      "pet": {
+        "species": [
+          "crystalPhials"
+        ]
+      },
+      "id": 5
     }
   ]
 }
