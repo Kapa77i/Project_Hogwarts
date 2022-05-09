@@ -229,6 +229,7 @@ function Uniform(props) {
     <div>
       <div id="cont-2">
         <Container id="searchInput" margin="3em">
+        <h2>Uniforms</h2>
           <input
             name="id"
             type="text"

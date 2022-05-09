@@ -97,7 +97,7 @@ class Welcome_Hogwarts extends React.Component {
 
         </div>
 
-        <div><a href="http://localhost:3000/asiakkaat">Click here to start the book and equipment preorder now</a></div>
+        <div><a href="http://localhost:3000/ApplicationForm">Click here to start the book and equipment preorder now</a></div>
       </div>
 
     );

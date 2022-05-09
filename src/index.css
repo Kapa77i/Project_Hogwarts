@@ -101,7 +101,8 @@ nav{
    padding: 1em;
    margin: auto; 
    justify-content: center;
-   font-family:Georgia, 'Times New Roman', Times, serif;
+   font-family: Georgia, 'Times New Roman', Times, serif;
+  height: 30px;
  }
 
   /* unvisited link */
@@ -177,4 +178,8 @@ p{
   padding: 0.2em;
   font-family: fantasy, papyrus;
    font-size: large;
+}
+
+input::placeholder {
+    font-size: 10px;
 }

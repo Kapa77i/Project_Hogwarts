@@ -4,12 +4,12 @@ import Logo from './pictures/Hogwarts-Logo-rb.png';
 import AppModaali from './AppModaali';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from "react-router-dom";
+
 var url = "http://localhost:5000/wizards";
 
 const delay = 3000;
 
 <script src="https://unpkg.com/react/umd/react.production.min.js" crossorigin></script>
-
 
 class Application extends React.Component {
     constructor(props) {
@@ -36,11 +36,26 @@ class Application extends React.Component {
             brassscales: "",
             petname: "",
             petspecies: "",
+
+            //kirjat
+
+
+
             searchLoading: false,
             handleShow: false,
-            handleClose: false
+            handleClose: false,
+
+
+
         };
     }
+
+    // lemmikinvalinta-radiobuttonit/nimiloota
+    handleChange = (e) => {
+        this.setState({
+            [e.target.name]: e.target.value
+        });
+    };
 
     //Jos halutaan heti luonnin jälkeen hakea data, ajetaan heti sen jälkeen kun dokumenttipuu on luotu tämän dokun osalta
     componentDidMount() {
@@ -177,6 +192,8 @@ class Application extends React.Component {
       }
     ] */
 
+
+
     async addUniform() {
         await fetch("http://localhost:5000/wizards", {
             method: "POST",
@@ -203,6 +220,9 @@ class Application extends React.Component {
                 pet: {
                     name: this.petname,
                     species: this.species
+                },
+                books: {
+                    
                 }
             }
             ),
@@ -214,7 +234,6 @@ class Application extends React.Component {
                 searchLoading: true
             });
         });
-
     }
 
 
@@ -253,12 +272,12 @@ class Application extends React.Component {
             return (
 
                 <div id="cont-application">
-                     <img src={Logo} height="250" width="250"  alt="Lucindas signature"/>
-                    <div id="WizardNameInputFields">
-                    <br />
-                        <br />
-                        <h3>Your Hogwarts application</h3>
-                        <p>Give your fullname: </p>
+                    <img src={Logo} height="250" width="250" alt="Lucindas signature" />
+
+                    {/* henkilötiedot */}
+                    <div id="WizardNameInputFields"><br /><br />
+                        <h2>Your book and equipment preorder</h2><br /><br />
+                        <h6>Give us your full name: </h6>
                         <input
                             name="nameInput"
                             type="text"
@@ -268,7 +287,7 @@ class Application extends React.Component {
                         />
                         <br />
                         <br />
-                        <p>Give your full address: </p>
+                        <h6>Give us your full address: </h6>
                         <input
                             name="addressInput"
                             type="text"
@@ -279,49 +298,47 @@ class Application extends React.Component {
                     </div>
 
 
-
-                    <div id="UniformInputFields">
-                        <br />
-                        <br />
-                        <br />
-                        <p>Next give your uniforms information</p>
-                        <p>Robes:</p>
+                    {/* vaatetus */}
+                    <div id="UniformInputFields"><br /><br />~<br /><br />
+                        <h3>Uniform</h3>
+                        <h6>Next give us your uniforms information:</h6><br />
+                        <label for="robesInput">Robes:</label><br />
                         <input
                             name="robesInput"
                             type="text"
                             placeholder="robes..."
                             //value={this.state.asiakasInput}
                             onChange={this.addParameters}
-                        />
+                        /><br /><br />
 
-                        <p>Hat:</p>
+                        <label for="hatInput">Hats:</label><br />
                         <input
                             name="hatInput"
                             type="text"
                             placeholder="hats..."
                             //value={this.state.osoiteInput}
                             onChange={this.addParameters}
-                        />
+                        /><br /><br />
 
-                        <p>Gloves:</p>
+                        <label for="glovesInput">Gloves:</label><br />
                         <input
                             name="glovesInput"
                             type="text"
                             placeholder="gloves..."
                             //value={this.state.osoiteInput}
                             onChange={this.addParameters}
-                        />
+                        /><br /><br />
 
-                        <p>Coat:</p>
+                        <label for="coatInput">Coats:</label><br />
                         <input
                             name="coatInput"
                             type="text"
-                            placeholder="coat..."
+                            placeholder="coats..."
                             //value={this.state.osoiteInput}
                             onChange={this.addParameters}
-                        />
+                        /><br /><br />
 
-                        <p>Do you need nametags:</p>
+                        <label for="nametagsInput">Do you need any nametags?</label><br />
                         <input
                             name="nametagsInput"
                             type="text"
@@ -330,57 +347,122 @@ class Application extends React.Component {
                             onChange={this.addParameters}
                         />
                     </div>
-                    <div>
-                        <br />
-                        <br />
-                        <br />
-                        <p>Next inform us about your equipment</p>
 
-                        <p>Wand:</p>
+                    {/* oppikirjat */}
+                    <div id="books"><br /><br />~<br /><br />
+                        <h3>Books</h3>
+                        <h6>Please select your course books:</h6><br />
+                        <label for="goshawkInput"><b>The Standard Book of Spells (Grade 1)</b> <br />by Miranda Goshawk</label><br />
+                        <input
+                            name="goshawkInput"
+                            type="text"
+                            placeholder="(quantity)"
+                            //value={this.state.osoiteInput}
+                            onChange={this.addParameters}
+                        /><br /><br />
+
+                        <label for="bagshotInput"><b>A History of Magic</b><br />by Bathilda Bagshot</label><br />
+                        <input
+                            name="bagshotInput"
+                            type="text"
+                            placeholder="(quantity)"
+                            //value={this.state.osoiteInput}
+                            onChange={this.addParameters}
+                        /><br /><br />
+
+                        <label for="wafflingInput"><b>Magical Theory</b> <br />by Adalbert Waffling</label><br />
+                        <input
+                            name="wafflingInput"
+                            type="text"
+                            placeholder="(quantity)"
+                            //value={this.state.osoiteInput}
+                            onChange={this.addParameters}
+                        /><br /><br />
+
+                        <label for="switchInput"><b>A Beginner's Guide to Transfiguration</b> <br />by Emeric Switch</label><br />
+                        <input name="switchInput" type="text" placeholder="(quantity)"
+                            //value={this.state.osoiteInput}
+                            onChange={this.addParameters}
+                        /><br /><br />
+
+                        <label for="sporeInput"><b>One Thousand Magical Herbs and Fungi </b><br />by Phyllida Spore</label><br />
+                        <input
+                            name="sporeInput"
+                            type="text"
+                            placeholder="(quantity)"
+                            //value={this.state.osoiteInput}
+                            onChange={this.addParameters}
+                        /><br /><br />
+
+                        <label for="jiggerInput"><b>Magical Drafts and Potions</b> <br />by Arsenius Jigger</label><br />
+                        <input
+                            name="jiggerInput"
+                            type="text"
+                            placeholder="(quantity)"
+                            //value={this.state.osoiteInput}
+                            onChange={this.addParameters}
+                        /><br /><br />
+
+                        <label for="scamanderInput"><b>Fantastic Beasts and Where to Find Them</b> <br />by Newt Scamander</label><br />
+                        <input
+                            name="scamanderInput"
+                            type="text"
+                            placeholder="(quantity)"
+                            //value={this.state.osoiteInput}
+                            onChange={this.addParameters}
+                        /><br /><br />
+
+                        <label for="trimbleInput"><b>The Dark Forces: A Guide to Self-Protection </b><br />by Quentin Trimble</label><br />
+                        <input
+                            name="trimbleInput"
+                            type="text"
+                            placeholder="(quantity)"
+                            //value={this.state.osoiteInput}
+                            onChange={this.addParameters}
+                        /><br />
+                    </div>
+
+                    {/* muut tarvikkeet */}
+                    <div id="otherEquipment"><br /><br />~<br /><br />
+                        <h3>Other equipment</h3>
+                        <h6>Next inform us about other equipment needed:</h6><br />
+
+                        <label for="wandInput">Wand:</label><br />
                         <input
                             name="wandInput"
                             type="text"
                             placeholder="Your wand is..."
                             //value={this.state.osoiteInput}
                             onChange={this.addParameters}
-                        />
+                        /><br /><br />
 
-                        <p>Cauldron:</p>
-
+                        <label for="cauldronInput">Cauldrons:</label><br />
                         <input
                             name="cauldronInput"
                             type="text"
                             placeholder="Cauldron..."
                             //value={this.state.osoiteInput}
                             onChange={this.addParameters}
-                        />
+                        /><br /><br /><br />
 
-                        <br />
-                        <br />
-                        <br />
-                        <br />
-                        <p>Phials:</p>
-
+                        <h5>Phials</h5>
+                        <label for="phialsInput">Choose one (if needed): </label><br />
                         <input
-                            name="phialsInput"
+                            name="speciesInput"
                             type="radio"
-                            value="Glass Phials"
+                            value="glassPhials"
                             //value={this.state.osoiteInput}
                             onChange={this.addParameters}
-                        /><p>Glass phials</p>
-
+                        /><label for="glassPhials">Glass phials</label><br />
                         <input
-                            name="phialsInput"
+                            name="speciesInput"
                             type="radio"
-                            value="Crystal Phials"
+                            value="crystalPhials"
                             //value={this.state.osoiteInput}
                             onChange={this.addParameters}
-                        /><p>Crystal phials</p>
-                        <br />
-                        <br />
-                        <br />
+                        /><label for="crystalPhials">Crystal phials</label><br /><br /><br />
 
-                        <p>Brass scales:</p>
+                        <label for="brassscalesInput">Brass scales:</label><br />
                         <input
                             name="brassscalesInput"
                             type="text"
@@ -389,51 +471,65 @@ class Application extends React.Component {
                             onChange={this.addParameters}
                         />
 
-                        <p>Pets:</p>
-                        <input
-                            name="petsnameInput"
-                            type="text"
-                            placeholder="Your pet's name is"
-                            //value={this.state.osoiteInput}
-                            onChange={this.addParameters}
-                        />
-                        <br />
-                        <br />
-                        <br />
-                        <p>Your pets species:</p>
-                        <input
-                            name="speciesInput"
-                            type="radio"
-                            value="Frog"
-                            //value={this.state.osoiteInput}
-                            onChange={this.addParameters}
-                        /><p>Frog</p>
-                        <input
-                            name="speciesInput"
-                            type="radio"
-                            value="Owl"
-                            //value={this.state.osoiteInput}
-                            onChange={this.addParameters}
-                        /><p>Owl</p>
-                        <input
-                            name="speciesInput"
-                            type="radio"
-                            value="Cat"
-                            //value={this.state.osoiteInput}
-                            onChange={this.addParameters}
-                        /><p>Cat</p>
+                        {/* lemmikki */}
+                        <div id="pet"><br /><br />~<br /><br />
+                            <h3>Pet</h3>
+                            <br />
 
+                            <label for="speciesInput">Your pet's species:</label><br />
 
-                        <br />
-                        <br />
+                            <input name="speciesInput" type="radio" value="Owl" checked={this.state.speciesInput === "Owl"}
+                                onChange={this.handleChange} />
+                                
+                            <label for="Owl">Owl</label><br />
 
+                            <input name="speciesInput" type="radio" value="Cat" checked={this.state.speciesInput=== "Cat"}
+                                //value={this.state.osoiteInput}
+                                onChange={this.handleChange} />
+                            <label for="Cat">Cat</label><br />
+
+                            <input name="speciesInput" type="radio" value="Toad" checked={this.state.speciesInput === "Toad"}
+                                //value={this.state.osoiteInput}
+                                onChange={this.handleChange} />
+                            <label for="Toad">Toad</label><br />
+
+                            <input name="speciesInput" type="radio" value="none" checked={this.state.speciesInput === "none"}
+                                //value={this.state.osoiteInput}
+                                onChange={this.handleChange} />
+                            <label for="none">I'm not bringing a pet</label><br /><br /><br />
+
+                            <input name="petsnameInput" type="text" placeholder="Your pet's name" disabled={this.state.speciesInput == "none"}
+                                value={this.state.petsnameInput}
+                                onChange={this.handleChange} />
+
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                        </div>
                     </div>
-                    {/*  <AppModaali /> */}
+
+{/* Katjan submit-buttoni: <Button as={Col} variant="secondary" onClick={this.addUniform}>Submit your order</Button> */}
+
+
+                    {/* <AppModaali tiedot={this.addUniform}/> */}
+
+
+
+
+                    {/* <AppModaali /> */}
 
                     {/*   <!-- Modaalinavausnappi --> */}
-                    <Row className="mx-0">
-                        <Button as={Col} variant="secondary" onClick={this.addUniform}>Send your application to school</Button>
-                    </Row>
+                    {/*                     <Row className="mx-0"> */}
+                    {/* <Button as={Col} variant="secondary" onClick={<AppModaali/>}>Submit your order</Button> */}
+                    {/*                     </Row> */}
+                    
+
+
+                    
+
+
+
                     {/*  <button type="button" class="btn btn-info btn-lg"
                         data-bs-toggle="modal" data-bs-target="#myModal">Open
                         Modal</button>

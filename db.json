@@ -20,6 +20,16 @@
       "pet": {
         "name": "Wand",
         "species": "Cauldron"
+      },
+      "books": {
+        "goshawk": 6,
+        "bagshot": 1,
+        "waffling": 1,
+        "switch": 3,
+        "spore": 1,
+        "jigger": 1,
+        "scamander": 1,
+        "trimble": 5
       }
     },
     {
@@ -42,6 +52,16 @@
       "pet": {
         "name": "Wand",
         "species": "Cauldron"
+      },
+      "books": {
+        "goshawk": 1,
+        "bagshot": 6,
+        "waffling": 1,
+        "switch": 1,
+        "spore": 3,
+        "jigger": 1,
+        "scamander": 1,
+        "trimble": 0
       }
     },
     {
@@ -87,7 +107,63 @@
           "Frog"
         ]
       },
+      "books": {
+        "goshawk": 12,
+        "bagshot": 1,
+        "waffling": 1,
+        "switch": 5,
+        "spore": 1,
+        "jigger": 7,
+        "scamander": 1,
+        "trimble": 1
+      },
       "id": 3
+    },
+    {
+      "name": [
+        "Ron Weasley"
+      ],
+      "address": [
+        "Kotikolo 2"
+      ],
+      "uniform": {
+        "hat": [
+          "5"
+        ],
+        "gloves": [
+          "5"
+        ],
+        "coat": [
+          "5"
+        ],
+        "robes": [
+          "5"
+        ],
+        "nametags": [
+          "25"
+        ]
+      },
+      "equipment": {
+        "phials": [
+          "Glass Phials"
+        ]
+      },
+      "pet": {
+        "species": [
+          "Owl"
+        ]
+      },
+      "books": {
+        "goshawk": 1,
+        "bagshot": 1,
+        "waffling": 0,
+        "switch": 21,
+        "spore": 1,
+        "jigger": 1,
+        "scamander": 1,
+        "trimble": 1
+      },
+      "id": 4
     }
   ]
 }
