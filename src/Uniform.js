@@ -241,7 +241,18 @@ function Uniform(props) {
 
 {/* EDITOINTI KENTTÄ  */}
         <Container id="EditInputs" className="bsContaineri">
-          <Table striped bordered hover size="sm">
+          <Table striped bordered hover size="sm" variant="light">
+          <thead >
+                <tr>
+                  <th></th>
+                  <th>Robes</th>
+                  <th>Hat</th>
+                  <th>Gloves</th>
+                  <th>Coat</th>
+                  <th>Nametags</th>
+                  <th>-</th>
+                </tr>
+              </thead>
             <tbody>
               <tr>
                 <td><input id="wizardsId"
