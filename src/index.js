@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
 /* import './App.scss'; */
 
 //import Asiakkaat from './Asiakkaat';
@@ -15,7 +17,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Application from './ApplicationForm';
 
 //En saanut sitä open esimerkkiä toimimaan, mutta alla olevalla (Verrattain samalla) räpellyksellä homma pyörii
-ReactDOM.render(
+createRoot(document.getElementById('root')).render(
   <React.StrictMode>
 
     <Router>
@@ -36,7 +38,6 @@ ReactDOM.render(
 
       </Router>
   </React.StrictMode>,
-  document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
