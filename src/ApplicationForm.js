@@ -19,7 +19,7 @@ class Application extends React.Component {
 
         this.addParameters = this.addParameters.bind(this);
         this.addApplication = this.addApplication.bind(this);
-        this.poista = this.poista.bind(this);
+        //this.poista = this.poista.bind(this);
 
         //Datan käsittely tilamuuttujassa
         this.state = {
@@ -200,7 +200,7 @@ class Application extends React.Component {
             }
 
 
-            // lemmikit -- EI JOSTAIN SYYSTÄ TALLENNU JSONIIN?
+            // lemmikit 
 
             if (event.target.name === "petsnameInput") {
                 this.setState({ petname: event.target.value });
@@ -213,24 +213,6 @@ class Application extends React.Component {
 
 
         }
-    }
-
-    async poista(event) {
-        console.log(event.target.id);
-        //Kutsutaan fetchiä delete-metodilla
-        await fetch(url + "/" + event.target.id, {
-            method: "DELETE",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            //body: JSON.stringify({ id: saatuID })
-            //Tietojen päivitys näkyciin
-        }).then((response) => {
-            this.fetchData();
-            this.setState({
-                searchLoading: true
-            });
-        });
     }
 
 
@@ -247,7 +229,7 @@ class Application extends React.Component {
                 address: this.address,
                 uniform: {
                     hat: this.hat,
-                    gloves: this.gloves, // hanskavalinta pitää koodata, ei vielä mene tietokantaan
+                    gloves: this.gloves, 
                     coat: this.coat,
                     robes: this.robes,
                     nametags: this.nametags
@@ -338,7 +320,7 @@ class Application extends React.Component {
                     <div id="UniformInputFields"><br /><br />~<br /><br />
                         <h3>Uniform</h3>
                         <h6>Next give us your uniforms information:</h6><br />
-                        <label for="robesInput">Plain work robes (black):</label><br />
+                        <label htmlFor="robesInput">Plain work robes (black):</label><br />
                         <input
                             name="robesInput"
                             type="text"
@@ -347,7 +329,7 @@ class Application extends React.Component {
                             onChange={this.addParameters}
                         /><br /><br />
 
-                        <label for="hatInput">Plain pointed hat (black) for day wear:</label><br />
+                        <label htmlFor="hatInput">Plain pointed hat (black) for day wear:</label><br />
                         <input
                             name="hatInput"
                             type="text"
@@ -356,21 +338,21 @@ class Application extends React.Component {
                             onChange={this.addParameters}
                         /><br /><br />
 
-                        <label for="glovesInput">Pair of protective gloves:</label><br />
+                        <label htmlFor="glovesInput">Pair of protective gloves:</label><br />
 
                         <input name="glovesInput" type="radio" value="From dragon hide" checked={this.state.glovesInput === "From dragon hide"}
                             //value={this.state.osoiteInput}
-                            onChange={this.addParameters} /> <label for="From dragon hide">From dragon hides</label><br />
+                            onChange={this.addParameters} /> <label htmlFor="From dragon hide">From dragon hides</label><br />
 
 
                         <input name="glovesInput" type="radio" value="From erumpet hide" checked={this.state.glovesInput === "From erumpet hide"}
                             //value={this.state.osoiteInput}
-                            onChange={this.addParameters} /> <label for="From erumpet hide">From erumpet hide</label><br />
+                            onChange={this.addParameters} /> <label htmlFor="From erumpet hide">From erumpet hide</label><br />
 
                         <br /><br />
 
 
-                        <label for="coatInput">Winter cloak (black, with silver fastenings):</label><br />
+                        <label htmlFor="coatInput">Winter cloak (black, with silver fastenings):</label><br />
                         <input
                             name="coatInput"
                             type="text"
@@ -379,7 +361,7 @@ class Application extends React.Component {
                             onChange={this.addParameters}
                         /><br /><br />
 
-                        <label for="nametagsInput">Do you need any nametags?</label><br />
+                        <label htmlFor="nametagsInput">Do you need any nametags?</label><br />
                         <input
                             name="nametagsInput"
                             type="text"
@@ -393,7 +375,7 @@ class Application extends React.Component {
                     <div id="books"><br /><br />~<br /><br />
                         <h3>Books</h3>
                         <h6>Please select your course books:</h6><br />
-                        <label for="goshawkInput"><b>The Standard Book of Spells (Grade 1)</b> <br />by Miranda Goshawk</label><br />
+                        <label htmlFor="goshawkInput"><b>The Standard Book of Spells (Grade 1)</b> <br />by Miranda Goshawk</label><br />
                         <input
                             name="goshawkInput"
                             type="text"
@@ -402,7 +384,7 @@ class Application extends React.Component {
                             onChange={this.addParameters}
                         /><br /><br />
 
-                        <label for="bagshotInput"><b>A History of Magic</b><br />by Bathilda Bagshot</label><br />
+                        <label htmlFor="bagshotInput"><b>A History of Magic</b><br />by Bathilda Bagshot</label><br />
                         <input
                             name="bagshotInput"
                             type="text"
@@ -411,7 +393,7 @@ class Application extends React.Component {
                             onChange={this.addParameters}
                         /><br /><br />
 
-                        <label for="wafflingInput"><b>Magical Theory</b> <br />by Adalbert Waffling</label><br />
+                        <label htmlFor="wafflingInput"><b>Magical Theory</b> <br />by Adalbert Waffling</label><br />
                         <input
                             name="wafflingInput"
                             type="text"
@@ -420,13 +402,13 @@ class Application extends React.Component {
                             onChange={this.addParameters}
                         /><br /><br />
 
-                        <label for="switchInput"><b>A Beginner's Guide to Transfiguration</b> <br />by Emeric Switch</label><br />
+                        <label htmlFor="switchInput"><b>A Beginner's Guide to Transfiguration</b> <br />by Emeric Switch</label><br />
                         <input name="switchInput" type="text" placeholder="(quantity)"
                             //value={this.state.osoiteInput}
                             onChange={this.addParameters}
                         /><br /><br />
 
-                        <label for="sporeInput"><b>One Thousand Magical Herbs and Fungi </b><br />by Phyllida Spore</label><br />
+                        <label htmlFor="sporeInput"><b>One Thousand Magical Herbs and Fungi </b><br />by Phyllida Spore</label><br />
                         <input
                             name="sporeInput"
                             type="text"
@@ -435,7 +417,7 @@ class Application extends React.Component {
                             onChange={this.addParameters}
                         /><br /><br />
 
-                        <label for="jiggerInput"><b>Magical Drafts and Potions</b> <br />by Arsenius Jigger</label><br />
+                        <label htmlFor="jiggerInput"><b>Magical Drafts and Potions</b> <br />by Arsenius Jigger</label><br />
                         <input
                             name="jiggerInput"
                             type="text"
@@ -444,7 +426,7 @@ class Application extends React.Component {
                             onChange={this.addParameters}
                         /><br /><br />
 
-                        <label for="scamanderInput"><b>Fantastic Beasts and Where to Find Them</b> <br />by Newt Scamander</label><br />
+                        <label htmlFor="scamanderInput"><b>Fantastic Beasts and Where to Find Them</b> <br />by Newt Scamander</label><br />
                         <input
                             name="scamanderInput"
                             type="text"
@@ -453,7 +435,7 @@ class Application extends React.Component {
                             onChange={this.addParameters}
                         /><br /><br />
 
-                        <label for="trimbleInput"><b>The Dark Forces: A Guide to Self-Protection </b><br />by Quentin Trimble</label><br />
+                        <label htmlFor="trimbleInput"><b>The Dark Forces: A Guide to Self-Protection </b><br />by Quentin Trimble</label><br />
                         <input
                             name="trimbleInput"
                             type="text"
@@ -468,7 +450,7 @@ class Application extends React.Component {
                         <h3>Other equipment</h3>
                         <h6>Next inform us about other equipment needed:</h6><br />
 
-                        <label for="wandInput">Wand:</label><br />
+                        <label htmlFor="wandInput">Wand:</label><br />
                         <input
                             name="wandInput"
                             type="text"
@@ -477,7 +459,7 @@ class Application extends React.Component {
                             onChange={this.addParameters}
                         /><br /><br />
 
-                        <label for="cauldronInput">Cauldrons (pewter, standard size 2):</label><br />
+                        <label htmlFor="cauldronInput">Cauldrons (pewter, standard size 2):</label><br />
                         <input
                             name="cauldronInput"
                             type="text"
@@ -487,24 +469,24 @@ class Application extends React.Component {
                         /><br /><br /><br />
 
                         <h5>Phials</h5>
-                        <label for="phialsInput">Choose one (if needed): </label><br />
+                        <label htmlFor="phialsInput">Choose one (if needed): </label><br />
                         <input
                             name="phialsInput"
                             type="radio"
                             value="Glass phials"
                             //value={this.state.osoiteInput}
                             onChange={this.addParameters}
-                        /><label for="Glass phials">Glass phials</label><br />
+                        /><label htmlFor="Glass phials">Glass phials</label><br />
                         <input
                             name="phialsInput"
                             type="radio"
                             value="Crystal phials"
                             //value={this.state.osoiteInput}
                             onChange={this.addParameters}
-                        /><label for="Crystal Phials">Crystal phials</label><br /><br /><br />
+                        /><label htmlFor="Crystal Phials">Crystal phials</label><br /><br /><br />
 
 
-                        <label for="telescopesInput">Telescopes:</label><br />
+                        <label htmlFor="telescopesInput">Telescopes:</label><br />
                         <input
                             name="telescopesInput"
                             type="text"
@@ -514,7 +496,7 @@ class Application extends React.Component {
                         /><br />
 
 
-                        <label for="brassscalesInput">Brass scales:</label><br />
+                        <label htmlFor="brassscalesInput">Brass scales:</label><br />
                         <input
                             name="brassscalesInput"
                             type="text"
@@ -528,19 +510,19 @@ class Application extends React.Component {
                             <h3>Pet</h3>
                             <br />
 
-                            <label for="speciesInput">Your pet's species:</label><br />
+                            <label htmlFor="speciesInput">Your pet's species:</label><br />
 
                             <input name="speciesInput" type="radio" value="Owl" checked={this.state.speciesInput === "Owl"}
-                                onChange={this.addParameters} /><label for="Owl">Owl</label><br />
+                                onChange={this.addParameters} /><label htmlFor="Owl">Owl</label><br />
 
                             <input name="speciesInput" type="radio" value="Cat" checked={this.state.speciesInput === "Cat"}
-                                onChange={this.addParameters} /><label for="Cat">Cat</label><br />
+                                onChange={this.addParameters} /><label htmlFor="Cat">Cat</label><br />
 
                             <input name="speciesInput" type="radio" value="Toad" checked={this.state.speciesInput === "Toad"}
-                                onChange={this.addParameters} /><label for="Toad">Toad</label><br />
+                                onChange={this.addParameters} /><label htmlFor="Toad">Toad</label><br />
 
                             <input name="speciesInput" type="radio" value="none" checked={this.state.speciesInput === "none"}
-                                onChange={this.addParameters} /><label for="none">I'm not bringing a pet</label><br /><br /><br />
+                                onChange={this.addParameters} /><label htmlFor="none">I'm not bringing a pet</label><br /><br /><br />
 
                             <input name="petsnameInput" type="text" placeholder="Your pet's name" disabled={this.state.speciesInput == "none"}
                                 value={this.state.petsnameInput}

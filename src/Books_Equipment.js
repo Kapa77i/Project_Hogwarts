@@ -1,6 +1,7 @@
 import React, { useState, useEffect, Component } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button, Col, Modal, Row, Container, Form } from 'react-bootstrap'
+import { Button, Col, Modal, Row, Container, Form } from 'react-bootstrap';
+import './index.css';
 
 function Books_Equipment(props) {
   const [bookList, setBookList] = useState([]);
@@ -39,7 +40,7 @@ function Books_Equipment(props) {
       });
     }, delay)
 
-  }, [bookList, eqList, petList]);
+  }, []);
 
   async function fetchData() {
     let response = await fetch(url);
@@ -64,6 +65,8 @@ function Books_Equipment(props) {
            console.log(searched)
          } */
 
+
+         //Books
       if (event.target.name === "goshawk") {
         console.log("Tultiin goshawk: " + event.target.value)
         console.log("dbBooks goshawk: " + dbBooks.goshawk)
@@ -123,14 +126,80 @@ function Books_Equipment(props) {
         })
       }
 
+/* 
+          <Container id="EditEqInputs" className="bsContaineri">
+            <input id="wizardsId" name="id" type="text" placeholder="id" hidden /* onChange={searchDefine} *//*  />
+            <input id="wandInput" name="wands" type="text" placeholder="wands" onChange={searchDefine} /><br />
+            <input id="cauldronInput" name="cauldrons" type="text" placeholder="cauldrons" onChange={searchDefine} /><br /> */
+  
+            /* phials radio buttonit */
+            /* <input id="phialsInput" name="phialsInput" type="radio" value="glassPhials" onChange={searchDefine} />
+            <label htmlFor="glassPhials">Glass phials</label><br />
+            <input name="phialsInput" type="radio" value="crystalPhials" onChange={searchDefine} />
+            <label htmlFor="crystalPhials">Crystal phials</label><br />
+            <input id="telescopesInput" name="telescopes" type="text" placeholder="telescopes" onChange={searchDefine} /><br />
+            <input id="brassscalesInput" name="brasscales" type="text" placeholder="brass scales" onChange={searchDefine} /><br />
+            <Button onClick={saveChanges}>Save changes</Button>
+          </Container>*/ 
+
+      //Other Equipment
+      if (event.target.name === "id") {
+        console.log("Tultiin id: " + event.target.value)
+        setDbEquipment({
+          ...dbEquipment,
+          id: [event.target.value]
+        })
+      } 
+      if (event.target.name === "wands") {
+        console.log("Tultiin wandInput: " + event.target.value)
+        setDbEquipment({
+          ...dbEquipment,
+          wands: [event.target.value]
+        })
+      } 
+      if (event.target.name === "cauldrons") {
+        console.log("Tultiin cauldronInput: " + event.target.value)
+        setDbEquipment({
+          ...dbEquipment,
+          cauldrons: [event.target.value]
+        })
+      } 
+       if (event.target.name === "phialsInput") {
+        console.log("Tultiin phialsInput: " + event.target.value)
+        setDbEquipment({
+          ...dbEquipment,
+          phials: [event.target.value]
+        })
+      } 
+
+      if (event.target.name === "telescopes") {
+        console.log("Tultiin telescopesInput: " + event.target.value)
+        setDbEquipment({
+          ...dbEquipment,
+          telescopes: [event.target.value]
+        })
+      }
+      if (event.target.name === "brassscales") {
+        console.log("Tultiin brassscalesInput: " + event.target.value)
+        setDbEquipment({
+          ...dbEquipment,
+          brassscales: [event.target.value]
+        })
+      }
+
+      //Pets
+
     } else {
       console.log("Tultiin elseen")
-      setDbBooks((prev) => ({ ...prev, [event.target.name]: '' }));
+      setDbEquipment((prev) => ({ ...prev, [event.target.name]: '' }));
     }
   };
 
-  // muokkauksen tallennus
-  const saveChanges = async (event) => {
+  
+
+
+   // Book muokkauksen tallennus
+   const saveChangesBooks = async (event) => {
     event.preventDefault();
 
     console.log("Tultiin saveen")
@@ -144,34 +213,6 @@ function Books_Equipment(props) {
     console.log("scamander: " + dbBooks.scamander)
     console.log("trimble: " + dbBooks.trimble)
 
-    /*     await fetch("http://localhost:5000/wizards/" + params.id, {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            equipment: {
-              wand: params.wand,
-              cauldron: params.cauldron,
-              phials: params.phials,
-              telescopes: params.telescopes,
-              brassscales: params.brassscales
-            },
-            books: {
-              goshawk: params.goshawk,
-              bagshot: params.bagshot,
-              waffling: params.waffling,
-              switch: params.switch,
-              spore: params.spore,
-              jigger: params.jigger,
-              scamander: params.scamander,
-              trimble: params.trimble
-            },
-            pet: {
-              name: params.name,
-              species: params.species
-            },
-          } */
 
     fetch(url +"/" + dbBooks.id + "?", {
 
@@ -210,10 +251,10 @@ function Books_Equipment(props) {
     });
 
     alert("You have succesfully updated book information")
-    clearInputs();
+    clearInputsBooks();
   }
 
-  const clearInputs = () => {
+  const clearInputsBooks = () => {
     document.getElementById("goshawkInput").value = "";
     document.getElementById("bagshotInput").value = "";
     document.getElementById("wafflingInput").value = "";
@@ -246,23 +287,6 @@ function Books_Equipment(props) {
 
   }; 
 
-  //Päivitetään button-clickillä url
-  /*   const getData = async () => {
-      setLoading(true);
-      setTimeout(() => {
-        async function fetchData() {
-          let response = await fetch(url + "?" + params.name + params.address + params.coat + params.gloves + params.robes + params.hat + params.nametags);
-          console.log(url + "?" + params.name + params.address + params.coat + params.gloves + params.robes + params.hat + params.nametags);
-          let data = await response.json();
-          setUniformlist(data);
-          setLoading(false);
-        }
-  
-        fetchData();
-      }, delay);
-  
-  
-    }; */
 
   // funktio kkirjatietojen muokkaamiseen
   const handleBookUpdate = (oldData) => {
@@ -296,43 +320,159 @@ function Books_Equipment(props) {
 
   }
 
+
+
   // funktio equipment-tietojen muokkaamiseen
- /*  const handleEqUpdate = (oldData) => {
+   const handleEqUpdate = (oldData) => {
     console.log(oldData)
     document.getElementById("wizardsId").value = oldData.id;
     console.log(oldData.id)
-    setParams({
-      id: oldData.id
+
+    setDbEquipment({...dbEquipment,
+      id: oldData.id,
     });
-    console.log(params.id)
-    document.getElementById("wandInput").value = oldData.wands;
-    document.getElementById("cauldronInput").value = oldData.cauldrons;
-    document.getElementById("phialsInput").value = oldData.phials; // tänne erilaiset phials-vaihtoehdot?
-    document.getElementById("telescopesInput").value = oldData.telescopes;
-    document.getElementById("brassscalesInput").value = oldData.brassscales;
-    /*  handleShow() */
-    /*  document.getElementById("robesModal") = oldData.robes; */
-  
+    
+    document.getElementById("wandInput").value = oldData.equipment.wand;
+    document.getElementById("cauldronInput").value = oldData.equipment.cauldron;
+    document.getElementById("phialsInput1").value = oldData.equipment.phials; 
+    document.getElementById("phialsInput2").value = oldData.equipment.phials;// tänne erilaiset phials-vaihtoehdot?
+    document.getElementById("telescopesInput").value = oldData.equipment.telescopes;
+    document.getElementById("brassscalesInput").value = oldData.equipment.brassscales;
+
+    console.log("Old data wand: " + oldData.equipment.wand)
+    setDbEquipment({...dbEquipment,
+      id: [oldData.id],
+      wands: [oldData.equipment.wand], 
+      cauldrons: [oldData.equipment.cauldron], 
+      phials: [oldData.equipment.phials], 
+      telescopes: [oldData.equipment.telescopes], 
+      scales: [oldData.equipment.brassscales]
+    });
+
+    console.log("db wand: " + dbEquipment.wands)
+    
+  }
+
+  // Equipment muokkauksen tallennus
+  const saveChangesEq = async (event) => {
+    event.preventDefault();
+
+    fetch(url +"/" + dbEquipment.id + "?", {
+
+
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        equipment: {
+          ...dbEquipment,
+          wand: dbEquipment.wands,
+          cauldron: dbEquipment.cauldrons,
+          phials: dbEquipment.phials,
+          telescopes: dbEquipment.telescopes,
+          brassscales: dbEquipment.brassscales
+        }
+      }
+      ),
+
+
+      //Tietojen päivitys näkyciin
+    }).then((response) => {
+      
+      /*   setLoading({
+        loading: false
+      })  */
+      
+      
+      setTimeout(()=>{
+        fetchData()
+        
+      })
+    });
+
+    alert("You have succesfully updated book information")
+    clearInputsEq();
+  }
+
+  const clearInputsEq = () => {
+    document.getElementById("wandInput").value = "";
+    document.getElementById("cauldronInput").value = "";
+    document.getElementById("phialsInput1").value = ""; 
+    document.getElementById("phialsInput2").value = "";// tänne erilaiset phials-vaihtoehdot?
+    document.getElementById("telescopesInput").value = "";
+    document.getElementById("brassscalesInput").value = "";
+
+
+  }
 
   // funktio lemmikkitietojen muokkaamiseen
-  /* const handlePetUpdate = (oldData) => {
+   const handlePetUpdate = (oldData) => {
     console.log(oldData)
     document.getElementById("wizardsId").value = oldData.id;
     console.log(oldData.id)
-    setParams({
+    setDbPets({...dbPets,
       id: oldData.id
     });
-    console.log(params.id)
+    console.log(dbPets.id)
+    document.getElementById("wizardsIdpet").value = oldData.id;
     document.getElementById("petsnameInput").value = oldData.pet.name;
-    document.getElementById("speciesInput").value = oldData.pet.species;
+    document.getElementById("speciesInput").value = oldData.pet.species; }
     /*  handleShow() */
     /*  document.getElementById("robesModal") = oldData.robes; */
   
+// Petsin muokkauksen tallennus
+const saveChangesPet = async (event) => {
+  event.preventDefault();
+
+  fetch(url +"/" + dbPets.id + "?", {
+
+
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      pet: {
+        ...dbPets,
+        id: dbEquipment.id,
+        name: dbEquipment.wands,
+        species: dbEquipment.cauldrons,
+      }
+    }
+    ),
+
+
+    //Tietojen päivitys näkyciin
+  }).then((response) => {
+    
+    /*   setLoading({
+      loading: false
+    })  */
+    
+    
+    setTimeout(()=>{
+      fetchData()
+      
+    })
+  });
+
+  alert("You have succesfully updated book information")
+  clearInputsPets();
+}
+
+const clearInputsPets = () => {
+  document.getElementById("wizardsIdpet").value = "";
+  document.getElementById("petname").value = "";
+  document.getElementById("species").value = ""; 
+
+
+}
 
   return (
 
     //kurssikirjataulukko:
-    <div id="cont-2">
+    <div id="cont-2" className="bsContaineri">
       <h2>Course books</h2>
       <Container id="searchBooksInput" margin="3em" className="bsContaineri">
         <input name="id" type="text" placeholder="Wizard id" onChange={searchDefine} />
@@ -348,10 +488,10 @@ function Books_Equipment(props) {
         <input id="jiggerInput" name="jigger" type="text" placeholder="Magical Drafts and Potions" onChange={searchDefine} />
         <input id="scamanderInput" name="scamander" type="text" placeholder="Fantastic Beasts and Where to Find Them" onChange={searchDefine} />
         <input id="trimbleInput" name="trimble" type="text" placeholder="The Dark Forces: A Guide to Self-Protection" onChange={searchDefine} />
-        <Button onClick={saveChanges}>Save changes</Button>
+        <Button variant="outline-dark" onClick={saveChangesBooks}>Save changes</Button>
       </Container>
 
-      <div id="bookTable">
+      <div id="bookTable" className="bsContaineri">
         {loading ? (
           <div id="loading">Loading...</div>
         ) : bookList.length > 0 ? (
@@ -383,8 +523,8 @@ function Books_Equipment(props) {
                   <td>{wizards.books.jigger}</td>
                   <td>{wizards.books.scamander}</td>
                   <td>{wizards.books.trimble}</td>
-                  <th><Button color="primary" onClick={() => handleBookUpdate(wizards)}>Edit</Button></th>
-                  <td><Button onClick={() => deleteAll(wizards)}  id={wizards.id}>Delete</Button></td>
+                  <td><Button variant="outline-dark" onClick={() => handleBookUpdate(wizards)}>Edit</Button></td>
+                  <td><Button variant="dark" onClick={() => deleteAll(wizards)}  id={wizards.id}>Delete</Button></td>
                 </tr>
               );
             })}</tbody></table>
@@ -400,7 +540,7 @@ function Books_Equipment(props) {
 
       {/* muut tarvikkeet */}
 
-      <div id="cont-3">
+      <div id="cont-3" className="bsContaineri">
         <br /><br />
         <h2>Other equipment</h2>
         <Container id="searchEqInput" margin="3em" className="bsContaineri">
@@ -413,13 +553,15 @@ function Books_Equipment(props) {
           <input id="cauldronInput" name="cauldrons" type="text" placeholder="cauldrons" onChange={searchDefine} /><br />
 
           {/* phials radio buttonit */}
-          <input id="phialsInput" name="phialsInput" type="radio" value="glassPhials" onChange={searchDefine} />
-          <label for="glassPhials">Glass phials</label><br />
-          <input name="phialsInput" type="radio" value="crystalPhials" onChange={searchDefine} />
-          <label for="crystalPhials">Crystal phials</label><br />
+          <input id="phialsInput1" name="phialsInput1" type="radio" value="glassPhials" onChange={searchDefine} />
+          <label htmlFor="glassPhials">Glass phials</label><br />
+
+          <input id="phialsInput2" name="phialsInput2" type="radio" value="crystalPhials" onChange={searchDefine} />
+          <label htmlFor="crystalPhials">Crystal phials</label><br />
+
           <input id="telescopesInput" name="telescopes" type="text" placeholder="telescopes" onChange={searchDefine} /><br />
           <input id="brassscalesInput" name="brasscales" type="text" placeholder="brass scales" onChange={searchDefine} /><br />
-          <Button onClick={saveChanges}>Save changes</Button>
+          <Button variant="light" onClick={saveChangesEq}>Save changes</Button>
         </Container>
 
         <div id="eqTable">
@@ -448,8 +590,8 @@ function Books_Equipment(props) {
                     <td>{wizards.equipment.phials}</td>
                     <td>{wizards.equipment.telescopes}</td>
                     <td>{wizards.equipment.brassscales}</td>
-                    <th><Button color="primary" /* onClick={() => handleEqUpdate(wizards)} */>Edit</Button></th>
-                    <td><Button  onClick={() => deleteAll(wizards)}  id={wizards.id}>Delete</Button></td>
+                    <td><Button variant="outline-dark"  onClick={() => handleEqUpdate(wizards)}>Edit</Button></td>
+                    <td><Button variant="dark"  onClick={() => deleteAll(wizards)}  id={wizards.id}>Delete</Button></td>
                   </tr>
                 );
               })}</tbody></table>
@@ -465,31 +607,31 @@ function Books_Equipment(props) {
 
         {/* lemmikit */}
 
-        <div id="cont-4">
+        <div id="cont-2" className="bsContaineri">
           <h2>Pets</h2>
           <Container id="searchPetInput" margin="3em" className="bsContaineri">
             <input name="id" type="text" placeholder="Wizard id" onChange={searchDefine} />
-            <button /* onClick={getData} */ >Search</button>
+            <button /*  onClick={getData} */ >Search</button>
           </Container>
-          <Container id="EditPetInputs" className="bsContaineri">
-            <input id="wizardsId" name="id" type="text" placeholder="id" hidden /* onChange={searchDefine} */ />
 
+
+
+          <Container id="cont-2" className="bsContaineri">
+            <input readOnly id="wizardsIdpet" name="id" type="text" placeholder="id" hidden  onChange={searchDefine} />
             <input id="petsnameInput" name="name" type="text" placeholder="name" onChange={searchDefine} /><br />
-
-
             {/* species radio buttonit */}
 
             {/* phials radio buttonit */}
             {/* tutki/mieti miten saat tiedon tietokannasta tähän */}
             <input id="speciesInput" name="phialsInput" type="radio" value="Owl" onChange={searchDefine} />
-            <label for="glassPhials">Owl</label><br />
+            <label htmlFor="speciesInput">Owl</label><br />
             <input name="speciesInput" type="radio" value="Cat" onChange={searchDefine} />
-            <label for="crystalPhials">Cat</label><br />
+            <label htmlFor="speciesInput">Cat</label><br />
             <input name="speciesInput" type="radio" value="Toad" onChange={searchDefine} />
-            <label for="crystalPhials">Toad</label><br />
+            <label htmlFor="speciesInput">Toad</label><br />
             <input name="speciesInput" type="radio" value="none" onChange={searchDefine} />
-            <label for="none">Not bringing any pets</label><br /><br />
-            <Button onClick={saveChanges}>Save changes</Button><br />
+            <label htmlFor="none">Not bringing any pets</label><br /><br />
+            <Button variant="light"  onClick={saveChangesPet} >Save changes</Button><br />
           </Container>
           <br />
           <div id="petTable">
@@ -515,8 +657,8 @@ function Books_Equipment(props) {
                       <td>{wizards.id}</td>
                       <td>{wizards.pet.name}</td>
                       <td>{wizards.pet.species}</td>
-                      <th><Button color="primary" /* onClick={() => handlePetUpdate(wizards)} */>Edit</Button></th>
-                      <td><Button  onClick={() => deleteAll(wizards)}  id={wizards.id}>Delete</Button></td>
+                      <td><Button variant="outline-dark" onClick={() => handlePetUpdate(wizards)} >Edit</Button></td>
+                      <td><Button variant="dark"  onClick={() => deleteAll(wizards)}  id={wizards.id}>Delete</Button></td>
 
                     </tr>
                   );
@@ -532,48 +674,7 @@ function Books_Equipment(props) {
 
 
       </div>
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <Form>
-            <Row>
-              <Col>
-                <Form.Control id="robesModal" placeholder="First name" />
-              </Col>
-              <Col>
-                <Form.Control id="hatModal" placeholder="Last name" />
-              </Col>
-            </Row>
-            <br />
-            <Row>
-              <Col>
-                <Form.Control id="glovesModal" placeholder="First name" />
-              </Col>
-              <Col>
-                <Form.Control id="coatModal" placeholder="Last name" />
-              </Col>
-            </Row>
-            <br />
-            <Row>
-              <Col>
-                <Form.Control id="nametagsModal" placeholder="First name" />
-              </Col>
-              <Col>
-              </Col>
-            </Row>
-          </Form>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Save Changes
-          </Button>
-        </Modal.Footer>
-      </Modal>
+     
     </div>
   );
 }

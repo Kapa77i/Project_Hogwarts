@@ -1,24 +1,16 @@
 import React, { useState, useEffect, useRef, Component } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button,  Container, Table} from 'react-bootstrap';
+import { Button, Col, Modal, Row, Container, Form, Table, Alert } from 'react-bootstrap';
+import { Link } from "react-router-dom";
 import './index.css';
 
 function Uniform(props) {
-  const [uniformlist, setUniformlist] = useState([]);
-  const [dbitem, setDbitems] = useState({ id: '', coat: '', gloves: '', robes: '', hat: '', nametags: '' });
+  const [wizardlist, setWizardlist] = useState([]);
+  const [dbitem, setDbitems] = useState({ id:"", name:"", address:"" });
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   const [show, setShow] = useState(false);
-  const inputEl = useRef("")
 
-  //const [searched, setSearched] = useState();
-
-  const handleClose = () => {
-    setShow(false)
-  };
-  const handleShow = () => {
-    setShow(true)
-  };
 
   //Määritellään urli, jota sitten päivitellään aina hakuehtojen yms mukaan
   const url = "http://localhost:5000/wizards";
@@ -37,7 +29,7 @@ function Uniform(props) {
   async function fetchData() {
     let response = await fetch(url);
     let data = await response.json();
-    setUniformlist(data);
+    setWizardlist(data);
   }
 
   //Otetaan eventeillä haltuun muutokset
@@ -45,52 +37,26 @@ function Uniform(props) {
     console.log("Tultiin seacrhDefinee")
     console.log("Eventid: " + event.target.id)
     if (event.target.value.length > 0) {
-
-      /*    if(event.target.name === "id")
-         {
-           setSearched(
-             "id_like=" + [event.target.value]
-           )
-           console.log(searched)
-         } */
-
-      if (event.target.name === "coat") {
-        console.log("Tultiin coat: " + event.target.value)
-        console.log("dbitem coat: " + dbitem.coat)
+        if (event.target.name === "id") {
+            setDbitems({
+              ...dbitem, id: [event.target.value],
+            })
+          }
+      if (event.target.name === "name") {
+        console.log("Tultiin name: " + event.target.value)
+        console.log("dbitem name: " + dbitem.name)
         setDbitems({
-          ...dbitem, coat: [event.target.value],
+          ...dbitem, name: [event.target.value],
         })
-
       }
-      if (event.target.name === "gloves") {
-        console.log("Tultiin gloves: " + event.target.value)
+      if (event.target.name === "address") {
+        console.log("Tultiin address: " + event.target.value)
         setDbitems({
           ...dbitem,
-          gloves: [event.target.value],
+          address: [event.target.value],
         })
       }
-      if (event.target.name === "robes") {
-        console.log("Tultiin robes: " + event.target.value)
-        setDbitems({
-          ...dbitem,
-          robes: [event.target.value],
-        })
-      }
-      if (event.target.name === "hat") {
-        console.log("Tultiin hat: " + event.target.value)
-        setDbitems({
-          ...dbitem,
-          hat: [event.target.value],
-
-        })
-      }
-      if (event.target.name === "nametags") {
-        console.log("Tultiin nametags: " + event.target.value)
-        setDbitems({
-          ...dbitem,
-          nametags: [event.target.value]
-        })
-      }
+     
 
     } else {
       console.log("Tultiin elseen")
@@ -105,26 +71,17 @@ function Uniform(props) {
 
     console.log("Tultiin saveen")
     console.log("dbitemid: " + dbitem.id)
-    console.log("hat: " + dbitem.hat)
-    console.log("gloves: " + dbitem.gloves)
-    console.log("robes: " + dbitem.robes)
-
+    console.log("hat: " + dbitem.name)
+    console.log("gloves: " + dbitem.address)
 
     fetch(url + "/" + dbitem.id + "?", {
-
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        uniform: {
-          ...dbitem,
-          hat: dbitem.hat,
-          gloves: dbitem.gloves,
-          coat: dbitem.coat,
-          robes: dbitem.robes,
-          nametags: dbitem.nametags
-        }
+          name: dbitem.name,
+          address: dbitem.address
       }
       ),
       //Tietojen päivitys näkyciin
@@ -148,11 +105,9 @@ function Uniform(props) {
 
   //Input kenttien clear-editoinnin jälkeen
   const clearInputs = () => {
-    document.getElementById("robesInput").value = "";
-    document.getElementById("hatInput").value = "";
-    document.getElementById("glovesInput").value = "";
-    document.getElementById("coatInput").value = "";
-    document.getElementById("nametagsInput").value = "";
+    document.getElementById("wizardsId").value = "";
+    document.getElementById("nameInput").value = "";
+    document.getElementById("addressInput").value = "";
   }
 
   //POISTO NAMISKA
@@ -188,7 +143,7 @@ function Uniform(props) {
         let response = await fetch(url + "?id_like=" + searched);
         console.log(url);
         let data = await response.json();
-        setUniformlist(data);
+        setWizardlist(data);
         setLoading(false);
       }
 
@@ -199,31 +154,23 @@ function Uniform(props) {
 
   /* EDIT NAPPULAN TOIMINTO */
   const handleUpdate = (oldData) => {
-
+    document.getElementById('wizardsId').setAttribute('readOnly', true);
     console.log(oldData)
     document.getElementById("wizardsId").value = oldData.id;
-    console.log(oldData.id)
-    setDbitems({
-      ...dbitem,
-      id: oldData.id
-    });
-
-    document.getElementById("wizardsId").value = oldData.id;
-    document.getElementById("robesInput").value =oldData.uniform.robes;
-    document.getElementById("hatInput").value = oldData.uniform.hat;
-    document.getElementById("glovesInput").value = oldData.uniform.gloves;
-    document.getElementById("coatInput").value = oldData.uniform.coat;
-    document.getElementById("nametagsInput").value = oldData.uniform.nametags;
+    document.getElementById("nameInput").value = oldData.name;
+    document.getElementById("addressInput").value = oldData.address;
+    console.log(oldData.id);
 
     setDbitems({
       ...dbitem,
       id: [oldData.id],
-      robes: [oldData.uniform.robes],
-      hat: [oldData.uniform.hat],
-      gloves: [oldData.uniform.gloves],
-      coat: [oldData.uniform.coat],
-      nametags: [oldData.uniform.nametags]
+      name: [oldData.name],
+      address: [oldData.address]
     });
+
+    console.log("Name: " + dbitem.name)
+    console.log("address: " + dbitem.address)
+    console.log("id: " + dbitem.id)
 
   }
 
@@ -235,9 +182,9 @@ function Uniform(props) {
 
         {/* HAKUKENTTÄ */}
         <Container id="searchInput" className="bsContaineri" margin="3em">
-          <h2>Uniforms</h2>
+          <h2>Basic information</h2>
 
-          <Table striped bordered size="sm">
+          <Table striped bordered hover size="sm">
             <tbody><tr><td><input
               id="idSearch"
               name="idSearch"
@@ -253,67 +200,39 @@ function Uniform(props) {
 
 
         {/* EDITOINTI KENTTÄ  */}
-        <Container id="EditInputs" margin="3em" className="bsContaineri">
+        <Container id="EditInputs" className="bsContaineri">
           <Table striped bordered hover size="sm" variant="light">
             <thead >
-              <tr variant="light">
-                <th></th>
-                <th>Robes</th>
-                <th>Hat</th>
-                <th>Gloves</th>
-                <th>Coat</th>
-                <th>Nametags</th>
+              <tr>
+                <th>Wizard ID</th>
+                <th>Wizards fullname</th>
+                <th>Wizards address</th>
                 <th>-</th>
               </tr>
             </thead>
             <tbody>
-              <tr className="uniformInput">
-                <td><input className="uniformInput" width="2em" id="wizardsId"
+              <tr>
+                <td readOnly><input id="wizardsId"
                   name="id"
                   type="text"
                   placeholder="id"
-                  hidden
-                /* onChange={searchDefine} */
-                /></td>
-                <td> <input className="uniformInput"
-                  id="robesInput"
-                  name="robes"
-                  type="text"
-                  placeholder="Robes"
-                  onChange={searchDefine}
-                /></td>
-                <td><input className="uniformInput"
-                  id="hatInput"
-                  name="hat"
-                  type="text"
-                  placeholder="Hat..."
-                  onChange={searchDefine}
+                  readOnly
                 /></td>
                 <td> <input
-                  id="glovesInput"
-                  name="gloves"
+                  id="nameInput"
+                  name="name"
                   type="text"
-                  placeholder="Gloves..."
+                  placeholder="Name"
                   onChange={searchDefine}
                 /></td>
-
-                <td className="uniformInput"><input className="uniformInput"
-                  id="coatInput"
-                  name="coat"
+                <td><input
+                  id="addressInput"
+                  name="address"
                   type="text"
-                  placeholder="Coat..."
+                  placeholder="Address"
                   onChange={searchDefine}
                 /></td>
-                <td>
-                  <input
-                    id="nametagsInput"
-                    name="nametags"
-                    type="text"
-                    placeholder="Nametags..."
-                    onChange={searchDefine}
-                  /></td>
                 <td><Button variant="light" onClick={saveChanges}>Save changes</Button></td>
-
 
               </tr>
             </tbody>
@@ -324,31 +243,28 @@ function Uniform(props) {
           {loading ? (
             <div id="loading">Loading...</div>
 
-          ) : uniformlist.length > 0 ? (
+          ) : wizardlist.length > 0 ? (
             <table>
               <thead>
                 <tr>
                   <th>Wizard ID</th>
-                  <th>Robes</th>
-                  <th>Hat</th>
-                  <th>Gloves</th>
-                  <th>Coat</th>
-                  <th>Nametags</th>
+                  <th>Name</th>
+                  <th>Address</th>
                   <th>-</th>
                   <th>-</th>
                 </tr>
               </thead>
-              <tbody>{uniformlist.map((wizards) => {
+              <tbody>{wizardlist.map((wizards) => {
                 return (
                   <tr data-testid="trAsiakasID" key={wizards.id}>
                     <td>{wizards.id}</td>
-                    <td>{wizards.uniform.robes}</td>
-                    <td>{wizards.uniform.hat}</td>
-                    <td>{wizards.uniform.gloves}</td>
-                    <td>{wizards.uniform.coat}</td>
-                    <td>{wizards.uniform.nametags}</td>
+                    <td>{wizards.name}</td>
+                    <td>{wizards.address}</td>
                     <td><Button variant="outline-dark" onClick={() => handleUpdate(wizards)}>Edit</Button></td>
                     <td><Button variant="dark" onClick={() => deleteAll(wizards)} id={wizards.id}>Delete</Button></td>
+                    <td><Link to={`/wizards/${wizards.id}`} id={wizards.id}>
+                <button>All info</button>
+              </Link></td>
 
                   </tr>
                 );

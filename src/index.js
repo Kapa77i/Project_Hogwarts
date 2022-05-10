@@ -33,7 +33,7 @@ createRoot(document.getElementById('root')).render(
           <Route path="/" element={<Welcome_Hogwarts />}/>
           <Route exact path= "/applicationform" element={<ApplicationForm />}/>
           <Route exact path="/books_equipment" element={<App />}/>
-          <Route path="/asiakas/:id" element={<Yhteystiedot />}/>
+          <Route path="/wizards/:id" element={<Yhteystiedot />}/>
         </Routes>
 
       </Router>

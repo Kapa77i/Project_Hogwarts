@@ -4,11 +4,24 @@
       "name": "Harry Potter",
       "address": "4 Privet Drive",
       "uniform": {
-        "robes": "3 black robes",
-        "hat": "1 black hat",
-        "gloves": "1 dragonscale gloves",
-        "coat": "1 black wintercoat",
-        "nametags": "20"
+        "id": [
+          1
+        ],
+        "coat": [
+          "1 black wintercoat"
+        ],
+        "gloves": [
+          "\tFrom dragon hide"
+        ],
+        "robes": [
+          "3 black robes"
+        ],
+        "hat": [
+          "1 black hat"
+        ],
+        "nametags": [
+          "20"
+        ]
       },
       "equipment": {
         "wand": "1 Wand",
@@ -35,14 +48,33 @@
     },
     {
       "id": 2,
-      "name": "Harry Potter",
-      "address": "4 Privet Drive",
+      "name": [
+        "Harry Potter"
+      ],
+      "address": [
+        [
+          "4 Privet Drive"
+        ]
+      ],
       "uniform": {
-        "robes": "1",
-        "hat": "1",
-        "gloves": "1",
-        "coat": "1",
-        "nametags": "10"
+        "id": [
+          2
+        ],
+        "coat": [
+          "1"
+        ],
+        "gloves": [
+          "\tFrom erumpet hide"
+        ],
+        "robes": [
+          "1"
+        ],
+        "hat": [
+          "1"
+        ],
+        "nametags": [
+          "10"
+        ]
       },
       "equipment": {
         "wand": "4",
@@ -55,14 +87,33 @@
         "species": "Owl"
       },
       "books": {
-        "goshawk": 1,
-        "bagshot": 6,
-        "waffling": 1,
-        "switch": 1,
-        "spore": 3,
-        "jigger": 1,
-        "scamander": 1,
-        "trimble": 0
+        "id": [
+          2
+        ],
+        "goshawk": [
+          1
+        ],
+        "bagshot": [
+          6
+        ],
+        "waffling": [
+          1
+        ],
+        "switch": [
+          1
+        ],
+        "spore": [
+          3
+        ],
+        "jigger": [
+          1
+        ],
+        "scamander": [
+          "77"
+        ],
+        "trimble": [
+          0
+        ]
       }
     },
     {
@@ -79,31 +130,37 @@
         "coat": [
           [
             [
-              "kok"
+              [
+                "kok"
+              ]
             ]
           ]
         ],
         "gloves": [
-          [
-            "6"
-          ]
+          "\tFrom dragon hide"
         ],
         "robes": [
           [
             [
-              "ko"
+              [
+                "ko"
+              ]
             ]
           ]
         ],
         "hat": [
           [
-            "6"
+            [
+              "6"
+            ]
           ]
         ],
         "nametags": [
           [
             [
-              "ok"
+              [
+                "ok"
+              ]
             ]
           ]
         ]
@@ -147,20 +204,31 @@
         "Kotikolo 2"
       ],
       "uniform": {
-        "hat": [
-          "5"
-        ],
-        "gloves": [
-          "5"
+        "id": [
+          4
         ],
         "coat": [
-          "5"
+          [
+            "5"
+          ]
+        ],
+        "gloves": [
+          "\tFrom dragon hide"
         ],
         "robes": [
-          "5"
+          [
+            "5"
+          ]
+        ],
+        "hat": [
+          [
+            "5"
+          ]
         ],
         "nametags": [
-          "25"
+          [
+            "25"
+          ]
         ]
       },
       "equipment": {
@@ -196,20 +264,31 @@
         "8 Heathgate, Hampstead Garden Suburb, London"
       ],
       "uniform": {
-        "hat": [
-          "1"
-        ],
-        "gloves": [
-          "2"
+        "id": [
+          5
         ],
         "coat": [
-          "1"
+          [
+            "1"
+          ]
+        ],
+        "gloves": [
+          "\tFrom erumpet hide"
         ],
         "robes": [
-          "3"
+          [
+            "3"
+          ]
+        ],
+        "hat": [
+          [
+            "1"
+          ]
         ],
         "nametags": [
-          "Yes"
+          [
+            "Yes"
+          ]
         ]
       },
       "books": {
@@ -298,7 +377,7 @@
           "7"
         ],
         "phials": [
-          "Glass phials"
+          "Crystal phials"
         ],
         "telescopes": [
           "8"
