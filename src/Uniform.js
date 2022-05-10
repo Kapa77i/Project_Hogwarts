@@ -19,7 +19,7 @@ function Uniform(props) {
   };
 
   //Määritellään urli, jota sitten päivitellään aina hakuehtojen yms mukaan
-  const url = "http://localhost:5000/wizards?";
+  const url = "http://localhost:5000/wizards";
   const delay = 1000;
 
   //Datan haku
@@ -102,7 +102,7 @@ function Uniform(props) {
     console.log("robes: " + dbitem.robes)
 
 
-     fetch(url + dbitem.id + "?", {
+     fetch(url +"/" + dbitem.id + "?", {
 
       method: "PATCH",
       headers: {
@@ -147,7 +147,7 @@ function Uniform(props) {
      //Poisto
       const deleteAll = (wizards) => {
         try{
-          fetch(url + wizards.id, {
+          fetch(url +"/" + wizards.id, {
             method:'DELETE',
           }).then(() => {
             fetchData();

@@ -22,7 +22,7 @@ function Books_Equipment(props) {
   };
 
   //Määritellään urli, jota sitten päivitellään aina hakuehtojen yms mukaan
-  const url = " http://localhost:5000/wizards?";
+  const url = " http://localhost:5000/wizards";
   const delay = 2000;
 
   /* const [params, setParams] = useState({
@@ -173,7 +173,7 @@ function Books_Equipment(props) {
             },
           } */
 
-    fetch(url + dbBooks.id + "?", {
+    fetch(url +"/" + dbBooks.id + "?", {
 
       method: "PATCH",
       headers: {
@@ -227,9 +227,9 @@ function Books_Equipment(props) {
 
 
   //Poisto
-/*   const deleteAll = (wizards) => {
+  const deleteAll = (wizards) => {
     try{
-      fetch(url + wizards.id, {
+      fetch(url +"/" + wizards.id, {
         method:'DELETE',
       }).then(() => {
         fetchData();
@@ -238,9 +238,13 @@ function Books_Equipment(props) {
         })
       })
     }
+
     catch{
+
     }
-  };  */
+
+
+  }; 
 
   //Päivitetään button-clickillä url
   /*   const getData = async () => {
@@ -380,7 +384,7 @@ function Books_Equipment(props) {
                   <td>{wizards.books.scamander}</td>
                   <td>{wizards.books.trimble}</td>
                   <th><Button color="primary" onClick={() => handleBookUpdate(wizards)}>Edit</Button></th>
-                  <td><Button /* onClick={delete} */ id={wizards.id}>Delete</Button></td>
+                  <td><Button onClick={() => deleteAll(wizards)}  id={wizards.id}>Delete</Button></td>
                 </tr>
               );
             })}</tbody></table>
@@ -445,7 +449,7 @@ function Books_Equipment(props) {
                     <td>{wizards.equipment.telescopes}</td>
                     <td>{wizards.equipment.brassscales}</td>
                     <th><Button color="primary" /* onClick={() => handleEqUpdate(wizards)} */>Edit</Button></th>
-                    <td><Button /* onClick={delete} */ id={wizards.id}>Delete</Button></td>
+                    <td><Button  onClick={() => deleteAll(wizards)}  id={wizards.id}>Delete</Button></td>
                   </tr>
                 );
               })}</tbody></table>
@@ -512,7 +516,7 @@ function Books_Equipment(props) {
                       <td>{wizards.pet.name}</td>
                       <td>{wizards.pet.species}</td>
                       <th><Button color="primary" /* onClick={() => handlePetUpdate(wizards)} */>Edit</Button></th>
-                      <td><Button /* onClick={delete} */ id={wizards.id}>Delete</Button></td>
+                      <td><Button  onClick={() => deleteAll(wizards)}  id={wizards.id}>Delete</Button></td>
 
                     </tr>
                   );

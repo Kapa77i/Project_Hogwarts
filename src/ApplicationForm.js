@@ -358,14 +358,14 @@ class Application extends React.Component {
 
                         <label for="glovesInput">Pair of protective gloves:</label><br />
 
-                        <input name="glovesInput" type="radio" value="From dragon hide" checked={this.state.speciesInput === "From dragon hide"}
+                        <input name="glovesInput" type="radio" value="From dragon hide" checked={this.state.glovesInput === "From dragon hide"}
                             //value={this.state.osoiteInput}
-                            onChange={this.handleChange} /> <label for="From dragon hide">From dragon hides</label><br />
+                            onChange={this.addParameters} /> <label for="From dragon hide">From dragon hides</label><br />
 
 
-                        <input name="glovesInput" type="radio" value="From erumpet hide" checked={this.state.speciesInput === "From erumpet hide"}
+                        <input name="glovesInput" type="radio" value="From erumpet hide" checked={this.state.glovesInput === "From erumpet hide"}
                             //value={this.state.osoiteInput}
-                            onChange={this.handleChange} /> <label for="From erumpet hide">From erumpet hide</label><br />
+                            onChange={this.addParameters} /> <label for="From erumpet hide">From erumpet hide</label><br />
 
                         <br /><br />
 
@@ -531,20 +531,20 @@ class Application extends React.Component {
                             <label for="speciesInput">Your pet's species:</label><br />
 
                             <input name="speciesInput" type="radio" value="Owl" checked={this.state.speciesInput === "Owl"}
-                                onChange={this.handleChange} /><label for="Owl">Owl</label><br />
+                                onChange={this.addParameters} /><label for="Owl">Owl</label><br />
 
                             <input name="speciesInput" type="radio" value="Cat" checked={this.state.speciesInput === "Cat"}
-                                onChange={this.handleChange} /><label for="Cat">Cat</label><br />
+                                onChange={this.addParameters} /><label for="Cat">Cat</label><br />
 
                             <input name="speciesInput" type="radio" value="Toad" checked={this.state.speciesInput === "Toad"}
-                                onChange={this.handleChange} /><label for="Toad">Toad</label><br />
+                                onChange={this.addParameters} /><label for="Toad">Toad</label><br />
 
                             <input name="speciesInput" type="radio" value="none" checked={this.state.speciesInput === "none"}
-                                onChange={this.handleChange} /><label for="none">I'm not bringing a pet</label><br /><br /><br />
+                                onChange={this.addParameters} /><label for="none">I'm not bringing a pet</label><br /><br /><br />
 
                             <input name="petsnameInput" type="text" placeholder="Your pet's name" disabled={this.state.speciesInput == "none"}
                                 value={this.state.petsnameInput}
-                                onChange={this.handleChange} />
+                                onChange={this.addParameters} />
 
                             <br /><br /><br /><br />
                         </div>
