@@ -8,27 +8,27 @@
           1
         ],
         "coat": [
-          "1 black wintercoat"
+          "1 "
         ],
         "gloves": [
           "\tFrom dragon hide"
         ],
         "robes": [
-          "3 black robes"
+          "3 "
         ],
         "hat": [
-          "1 black hat"
+          "1 "
         ],
         "nametags": [
-          "20"
+          "4"
         ]
       },
       "equipment": {
         "wand": "1 Wand",
-        "cauldron": "3 Cauldrons",
-        "phials": "5 Glass phials",
+        "cauldron": "3 ",
+        "phials": "Glass phials",
         "telescopes": 6,
-        "brassscales": "8 brass scales"
+        "brassscales": "8"
       },
       "pet": {
         "name": "Wand",
@@ -79,7 +79,8 @@
       "equipment": {
         "wand": "4",
         "cauldron": "3",
-        "phials": "2",
+        "phials": "Crystal Phials",
+        "telescopes": "3",
         "brassscales": "1"
       },
       "pet": {
@@ -167,15 +168,20 @@
       },
       "equipment": {
         "wand": [
-          "ok"
+          "7"
         ],
         "cauldron": [
-          "ok"
+          "7"
         ],
         "phials": [
-          "Glass Phials"
-        ]
-      },
+          "Crystal phials"
+        ],
+        "telescopes": [
+          "8"
+        ],
+        "brassscales": [
+          "8"
+        ]},
       "pet": {
         "name": [
           "Saku Sammakko"
@@ -232,8 +238,20 @@
         ]
       },
       "equipment": {
+        "wand": [
+          "7"
+        ],
+        "cauldron": [
+          "7"
+        ],
         "phials": [
-          "Glass Phials"
+          "Crystal phials"
+        ],
+        "telescopes": [
+          "8"
+        ],
+        "brassscales": [
+          "8"
         ]
       },
       "pet": {
@@ -306,9 +324,17 @@
           "10¾\" long, made of vine wood, and possessed a dragon heartstring core"
         ],
         "cauldron": [
-          "Black cauldron"
-        ]
-      },
+          "7"
+        ],
+        "phials": [
+          "Crystal phials"
+        ],
+        "telescopes": [
+          "8"
+        ],
+        "brassscales": [
+          "8"
+        ]},
       "pet": {
         "name": [
           "Koukkujalka"
@@ -321,10 +347,10 @@
     },
     {
       "name": [
-        "77"
+        "Petteri Punakuono"
       ],
       "address": [
-        "77"
+        "Korvatunturi"
       ],
       "uniform": {
         "hat": [

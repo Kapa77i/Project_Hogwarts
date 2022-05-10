@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, Component } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button,  Container, Table} from 'react-bootstrap';
+import { Button, Container, Table } from 'react-bootstrap';
 import './index.css';
 
 function Uniform(props) {
@@ -46,13 +46,12 @@ function Uniform(props) {
     console.log("Eventid: " + event.target.id)
     if (event.target.value.length > 0) {
 
-      /*    if(event.target.name === "id")
-         {
-           setSearched(
-             "id_like=" + [event.target.value]
-           )
-           console.log(searched)
-         } */
+      if (event.target.name === "id") {
+        setDbitems({
+          ...dbitem, id: [event.target.value]
+        })
+       
+      }
 
       if (event.target.name === "coat") {
         console.log("Tultiin coat: " + event.target.value)
@@ -179,10 +178,11 @@ function Uniform(props) {
 
   //HAE NAPPULAN TOIMINTO
   const getData = async () => {
-    console.log(document.getElementById("idSearch").value)
-    const searched = document.getElementById("idSearch").value;
+    
+    const searched = document.getElementById("idSeacrhUniform").value;
     setLoading(true);
 
+    console.log(searched)
     setTimeout(() => {
       async function fetchData() {
         let response = await fetch(url + "?id_like=" + searched);
@@ -209,7 +209,7 @@ function Uniform(props) {
     });
 
     document.getElementById("wizardsId").value = oldData.id;
-    document.getElementById("robesInput").value =oldData.uniform.robes;
+    document.getElementById("robesInput").value = oldData.uniform.robes;
     document.getElementById("hatInput").value = oldData.uniform.hat;
     document.getElementById("glovesInput").value = oldData.uniform.gloves;
     document.getElementById("coatInput").value = oldData.uniform.coat;
@@ -235,12 +235,12 @@ function Uniform(props) {
 
         {/* HAKUKENTTÄ */}
         <Container id="searchInput" className="bsContaineri" margin="3em">
-          <h2>Uniforms</h2>
+          <h2>Uniform</h2>
 
-          <Table striped bordered size="sm">
+          <Table striped bordered hover size="sm">
             <tbody><tr><td><input
-              id="idSearch"
-              name="idSearch"
+              id="idSeacrhUniform"
+              name="idSeacrhUniform"
               type="text"
               placeholder="Wizard id"
             /></td>
@@ -249,7 +249,6 @@ function Uniform(props) {
             </tbody>
           </Table>
         </Container>
-
 
 
         {/* EDITOINTI KENTTÄ  */}
