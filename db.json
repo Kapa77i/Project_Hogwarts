@@ -1,21 +1,21 @@
 {
   "wizards": [
     {
-      "id": 1,
       "name": "Harry Potter",
       "address": "4 Privet Drive",
       "uniform": {
         "robes": "3 black robes",
-        "hat": "one black hat",
-        "gloves": "one dragonscale gloves",
-        "coat": "one black wintercoat",
-        "nametags": "Need a nametags"
+        "hat": "1 black hat",
+        "gloves": "1 dragonscale gloves",
+        "coat": "1 black wintercoat",
+        "nametags": "20"
       },
       "equipment": {
-        "wand": "Wand",
-        "cauldron": "Cauldron",
-        "phials": "Glass phials",
-        "brassscales": "brass scales"
+        "wand": "1 Wand",
+        "cauldron": "3 Cauldrons",
+        "phials": "5 Glass phials",
+        "telescopes": 6,
+        "brassscales": "8 brass scales"
       },
       "pet": {
         "name": "Wand",
@@ -30,28 +30,29 @@
         "jigger": 1,
         "scamander": 1,
         "trimble": 5
-      }
+      },
+      "id": 1
     },
     {
       "id": 2,
       "name": "Harry Potter",
       "address": "4 Privet Drive",
       "uniform": {
-        "robes": "3 black robes",
-        "hat": "one black hat",
-        "gloves": "one dragonscale gloves",
-        "coat": "one black wintercoat",
-        "nametags": "Need a nametags"
+        "robes": "1",
+        "hat": "1",
+        "gloves": "1",
+        "coat": "1",
+        "nametags": "10"
       },
       "equipment": {
-        "wand": "Wand",
-        "cauldron": "Cauldron",
-        "phials": "Glass phials",
-        "brassscales": "brass scales"
+        "wand": "4",
+        "cauldron": "3",
+        "phials": "2",
+        "brassscales": "1"
       },
       "pet": {
-        "name": "Wand",
-        "species": "Cauldron"
+        "name": "Hedwig",
+        "species": "Owl"
       },
       "books": {
         "goshawk": 1,
@@ -120,10 +121,10 @@
       },
       "pet": {
         "name": [
-          "ok"
+          "Saku Sammakko"
         ],
         "species": [
-          "Frog"
+          "Toad"
         ]
       },
       "books": {
@@ -168,8 +169,11 @@
         ]
       },
       "pet": {
+        "name": [
+          "Kikkare"
+        ],
         "species": [
-          "Owl"
+          "Toad"
         ]
       },
       "books": {
@@ -208,7 +212,16 @@
           "Yes"
         ]
       },
-      "books": {},
+      "books": {
+        "goshawk": 1,
+        "bagshot": 6,
+        "waffling": 1,
+        "switch": 1,
+        "spore": 3,
+        "jigger": 1,
+        "scamander": 1,
+        "trimble": 0
+      },
       "equipment": {
         "wand": [
           "10¾\" long, made of vine wood, and possessed a dragon heartstring core"
@@ -218,11 +231,670 @@
         ]
       },
       "pet": {
+        "name": [
+          "Koukkujalka"
+        ],
         "species": [
-          "crystalPhials"
+          "Cat"
         ]
       },
       "id": 5
+    },
+    {
+      "uniform": {},
+      "books": {},
+      "equipment": {},
+      "pet": {},
+      "id": 6
+    },
+    {
+      "name": [
+        "Mikki"
+      ],
+      "address": [
+        "Hiiri"
+      ],
+      "uniform": {
+        "hat": [
+          "3"
+        ],
+        "coat": [
+          "3"
+        ],
+        "robes": [
+          "5"
+        ],
+        "nametags": [
+          "4"
+        ]
+      },
+      "books": {},
+      "equipment": {
+        "wand": [
+          "hieno"
+        ],
+        "cauldron": [
+          "4"
+        ],
+        "phials": [
+          "crystalPhials"
+        ]
+      },
+      "pet": {},
+      "id": 7
+    },
+    {
+      "name": [
+        "testi"
+      ],
+      "address": [
+        "testinen"
+      ],
+      "uniform": {
+        "hat": [
+          "4"
+        ],
+        "coat": [
+          "3"
+        ],
+        "robes": [
+          "4"
+        ],
+        "nametags": [
+          "7"
+        ]
+      },
+      "books": {},
+      "equipment": {
+        "wand": [
+          "mahtava"
+        ],
+        "cauldron": [
+          "9"
+        ],
+        "phials": [
+          "glassPhials"
+        ]
+      },
+      "pet": {},
+      "id": 8
+    },
+    {
+      "name": [
+        "toka"
+      ],
+      "address": [
+        "testi"
+      ],
+      "uniform": {
+        "hat": [
+          "2"
+        ],
+        "coat": [
+          "1"
+        ],
+        "robes": [
+          "3"
+        ],
+        "nametags": [
+          "4"
+        ]
+      },
+      "books": {},
+      "equipment": {
+        "wand": [
+          "upea"
+        ],
+        "cauldron": [
+          "1"
+        ],
+        "phials": [
+          "crystalPhials"
+        ]
+      },
+      "pet": {},
+      "id": 9
+    },
+    {
+      "name": [
+        "kokeillaanpas"
+      ],
+      "address": [
+        "vielä"
+      ],
+      "uniform": {
+        "hat": [
+          "2"
+        ],
+        "coat": [
+          "3"
+        ],
+        "robes": [
+          "2"
+        ],
+        "nametags": [
+          "5"
+        ]
+      },
+      "books": {},
+      "equipment": {
+        "wand": [
+          "huono"
+        ],
+        "cauldron": [
+          "3"
+        ],
+        "phials": [
+          "crystalPhials"
+        ],
+        "telescopes": [
+          "5"
+        ]
+      },
+      "pet": {},
+      "id": 10
+    },
+    {
+      "name": [
+        "kokkeillaan tallentuisko scalet kantaan"
+      ],
+      "address": [
+        "sfdfsdf"
+      ],
+      "uniform": {
+        "hat": [
+          "5"
+        ],
+        "coat": [
+          "3"
+        ],
+        "robes": [
+          "5"
+        ],
+        "nametags": [
+          "6"
+        ]
+      },
+      "books": {},
+      "equipment": {
+        "wand": [
+          "4"
+        ],
+        "cauldron": [
+          "4"
+        ],
+        "phials": [
+          "glassPhials"
+        ],
+        "telescopes": [
+          "4"
+        ],
+        "brassscales": [
+          "112"
+        ]
+      },
+      "pet": {},
+      "id": 11
+    },
+    {
+      "name": [
+        "testi kirjoille ja peteille"
+      ],
+      "address": [
+        "efwfeew"
+      ],
+      "uniform": {
+        "hat": [
+          "4"
+        ],
+        "coat": [
+          "2"
+        ],
+        "robes": [
+          "3"
+        ],
+        "nametags": [
+          "6"
+        ]
+      },
+      "books": {
+        "goshawk": [
+          "2"
+        ],
+        "bagshot": [
+          "3"
+        ],
+        "switch": [
+          "5"
+        ],
+        "spore": [
+          "6"
+        ],
+        "jigger": [
+          "8"
+        ],
+        "scamander": [
+          "2"
+        ],
+        "trimble": [
+          "1"
+        ]
+      },
+      "equipment": {
+        "wand": [
+          "kaunis"
+        ],
+        "cauldron": [
+          "5"
+        ],
+        "telescopes": [
+          "3"
+        ],
+        "brassscales": [
+          "3"
+        ]
+      },
+      "pet": {},
+      "id": 12
+    },
+    {
+      "name": [
+        "Mikko Makkara"
+      ],
+      "address": [
+        "Asdtie"
+      ],
+      "uniform": {
+        "hat": [
+          "3"
+        ],
+        "coat": [
+          "2"
+        ],
+        "robes": [
+          "3"
+        ],
+        "nametags": [
+          "5"
+        ]
+      },
+      "books": {
+        "goshawk": [
+          "6"
+        ],
+        "bagshot": [
+          "2"
+        ],
+        "waffling": [
+          "1"
+        ],
+        "switch": [
+          "5"
+        ],
+        "spore": [
+          "6"
+        ],
+        "jigger": [
+          "3"
+        ],
+        "scamander": [
+          "2"
+        ],
+        "trimble": [
+          "7"
+        ]
+      },
+      "equipment": {
+        "wand": [
+          "rikki"
+        ],
+        "cauldron": [
+          "5"
+        ],
+        "phials": [
+          "Crystal ohials"
+        ],
+        "telescopes": [
+          "5"
+        ],
+        "brassscales": [
+          "5"
+        ]
+      },
+      "pet": {},
+      "id": 13
+    },
+    {
+      "name": [
+        "kakkeli"
+      ],
+      "address": [
+        "sdsggseg"
+      ],
+      "uniform": {
+        "hat": [
+          "3"
+        ],
+        "coat": [
+          "6"
+        ],
+        "robes": [
+          "5"
+        ],
+        "nametags": [
+          "5"
+        ]
+      },
+      "books": {
+        "goshawk": [
+          "4"
+        ],
+        "bagshot": [
+          "2"
+        ],
+        "waffling": [
+          "6"
+        ],
+        "switch": [
+          "2"
+        ],
+        "spore": [
+          "6"
+        ],
+        "jigger": [
+          "8"
+        ],
+        "scamander": [
+          "4"
+        ],
+        "trimble": [
+          "1"
+        ]
+      },
+      "equipment": {
+        "wand": [
+          "köyhä"
+        ],
+        "cauldron": [
+          "6"
+        ],
+        "phials": [
+          "Crystal phials"
+        ],
+        "telescopes": [
+          "10"
+        ],
+        "brassscales": [
+          "12"
+        ]
+      },
+      "pet": {},
+      "id": 14
+    },
+    {
+      "name": [
+        "234"
+      ],
+      "address": [
+        "234"
+      ],
+      "uniform": {
+        "hat": [
+          "234"
+        ],
+        "coat": [
+          "234"
+        ],
+        "robes": [
+          "234"
+        ],
+        "nametags": [
+          "234"
+        ]
+      },
+      "books": {
+        "goshawk": [
+          "234"
+        ],
+        "bagshot": [
+          "234"
+        ],
+        "waffling": [
+          "234"
+        ],
+        "switch": [
+          "234"
+        ],
+        "spore": [
+          "234"
+        ],
+        "jigger": [
+          "234"
+        ],
+        "scamander": [
+          "234"
+        ],
+        "trimble": [
+          "234"
+        ]
+      },
+      "equipment": {
+        "wand": [
+          "234"
+        ],
+        "cauldron": [
+          "234"
+        ],
+        "phials": [
+          "Glass phials"
+        ],
+        "telescopes": [
+          "234"
+        ],
+        "brassscales": [
+          "234"
+        ]
+      },
+      "pet": {},
+      "id": 15
+    },
+    {
+      "name": [
+        "3"
+      ],
+      "address": [
+        "2"
+      ],
+      "uniform": {
+        "hat": [
+          "3"
+        ],
+        "coat": [
+          "3"
+        ],
+        "robes": [
+          "2"
+        ],
+        "nametags": [
+          "4"
+        ]
+      },
+      "books": {
+        "goshawk": [
+          "6"
+        ],
+        "bagshot": [
+          "5"
+        ],
+        "waffling": [
+          "5"
+        ],
+        "switch": [
+          "5"
+        ],
+        "spore": [
+          "3"
+        ],
+        "jigger": [
+          "2"
+        ],
+        "scamander": [
+          "3"
+        ],
+        "trimble": [
+          "5"
+        ]
+      },
+      "equipment": {
+        "wand": [
+          "6"
+        ],
+        "cauldron": [
+          "33"
+        ],
+        "phials": [
+          "Crystal phials"
+        ],
+        "telescopes": [
+          "3"
+        ],
+        "brassscales": [
+          "5"
+        ]
+      },
+      "pet": {},
+      "id": 16
+    },
+    {
+      "name": [
+        "Antti Tuisku"
+      ],
+      "address": [
+        "304i340i4"
+      ],
+      "uniform": {
+        "hat": [
+          "5"
+        ],
+        "coat": [
+          "3"
+        ],
+        "robes": [
+          "4"
+        ],
+        "nametags": [
+          "3"
+        ]
+      },
+      "books": {
+        "goshawk": [
+          "4"
+        ],
+        "bagshot": [
+          "4"
+        ],
+        "waffling": [
+          "3"
+        ],
+        "switch": [
+          "2"
+        ],
+        "spore": [
+          "5"
+        ],
+        "jigger": [
+          "6"
+        ],
+        "scamander": [
+          "7"
+        ],
+        "trimble": [
+          "3"
+        ]
+      },
+      "equipment": {
+        "wand": [
+          "puinen"
+        ],
+        "cauldron": [
+          "4"
+        ],
+        "phials": [
+          "Crystal phials"
+        ],
+        "telescopes": [
+          "5"
+        ],
+        "brassscales": [
+          "2"
+        ]
+      },
+      "pet": {},
+      "id": 17
+    },
+    {
+      "name": [
+        "eerer"
+      ],
+      "address": [
+        "rttrtr"
+      ],
+      "uniform": {
+        "hat": [
+          "5"
+        ],
+        "coat": [
+          "6"
+        ],
+        "robes": [
+          "4"
+        ],
+        "nametags": [
+          "4"
+        ]
+      },
+      "books": {
+        "goshawk": [
+          "7"
+        ],
+        "bagshot": [
+          "3"
+        ],
+        "waffling": [
+          "2"
+        ],
+        "switch": [
+          "3"
+        ],
+        "spore": [
+          "6"
+        ],
+        "scamander": [
+          "4"
+        ],
+        "trimble": [
+          "5"
+        ]
+      },
+      "equipment": {
+        "wand": [
+          "3"
+        ],
+        "cauldron": [
+          "2"
+        ],
+        "phials": [
+          "Crystal phials"
+        ],
+        "telescopes": [
+          "3"
+        ],
+        "brassscales": [
+          "5"
+        ]
+      },
+      "pet": {},
+      "id": 18
     }
   ]
 }

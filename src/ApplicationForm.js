@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import { Button, Col, Modal, Row, Container } from 'react-bootstrap'
 import Logo from './pictures/Hogwarts-Logo-rb.png';
-import AppModaali from './AppModaali';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from "react-router-dom";
+import { useState, useEffect} from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 var url = "http://localhost:5000/wizards";
 
@@ -35,20 +37,24 @@ class Application extends React.Component {
             wand: "",
             cauldron: "",
             phials: "",
+            telescopes: "",
             brassscales: "",
-            petname: "",
-            petspecies: "",
 
             //kirjat
-            
-                goshawk: "",
-                bagshot: "",
-                waffling: "",
-                switch: "",
-                spore: "",
-                jigger: "",
-                scamander: "",
-                trimble: "",
+
+            goshawk: "",
+            bagshot: "",
+            waffling: "",
+            switch: "",
+            spore: "",
+            jigger: "",
+            scamander: "",
+            trimble: "",
+
+            // lemmikit
+
+            petname: "",
+            petspecies: "",
 
 
 
@@ -61,6 +67,9 @@ class Application extends React.Component {
         };
     }
 
+
+
+    
     // lemmikinvalinta-radiobuttonit/nimiloota
     handleChange = (e) => {
         this.setState({
@@ -131,39 +140,40 @@ class Application extends React.Component {
 
             //Kirjat
             if (event.target.name === "goshawkInput") {
-                this.setState({ nametags: event.target.value });
-                this.goshawkInput = [event.target.value];
+                this.setState({ goshawk: event.target.value });
+                this.goshawk = [event.target.value];
             }
             if (event.target.name === "bagshotInput") {
-                this.setState({ nametags: event.target.value });
-                this.bagshotInput = [event.target.value];
+                this.setState({ bagshot: event.target.value });
+                this.bagshot = [event.target.value];
             }
-            if (event.target.name === "wafllingInput") {
-                this.setState({ nametags: event.target.value });
-                this.wafflingInput = [event.target.value];
+            if (event.target.name === "wafflingInput") {
+                this.setState({ waffling: event.target.value });
+                this.waffling = [event.target.value];
             }
             if (event.target.name === "switchInput") {
-                this.setState({ nametags: event.target.value });
-                this.switchInput = [event.target.value];
+                this.setState({ switch: event.target.value });
+                this.switch = [event.target.value];
             }
             if (event.target.name === "sporeInput") {
-                this.setState({ nametags: event.target.value });
-                this.sporeInput = [event.target.value];
+                this.setState({ spore: event.target.value });
+                this.spore = [event.target.value];
             }
             if (event.target.name === "jiggerInput") {
-                this.setState({ nametags: event.target.value });
-                this.jiggerInput = [event.target.value];
+                this.setState({ jigger: event.target.value });
+                this.jigger = [event.target.value];
             }
             if (event.target.name === "scamanderInput") {
-                this.setState({ nametags: event.target.value });
-                this.scamanderInput = [event.target.value];
+                this.setState({ scamander: event.target.value });
+                this.scamander = [event.target.value];
             }
             if (event.target.name === "trimbleInput") {
-                this.setState({ nametags: event.target.value });
-                this.trimbleInput = [event.target.value];
+                this.setState({ trimble: event.target.value });
+                this.trimble = [event.target.value];
             }
-          
-    
+
+
+            // tarvikkeet
 
             if (event.target.name === "wandInput") {
                 this.setState({ wand: event.target.value });
@@ -178,19 +188,27 @@ class Application extends React.Component {
                 this.setState({ phials: event.target.value });
                 this.phials = [event.target.value];
             }
-            if (event.target.name === "brassscalesInput") {
-                this.setState({ brassscalesInput: event.target.value });
-                this.brassscalesInput = [event.target.value];
+
+            if (event.target.name === "telescopesInput") {
+                this.setState({ telescopes: event.target.value });
+                this.telescopes = [event.target.value];
             }
 
+            if (event.target.name === "brassscalesInput") {
+                this.setState({ brassscales: event.target.value });
+                this.brassscales = [event.target.value];
+            }
+
+
+            // lemmikit -- EI JOSTAIN SYYSTÄ TALLENNU JSONIIN?
 
             if (event.target.name === "petsnameInput") {
                 this.setState({ petname: event.target.value });
                 this.petname = [event.target.value];
             }
-            if (event.target.name === "speciesInput") {
-                this.setState({ species: event.target.value });
-                this.species = [event.target.value];
+            if (event.target.name === "speciesInput") { // 
+                this.setState({ petspecies: event.target.value });
+                this.petspecies = [event.target.value];
             };
 
 
@@ -229,7 +247,7 @@ class Application extends React.Component {
                 address: this.address,
                 uniform: {
                     hat: this.hat,
-                    gloves: this.gloves,
+                    gloves: this.gloves, // hanskavalinta pitää koodata, ei vielä mene tietokantaan
                     coat: this.coat,
                     robes: this.robes,
                     nametags: this.nametags
@@ -243,19 +261,20 @@ class Application extends React.Component {
                     jigger: this.jigger,
                     scamander: this.scamander,
                     trimble: this.trimble
-        },
+                },
                 equipment: {
                     wand: this.wand,
                     cauldron: this.cauldron,
-                    phials: this.phials,
+                    phials: this.phials, 
+                    telescopes: this.telescopes,
                     brassscales: this.brassscales
                 },
                 pet: {
                     name: this.petname,
-                    species: this.species
+                    species: this.petspecies
                 },
-                
-        }),
+
+            }),
 
             //Tietojen päivitys näkyciin
         }).then((response) => {
@@ -265,6 +284,8 @@ class Application extends React.Component {
             });
         });
     }
+
+    
 
 
 
@@ -281,7 +302,7 @@ class Application extends React.Component {
                 </div>
             );
         } else if (this.state.data != null) {
-            
+
 
 
             return (
@@ -336,17 +357,17 @@ class Application extends React.Component {
                         /><br /><br />
 
                         <label for="glovesInput">Pair of protective gloves:</label><br />
-          
-                            <input name="glovesInput" type="radio" value="From dragon hide" checked={this.state.speciesInput === "From dragon hide"}
-                                //value={this.state.osoiteInput}
-                                onChange={this.handleChange} /> <label for="From dragon hide">From dragon hides</label><br />
-                            
 
-                            <input name="glovesInput" type="radio" value="From erumpet hide" checked={this.state.speciesInput === "From erumpet hide"}
-                                //value={this.state.osoiteInput}
-                                onChange={this.handleChange} /> <label for="From erumpet hide">From erumpet hide</label><br />
-                            
-                            <br /><br />
+                        <input name="glovesInput" type="radio" value="From dragon hide" checked={this.state.speciesInput === "From dragon hide"}
+                            //value={this.state.osoiteInput}
+                            onChange={this.handleChange} /> <label for="From dragon hide">From dragon hides</label><br />
+
+
+                        <input name="glovesInput" type="radio" value="From erumpet hide" checked={this.state.speciesInput === "From erumpet hide"}
+                            //value={this.state.osoiteInput}
+                            onChange={this.handleChange} /> <label for="From erumpet hide">From erumpet hide</label><br />
+
+                        <br /><br />
 
 
                         <label for="coatInput">Winter cloak (black, with silver fastenings):</label><br />
@@ -451,16 +472,16 @@ class Application extends React.Component {
                         <input
                             name="wandInput"
                             type="text"
-                            placeholder="Your wand is..."
+                            placeholder="describe"
                             //value={this.state.osoiteInput}
                             onChange={this.addParameters}
                         /><br /><br />
 
-                        <label for="cauldronInput">Cauldrons:</label><br />
+                        <label for="cauldronInput">Cauldrons (pewter, standard size 2):</label><br />
                         <input
                             name="cauldronInput"
                             type="text"
-                            placeholder="Cauldron..."
+                            placeholder="(quantity)"
                             //value={this.state.osoiteInput}
                             onChange={this.addParameters}
                         /><br /><br /><br />
@@ -468,19 +489,30 @@ class Application extends React.Component {
                         <h5>Phials</h5>
                         <label for="phialsInput">Choose one (if needed): </label><br />
                         <input
-                            name="speciesInput"
+                            name="phialsInput"
                             type="radio"
-                            value="glassPhials"
+                            value="Glass phials"
                             //value={this.state.osoiteInput}
                             onChange={this.addParameters}
-                        /><label for="glassPhials">Glass phials</label><br />
+                        /><label for="Glass phials">Glass phials</label><br />
                         <input
-                            name="speciesInput"
+                            name="phialsInput"
                             type="radio"
-                            value="crystalPhials"
+                            value="Crystal phials"
                             //value={this.state.osoiteInput}
                             onChange={this.addParameters}
-                        /><label for="crystalPhials">Crystal phials</label><br /><br /><br />
+                        /><label for="Crystal Phials">Crystal phials</label><br /><br /><br />
+
+
+                        <label for="telescopesInput">Telescopes:</label><br />
+                        <input
+                            name="telescopesInput"
+                            type="text"
+                            placeholder="(quantity)"
+                            //value={this.state.osoiteInput}
+                            onChange={this.addParameters}
+                        /><br />
+
 
                         <label for="brassscalesInput">Brass scales:</label><br />
                         <input
@@ -499,38 +531,31 @@ class Application extends React.Component {
                             <label for="speciesInput">Your pet's species:</label><br />
 
                             <input name="speciesInput" type="radio" value="Owl" checked={this.state.speciesInput === "Owl"}
-                                onChange={this.handleChange} />
-                                
-                            <label for="Owl">Owl</label><br />
+                                onChange={this.handleChange} /><label for="Owl">Owl</label><br />
 
-                            <input name="speciesInput" type="radio" value="Cat" checked={this.state.speciesInput=== "Cat"}
-                                //value={this.state.osoiteInput}
-                                onChange={this.handleChange} />
-                            <label for="Cat">Cat</label><br />
+                            <input name="speciesInput" type="radio" value="Cat" checked={this.state.speciesInput === "Cat"}
+                                onChange={this.handleChange} /><label for="Cat">Cat</label><br />
 
                             <input name="speciesInput" type="radio" value="Toad" checked={this.state.speciesInput === "Toad"}
-                                //value={this.state.osoiteInput}
-                                onChange={this.handleChange} />
-                            <label for="Toad">Toad</label><br />
+                                onChange={this.handleChange} /><label for="Toad">Toad</label><br />
 
                             <input name="speciesInput" type="radio" value="none" checked={this.state.speciesInput === "none"}
-                                //value={this.state.osoiteInput}
-                                onChange={this.handleChange} />
-                            <label for="none">I'm not bringing a pet</label><br /><br /><br />
+                                onChange={this.handleChange} /><label for="none">I'm not bringing a pet</label><br /><br /><br />
 
                             <input name="petsnameInput" type="text" placeholder="Your pet's name" disabled={this.state.speciesInput == "none"}
                                 value={this.state.petsnameInput}
                                 onChange={this.handleChange} />
 
-                            <br />
-                            <br />
-                            <br />
-                            <br />
+                            <br /><br /><br /><br />
                         </div>
                     </div>
 
- {/* <Button as={Col} variant="secondary" onClick={this.addApplication}>Submit your order</Button> */}
+                    <Button variant="btn btn-dark btn-lg" onClick={this.addApplication}>Submit your order</Button> 
+                    {/* jos ei saada modaalia toimimaan niin tänne vielä joku pop-up-ikkuna joka kertoo että submit onnistui */}
 
+
+
+                    {/* <AppiModaali /> */}
 
                     {/* <AppModaali tiedot={this.addApplication}/> */}
 
@@ -543,10 +568,10 @@ class Application extends React.Component {
                     {/*                     <Row className="mx-0"> */}
                     {/* <Button as={Col} variant="secondary" onClick={<AppModaali/>}>Submit your order</Button> */}
                     {/*                     </Row> */}
-                    
 
 
-                    
+
+
 
 
 
@@ -603,6 +628,73 @@ class Application extends React.Component {
                 </div>
             );
         }
+
+
+
+        /* function AppiModaali(props) {
+             modaali-ikkuna joka aukeaa kun käyttäjä painaa submit-nappia -> "tilausvahvistus" joka näyttää annetut tiedot taulukkomuotoisena 
+            const [show, setShow] = useState(false);
+            const handleClose = () => setShow(false);
+            const handleShow = () => setShow(true);
+            return (
+              <>
+                <Button variant="btn btn-dark btn-lg" onClick={handleShow}>Submit your order</Button>
+                <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false}>
+                  <Modal.Header closeButton>
+                    <Modal.Title>Order details</Modal.Title>
+                  </Modal.Header>
+          
+                  <Modal.Body>
+                  <h5>Please check that your order details are correct:</h5>
+                  <table>
+                    <th>Tietoa</th>
+                    <td>* Tänne tulis tilaustiedot taulukkomuodossa *</td>
+                  </table>
+                  </Modal.Body>
+                  <Modal.Footer>
+                    <Button variant="secondary" onClick={handleClose}>Cancel</Button>
+                    <Button variant="primary" onClick={props.addApplication}>Submit your order</Button>
+                  </Modal.Footer>
+                </Modal>
+              </>
+            );
+          }
+ */
+
+       /*  function AppModaali(props) {
+            const [show, setShow] = useState(false);
+          
+            const handleClose = () => setShow(false);
+            const handleShow = () => setShow(true);
+          
+            return (
+              <>
+                <Button variant="btn btn-dark btn-lg" onClick={handleShow}>Submit your order</Button>
+                <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false}>
+                  <Modal.Header closeButton>
+                    <Modal.Title>Order details</Modal.Title>
+                  </Modal.Header>
+                  <Modal.Body>
+                    <h5>Please check that your order details are correct:</h5>
+                    <table>
+                      <th>Tietoa</th>
+                      <td>* Tänne tulis tilaustiedot taulukkomuodossa *</td>
+                    </table>
+                  </Modal.Body>
+          
+                  <Modal.Footer>
+                    <Button variant="secondary" onClick={handleClose}>Cancel</Button>
+                    <Button as={Col} variant="primary" onClick={this.addUniform}>Submit your order</Button>
+                  </Modal.Footer>
+          
+                </Modal>
+              </>
+            );
+          } */
+
+
+
+
     }
 }
 
