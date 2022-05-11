@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, Component } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button, Container, Table } from 'react-bootstrap';
+import { Button, Container, Table, Form, Row, Col } from 'react-bootstrap';
 import './index.css';
 
 function Uniform(props) {
@@ -50,7 +50,7 @@ function Uniform(props) {
         setDbitems({
           ...dbitem, id: [event.target.value]
         })
-       
+
       }
 
       if (event.target.name === "coat") {
@@ -156,7 +156,7 @@ function Uniform(props) {
 
   //HAE NAPPULAN TOIMINTO
   const getData = async () => {
-    
+
     const searched = document.getElementById("idSeacrhUniform").value;
     setLoading(true);
 
@@ -230,7 +230,82 @@ function Uniform(props) {
 
 
         {/* EDITOINTI KENTTÄ  */}
-        <Container id="EditInputs" padding="50em" justify-content="center" className="bsContaineri">
+
+        <Container >
+          <Form>
+            <Row className="mb-3">
+              <Form.Group as={Col} className="mb-3" controlId="formGroupWizardsIdUni">
+              <Form.Label >Wizard id</Form.Label><br/>
+              <input size="sm" className="uniformInput" width="2em" id="wizardsIdUni"
+                  name="id"
+                  type="text"
+                  placeholder="id"
+                  readOnly
+                /* onChange={searchDefine} */
+                />
+              </Form.Group>
+              <Form.Group as={Col} className="mb-3">
+                <Form.Label>Robes</Form.Label> <br/>
+                <input padding="3em" className="uniformInput"
+                  id="robesInput"
+                  name="robes"
+                  type="text"
+                  placeholder="Robes"
+                  onChange={searchDefine}
+                />
+              </Form.Group>
+              <Form.Group as={Col} className="mb-3" controlId="formGroupWizardsIdUni">
+                <Form.Label>Hat     </Form.Label><br/>
+                <input size="sm" className="uniformInput"
+                  id="hatInput"
+                  name="hat"
+                  type="text"
+                  placeholder="Hat..."
+                  onChange={searchDefine}
+                />
+              </Form.Group>
+              <Form.Group as={Col} className="mb-3">
+                <Form.Label>Gloves     </Form.Label><br/>
+                <input size="lg"
+                  id="glovesInput"
+                  name="gloves"
+                  type="text"
+                  placeholder="Gloves..."
+                  onChange={searchDefine}
+                />
+              </Form.Group>
+            </Row>
+            <Row className="mb-3">
+              <Form.Group as={Col} className="mb-3" controlId="formGroupWizardsIdUni">
+                <Form.Label>Cloak     </Form.Label><br/>
+                <input className="uniformInput"
+                  id="coatInput"
+                  name="coat"
+                  type="text"
+                  placeholder="Coat..."
+                  onChange={searchDefine}
+                />
+              </Form.Group>
+              <Form.Group as={Col} className="mb-3">
+                <Form.Label>Nametags     </Form.Label><br/>
+                <input
+                    id="nametagsInput"
+                    name="nametags"
+                    type="text"
+                    placeholder="Nametags..."
+                    onChange={searchDefine}
+                  />
+              </Form.Group>
+              <Form.Group as={Col} className="mb-3">
+              <Form.Label> </Form.Label><br/>
+              <Button variant="light" onClick={saveChanges}>Save changes</Button>
+              </Form.Group></Row>
+              
+          </Form>
+        </Container>
+
+
+       {/*  <Container id="EditInputs" padding="50em" justify-content="center" className="bsContaineri">
           <Table striped bordered hover size="sm" variant="light">
             <thead >
               <tr variant="light">
@@ -250,7 +325,7 @@ function Uniform(props) {
                   type="text"
                   placeholder="id"
                   hidden
-                /* onChange={searchDefine} */
+                
                 /></td>
                 <td> <input size="sm" className="uniformInput"
                   id="robesInput"
@@ -289,13 +364,13 @@ function Uniform(props) {
                     placeholder="Nametags..."
                     onChange={searchDefine}
                   /></td>
-                  <td></td>
+                <td></td>
               </tr>
             </tbody>
           </Table>
           <Button variant="light" onClick={saveChanges}>Save changes</Button>
           <div>~</div>
-        </Container>
+        </Container> */}
 
         <div id="taulukko" className="bsContaineri">
           {loading ? (

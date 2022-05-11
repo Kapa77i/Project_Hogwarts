@@ -114,20 +114,31 @@
         "Kotikolo 1"
       ],
       "uniform": {
-        "hat": [
-          "5"
-        ],
-        "gloves": [
-          "From dragon hide"
+        "id": [
+          6
         ],
         "coat": [
-          "5"
+          [
+            "5"
+          ]
+        ],
+        "gloves": [
+          [
+            "From dragon hide"
+          ]
         ],
         "robes": [
-          "5"
+          [
+            "5"
+          ]
+        ],
+        "hat": [
+          [
+            "5"
+          ]
         ],
         "nametags": [
-          "5"
+          "6"
         ]
       },
       "books": {
