@@ -2,80 +2,68 @@
   "wizards": [
     {
       "name": [
-        "Harry Pottery"
+        [
+          "Harry Potteryr"
+        ]
       ],
       "address": [
-        "4 Privet Drive"
+        "4 Privet Driver"
       ],
       "uniform": {
         "id": [
           1
         ],
         "coat": [
-          "2"
+          "4"
         ],
         "gloves": [
-          [
-            [
-              "\tFrom dragon hide"
-            ]
-          ]
+          "\tFrom erumpet hide"
         ],
         "robes": [
-          [
-            [
-              "3 "
-            ]
-          ]
+          "3 4"
         ],
         "hat": [
-          [
-            [
-              "1 "
-            ]
-          ]
+          "1 4"
         ],
         "nametags": [
-          [
-            "44"
-          ]
+          "444"
         ]
       },
       "equipment": {
+        "id": [
+          1
+        ],
         "wands": [
           [
-            "5"
+            "52"
           ]
         ],
         "cauldrons": [
           [
-            "3 "
+            "3 2"
           ]
         ],
         "phials": [
           [
-            "Glass phials"
+            "Crystal phials"
           ]
         ],
         "telescopes": [
           [
-            6
+            "62"
           ]
         ],
         "scales": [
           null
         ],
-        "id": [
-          1
-        ],
         "wand": [
           [
-            "5"
+            "52"
           ]
         ],
         "cauldron": [
           [
-            "3 "
+            "3 2"
           ]
         ]
       },
@@ -88,42 +76,28 @@
           1
         ],
         "goshawk": [
-          [
-            6
-          ]
+          "62"
         ],
         "bagshot": [
-          [
-            1
-          ]
+          "12"
         ],
         "waffling": [
-          [
-            1
-          ]
+          "12"
         ],
         "switch": [
-          [
-            3
-          ]
+          "32"
         ],
         "spore": [
-          [
-            1
-          ]
+          "12"
         ],
         "jigger": [
-          "15"
+          "152"
         ],
         "scamander": [
-          [
-            1
-          ]
+          "12"
         ],
         "trimble": [
-          [
-            "54"
-          ]
+          "542"
         ]
       },
       "id": 1
@@ -193,8 +167,13 @@
         ]
       },
       "pet": {
-        "name": "Hedwig",
-        "species": "Owl"
+        "id": 2,
+        "name": [
+          "Hedwig"
+        ],
+        "species": [
+          "Owl"
+        ]
       },
       "books": {
         "id": [
@@ -328,86 +307,6 @@
     },
     {
       "name": [
-        "Ron Weasley"
-      ],
-      "address": [
-        "Kotikolo 2"
-      ],
-      "uniform": {
-        "id": [
-          4
-        ],
-        "coat": [
-          [
-            [
-              "5"
-            ]
-          ]
-        ],
-        "gloves": [
-          "\tFrom erumpet hide"
-        ],
-        "robes": [
-          [
-            [
-              "5"
-            ]
-          ]
-        ],
-        "hat": [
-          [
-            [
-              "5"
-            ]
-          ]
-        ],
-        "nametags": [
-          [
-            [
-              "25"
-            ]
-          ]
-        ]
-      },
-      "equipment": {
-        "wand": [
-          "7"
-        ],
-        "cauldron": [
-          "7"
-        ],
-        "phials": [
-          "Crystal phials"
-        ],
-        "telescopes": [
-          "8"
-        ],
-        "brassscales": [
-          "8"
-        ]
-      },
-      "pet": {
-        "name": [
-          "Kikkare"
-        ],
-        "species": [
-          "Toad"
-        ]
-      },
-      "books": {
-        "goshawk": 1,
-        "bagshot": 1,
-        "waffling": 0,
-        "switch": 21,
-        "spore": 1,
-        "jigger": 1,
-        "scamander": 1,
-        "trimble": 1
-      },
-      "id": 4
-    },
-    {
-      "name": [
         "Hermione Granger"
       ],
       "address": [
@@ -475,245 +374,11 @@
         ]
       },
       "pet": {
-        "name": [
-          "Koukkujalka"
-        ],
-        "species": [
-          "Cat"
-        ]
+        "id": 5,
+        "name": "",
+        "species": ""
       },
       "id": 5
-    },
-    {
-      "name": [
-        "Petteri Punakuono"
-      ],
-      "address": [
-        "Korvatunturi"
-      ],
-      "uniform": {
-        "hat": [
-          "7"
-        ],
-        "gloves": [
-          "From erumpet hide"
-        ],
-        "coat": [
-          "7"
-        ],
-        "robes": [
-          "7"
-        ],
-        "nametags": [
-          "7"
-        ]
-      },
-      "books": {
-        "goshawk": [
-          "7"
-        ],
-        "bagshot": [
-          "7"
-        ],
-        "waffling": [
-          "7"
-        ],
-        "switch": [
-          "7"
-        ],
-        "spore": [
-          "7"
-        ],
-        "jigger": [
-          "7"
-        ],
-        "scamander": [
-          "7"
-        ],
-        "trimble": [
-          "7"
-        ]
-      },
-      "equipment": {
-        "wand": [
-          "7"
-        ],
-        "cauldron": [
-          "7"
-        ],
-        "phials": [
-          "Crystal phials"
-        ],
-        "telescopes": [
-          "8"
-        ],
-        "brassscales": [
-          "8"
-        ]
-      },
-      "pet": {
-        "name": [
-          "Kutka"
-        ],
-        "species": [
-          "none"
-        ]
-      },
-      "id": 20
-    },
-    {
-      "name": [
-        "Draco Malfoy"
-      ],
-      "address": [
-        "Dracontie"
-      ],
-      "uniform": {
-        "hat": [
-          "3"
-        ],
-        "gloves": [
-          "From dragon hide"
-        ],
-        "coat": [
-          "3"
-        ],
-        "robes": [
-          "5"
-        ],
-        "nametags": [
-          "2"
-        ]
-      },
-      "books": {
-        "goshawk": [
-          "5"
-        ],
-        "bagshot": [
-          "4"
-        ],
-        "waffling": [
-          "2"
-        ],
-        "switch": [
-          "1"
-        ],
-        "spore": [
-          "3"
-        ],
-        "jigger": [
-          "2"
-        ],
-        "scamander": [
-          "3"
-        ],
-        "trimble": [
-          "1"
-        ]
-      },
-      "equipment": {
-        "wand": [
-          "wooden"
-        ],
-        "cauldron": [
-          "4"
-        ],
-        "phials": [
-          "Crystal phials"
-        ],
-        "telescopes": [
-          "3"
-        ],
-        "brassscales": [
-          "2"
-        ]
-      },
-      "pet": {
-        "name": [
-          "Katti Matikainen"
-        ],
-        "species": [
-          "Cat"
-        ]
-      },
-      "id": 21
-    },
-    {
-      "name": [
-        "Mikko"
-      ],
-      "address": [
-        "23"
-      ],
-      "uniform": {
-        "hat": [
-          "5"
-        ],
-        "gloves": [
-          "From erumpet hide"
-        ],
-        "coat": [
-          "4"
-        ],
-        "robes": [
-          "3"
-        ],
-        "nametags": [
-          "3"
-        ]
-      },
-      "books": {
-        "goshawk": [
-          "4"
-        ],
-        "bagshot": [
-          "7"
-        ],
-        "waffling": [
-          "4"
-        ],
-        "switch": [
-          "6"
-        ],
-        "spore": [
-          "3"
-        ],
-        "jigger": [
-          "3"
-        ],
-        "scamander": [
-          "3"
-        ],
-        "trimble": [
-          "3"
-        ]
-      },
-      "equipment": {
-        "wand": [
-          "blue"
-        ],
-        "cauldron": [
-          "4"
-        ],
-        "phials": [
-          "Glass phials"
-        ],
-        "telescopes": [
-          "6"
-        ],
-        "brassscales": [
-          "4"
-        ]
-      },
-      "pet": {
-        "name": [
-          "Pöllöskä"
-        ],
-        "species": [
-          "Owl"
-        ]
-      },
-      "id": 22
     },
     {
       "name": [
@@ -766,17 +431,54 @@
         ]
       },
       "equipment": {
-        "wand": [
-          "4"
+        "id": [
+          23
         ],
-        "cauldron": [
-          "56"
+        "wands": [
+          [
+            [
+              "4"
+            ]
+          ]
+        ],
+        "cauldrons": [
+          [
+            [
+              "56"
+            ]
+          ]
+        ],
+        "phials": [
+          [
+            null
+          ]
         ],
         "telescopes": [
-          "6"
+          [
+            [
+              "6"
+            ]
+          ]
+        ],
+        "scales": [
+          null
         ],
         "brassscales": [
-          "3"
+          "6"
+        ],
+        "wand": [
+          [
+            [
+              "4"
+            ]
+          ]
+        ],
+        "cauldron": [
+          [
+            [
+              "56"
+            ]
+          ]
         ]
       },
       "pet": {
@@ -788,78 +490,6 @@
         ]
       },
       "id": 23
-    },
-    {
-      "name": [
-        "Matohäntä"
-      ],
-      "address": [
-        "45"
-      ],
-      "uniform": {
-        "hat": [
-          "3"
-        ],
-        "gloves": [
-          "From dragon hide"
-        ],
-        "coat": [
-          "4"
-        ],
-        "robes": [
-          "6"
-        ],
-        "nametags": [
-          "6"
-        ]
-      },
-      "books": {
-        "goshawk": [
-          "7"
-        ],
-        "bagshot": [
-          "3"
-        ],
-        "waffling": [
-          "3"
-        ],
-        "switch": [
-          "4"
-        ],
-        "spore": [
-          "5"
-        ],
-        "jigger": [
-          "7"
-        ],
-        "scamander": [
-          "5"
-        ],
-        "trimble": [
-          "7"
-        ]
-      },
-      "equipment": {
-        "wand": [
-          "5"
-        ],
-        "cauldron": [
-          "4"
-        ],
-        "phials": [
-          "Crystal phials"
-        ],
-        "telescopes": [
-          "4"
-        ],
-        "brassscales": [
-          "7"
-        ]
-      },
-      "pet": {
-        "species": ""
-      },
-      "id": 24
     }
   ]
 }

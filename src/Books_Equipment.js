@@ -12,8 +12,8 @@ function Books_Equipment(props) {
   const [show, setShow] = useState(false);
 
   const [dbBooks, setDbBooks] = useState({ id: '', goshawk: "", bagshot: "", waffling: "", switch: "", spore: "", jigger: "", scamander: "", trimble: "" });
-  const [dbEquipment, setDbEquipment] = useState({ wands: "", cauldrons: "", phials: "", telescopes: "", scales: "" });
-  const [dbPets, setDbPets] = useState({ name: "", species: "" });
+  const [dbEquipment, setDbEquipment] = useState({ id: '', wands: "", cauldrons: "", phials: "", telescopes: "", scales: "" });
+  const [dbPets, setDbPets] = useState({ id: '', name: "", species: "" });
 
   const handleClose = () => {
     setShow(false)
@@ -249,25 +249,6 @@ function Books_Equipment(props) {
   }
 
 
-
-  //Poisto
-  const deleteAll = (wizards) => {
-    try {
-      fetch(url + "/" + wizards.id, {
-        method: 'DELETE',
-      }).then(() => {
-        fetchData();
-        setLoading({
-          loading: false
-        })
-      })
-    }
-    catch {
-    }
-
-  };
-
-
   // funktio kirjatietojen muokkaamiseen
   const handleBookUpdate = (oldData) => {
     console.log(oldData)
@@ -383,17 +364,22 @@ function Books_Equipment(props) {
   // funktio lemmikkitietojen muokkaamiseen
   const handlePetUpdate = (oldData) => {
     console.log(oldData)
-    document.getElementById("wizardsId").value = oldData.id;
+    document.getElementById("wizardsIdPet").value = oldData.id;
     console.log(oldData.id)
     setDbPets({
       ...dbPets,
       id: oldData.id
     });
     console.log(dbPets.id)
-    document.getElementById("wizardsIdpet").value = oldData.id;
+    document.getElementById("wizardsIdPet").value = oldData.id;
     document.getElementById("petsnameInput").value = oldData.pet.name;
     document.getElementById("speciesInput").value = oldData.pet.species;
   }
+
+
+
+
+  
   /*  handleShow() */
   /*  document.getElementById("robesModal") = oldData.robes; */
 
@@ -443,9 +429,24 @@ function Books_Equipment(props) {
     document.getElementById("species").value = "";
   }
 
+  //Poisto
+  const deleteAll = (wizards) => {
+    try {
+      fetch(url + "/" + wizards.id, {
+        method: 'DELETE',
+      }).then(() => {
+        fetchData();
+        setLoading({
+          loading: false
+        })
+      })
+    }
+    catch {
+    }
+
+  };
+
   return (
-
-
     <div id="cont-2" className="bsContaineri">
       <h2>Course books</h2>
 
@@ -487,7 +488,7 @@ function Books_Equipment(props) {
               <th>Magical Drafts and Potions</th>
               <th>Fantastic Beasts and Where to Find Thems</th>
               <th>The Dark Forces: A Guide to Self-Protection</th>
-              <th>-</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -516,9 +517,6 @@ function Books_Equipment(props) {
           </tbody>
         </Table>
       </Container>
-
-
-      {/* //kurssikirjataulukko: */}
 
       <div id="bookTable" className="bsContaineri">
         {loading ? (
@@ -606,7 +604,7 @@ function Books_Equipment(props) {
                   /><br /><br /></td>
                 <td><input id="telescopesInput" name="telescopes" type="text" placeholder="(quantity)" onChange={searchDefine}
                 /></td>
-                <td><input id="brassscalesInput" name="brasscales" type="text" placeholder="(quantity)" onChange={searchDefine}
+                <td><input id="brassscalesInput" name="brassscales" type="text" placeholder="(quantity)" onChange={searchDefine}
                 /></td>
 
                 <td><Button variant="light" onClick={saveChangesEq}>Save changes</Button></td>
@@ -661,6 +659,8 @@ function Books_Equipment(props) {
 
         <div id="cont-2" className="bsContaineri">
           <h2>Pets</h2>
+
+          {/* hakuloota */}
           <Container id="searchPetInput" margin="3em" className="bsContaineri">
             <input name="id" type="text" placeholder="Wizard id" onChange={searchDefine} />
             <button /*  onClick={getData} */ >Search</button>
@@ -668,8 +668,8 @@ function Books_Equipment(props) {
 
 
 
-          {/* EDITOINTI KENTTÄ  */}
-          <Container id="EditEqInputs" className="bsContaineri">
+          {/* editointikenttä  */}
+          <Container id="EditPetInputs" className="bsContaineri">
             <Table striped bordered hover size="sm" variant="light">
               <thead >
                 <tr>
@@ -681,7 +681,7 @@ function Books_Equipment(props) {
               </thead>
               <tbody>
                 <tr>
-                  <td readOnly><input id="wizardsId" name="id" type="text" placeholder="id" readOnly/></td>
+                  <td readOnly><input id="wizardsIdPet" name="id" type="text" placeholder="id" readOnly/></td>
                   <td><input id="petsnameInput" name="name" type="text" placeholder="(name)" onChange={searchDefine}/></td>
                   <td><input id="speciesInput" name="speciesInput" type="text" placeholder="(owl/cat/toad/none)" onChange={searchDefine}
                   /><br /><br /></td>
@@ -715,7 +715,7 @@ function Books_Equipment(props) {
                       <td>{wizards.id}</td>
                       <td>{wizards.pet.name}</td>
                       <td>{wizards.pet.species}</td>
-                      <td><Button variant="outline-dark" onClick={() => handlePetUpdate(wizards)} >Edit</Button></td>
+                      <td><Button variant="outline-dark" onClick={() => handlePetUpdate(wizards)}>Edit</Button></td>
                       <td><Button variant="dark" onClick={() => deleteAll(wizards)} id={wizards.id}>Delete</Button></td>
 
                     </tr>
