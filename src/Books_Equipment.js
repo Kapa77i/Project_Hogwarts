@@ -333,7 +333,7 @@ function Books_Equipment(props) {
       cauldrons: [oldData.equipment.cauldron],
       phials: [oldData.equipment.phials],
       telescopes: [oldData.equipment.telescopes],
-      scales: [oldData.equipment.brassscales]
+      brassscales: [oldData.equipment.brassscales]
     });
 
     console.log("db wand: " + dbEquipment.wands)
@@ -455,24 +455,7 @@ function Books_Equipment(props) {
     document.getElementById("petsnameInput").value = "";
     document.getElementById("speciesInput").value = "";
   }
-
-  //Poisto
-  const deleteAll = (wizards) => {
-    try {
-      fetch(url + "/" + wizards.id, {
-        method: 'DELETE',
-      }).then(() => {
-        fetchData();
-        setLoading({
-          loading: false
-        })
-      })
-    }
-    catch {
-    }
-
-  };
-
+  
   return (
     <div id="cont-2" className="bsContaineri">
       <h2 id="coursebooksLink">Course books</h2>
@@ -562,7 +545,6 @@ function Books_Equipment(props) {
                 <th>Fantastic Beasts and Where to Find Them</th>
                 <th>The Dark Forces: A Guide to Self-Protection</th>
                 <th></th>
-                <th></th>
               </tr>
             </thead>
             <tbody>{bookList.map((wizards) => {
@@ -578,7 +560,6 @@ function Books_Equipment(props) {
                   <td>{wizards.books.scamander}</td>
                   <td>{wizards.books.trimble}</td>
                   <td><Button variant="outline-dark" onClick={() => handleBookUpdate(wizards)}>Edit</Button></td>
-                  <td><Button variant="dark" onClick={() => deleteAll(wizards)} id={wizards.id}>Delete</Button></td>
                 </tr>
               );
             })}</tbody></table>
@@ -655,7 +636,6 @@ function Books_Equipment(props) {
                   <th>Telescopes</th>
                   <th>Brass scales</th>
                   <th></th>
-                  <th></th>
                 </tr>
               </thead>
               <tbody>{eqList.map((wizards) => {
@@ -668,7 +648,6 @@ function Books_Equipment(props) {
                     <td>{wizards.equipment.telescopes}</td>
                     <td>{wizards.equipment.brassscales}</td>
                     <td><Button variant="outline-dark" onClick={() => handleEqUpdate(wizards)}>Edit</Button></td>
-                    <td><Button variant="dark" onClick={() => deleteAll(wizards)} id={wizards.id}>Delete</Button></td>
                   </tr>
                 );
               })}</tbody></table>
@@ -730,7 +709,6 @@ function Books_Equipment(props) {
                     <th>Name</th>
                     <th>Species</th>
                     <th></th>
-                    <th></th>
                   </tr>
                 </thead>
 
@@ -743,7 +721,6 @@ function Books_Equipment(props) {
                       <td>{wizards.pet.name}</td>
                       <td>{wizards.pet.species}</td>
                       <td><Button variant="outline-dark" onClick={() => handlePetUpdate(wizards)}>Edit</Button></td>
-                      <td><Button variant="dark" onClick={() => deleteAll(wizards)} id={wizards.id}>Delete</Button></td>
 
                     </tr>
                   );

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import './index.css';
 import Logo from './pictures/Hogwarts-Logo-rb.png';
 
-function Uniform(props) {
+function NameAddress(props) {
   const [wizardlist, setWizardlist] = useState([]);
   const [dbitem, setDbitems] = useState({ id:"", name:"", address:"" });
   const [loading, setLoading] = useState(true);
@@ -113,8 +113,7 @@ function Uniform(props) {
 
   //POISTO NAMISKA
   const deleteAll = (wizards) => {
-    try {
-      
+    try {  
       fetch(url + "/" + wizards.id, {
         method: 'DELETE',
       }).then(() => {
@@ -290,4 +289,4 @@ Click on the "Delete" button in the Basic information section to delete the sele
   );
 }
 
-export default Uniform;
+export default NameAddress;

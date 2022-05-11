@@ -1,171 +1,15 @@
 {
   "wizards": [
     {
-      "id": 2,
-      "name": [
-        [
-          "Harry Potter"
-        ]
-      ],
-      "address": [
-        "5 Privet Drive"
-      ],
-      "uniform": {
-        "id": [
-          2
-        ],
-        "coat": [
-          "40"
-        ],
-        "gloves": [
-          [
-            "From erumpet hide"
-          ]
-        ],
-        "robes": [
-          [
-            [
-              "1"
-            ]
-          ]
-        ],
-        "hat": [
-          [
-            [
-              "1"
-            ]
-          ]
-        ],
-        "nametags": [
-          [
-            [
-              "10"
-            ]
-          ]
-        ]
-      },
-      "equipment": {
-        "id": [
-          2
-        ],
-        "wands": [
-          [
-            [
-              "Elder, 15\", thestral tail hair"
-            ]
-          ]
-        ],
-        "cauldrons": [
-          [
-            [
-              [
-                "3"
-              ]
-            ]
-          ]
-        ],
-        "phials": [
-          [
-            [
-              [
-                "Glass Phials"
-              ]
-            ]
-          ]
-        ],
-        "telescopes": [
-          [
-            [
-              [
-                "3"
-              ]
-            ]
-          ]
-        ],
-        "scales": [
-          [
-            "4"
-          ]
-        ],
-        "brassscales": [
-          "4"
-        ],
-        "wand": [
-          [
-            [
-              "Elder, 15\", thestral tail hair"
-            ]
-          ]
-        ],
-        "cauldron": [
-          [
-            [
-              [
-                "3"
-              ]
-            ]
-          ]
-        ]
-      },
-      "pet": {
-        "id": 2,
-        "name": [
-          "Hedwig"
-        ],
-        "species": [
-          "Owl"
-        ]
-      },
-      "books": {
-        "id": [
-          2
-        ],
-        "goshawk": [
-          [
-            1
-          ]
-        ],
-        "bagshot": [
-          [
-            6
-          ]
-        ],
-        "waffling": [
-          [
-            1
-          ]
-        ],
-        "switch": [
-          [
-            1
-          ]
-        ],
-        "spore": [
-          [
-            3
-          ]
-        ],
-        "jigger": [
-          [
-            1
-          ]
-        ],
-        "scamander": [
-          [
-            "77"
-          ]
-        ],
-        "trimble": [
-          "6"
-        ]
-      }
-    },
-    {
       "name": [
         "Hermione Granger"
       ],
       "address": [
-        "8 Heathgate, Hampstead Garden Suburb, London"
+        [
+          [
+            "8 Heathgate, Hampstead Garden Suburb, London"
+          ]
+        ]
       ],
       "uniform": {
         "id": [
@@ -212,20 +56,41 @@
         "trimble": 0
       },
       "equipment": {
-        "wand": [
-          "10¾\" long, made of vine wood, and possessed a dragon heartstring core"
+        "id": [
+          5
         ],
-        "cauldron": [
-          "7"
+        "wands": [
+          [
+            "10¾\" long, made of vine wood, and possessed a dragon heartstring core"
+          ]
+        ],
+        "cauldrons": [
+          [
+            "7"
+          ]
         ],
         "phials": [
-          "Crystal phials"
+          [
+            "Crystal phials"
+          ]
         ],
         "telescopes": [
-          "8"
+          "84"
         ],
         "brassscales": [
-          "8"
+          [
+            "8"
+          ]
+        ],
+        "wand": [
+          [
+            "10¾\" long, made of vine wood, and possessed a dragon heartstring core"
+          ]
+        ],
+        "cauldron": [
+          [
+            "7"
+          ]
         ]
       },
       "pet": {
@@ -286,20 +151,40 @@
         ]
       },
       "equipment": {
-        "wand": [
-          "Perfecto"
+        "id": [
+          6
         ],
-        "cauldron": [
-          "5"
+        "wands": [
+          "Bueno"
+        ],
+        "cauldrons": [
+          [
+            "5"
+          ]
         ],
         "phials": [
-          "Glass phials"
+          [
+            "Glass phials"
+          ]
         ],
         "telescopes": [
-          "5"
+          [
+            "5"
+          ]
         ],
+        "scales": "",
         "brassscales": [
-          "5"
+          [
+            "5"
+          ]
+        ],
+        "wand": [
+          "Bueno"
+        ],
+        "cauldron": [
+          [
+            "5"
+          ]
         ]
       },
       "pet": {
@@ -311,6 +196,85 @@
         ]
       },
       "id": 6
+    },
+    {
+      "name": [
+        [
+          "Mikko Makkonen"
+        ]
+      ],
+      "address": [
+        "Makkosentie 55"
+      ],
+      "uniform": {
+        "hat": [
+          "3"
+        ],
+        "gloves": [
+          "From dragon hide"
+        ],
+        "coat": [
+          "2"
+        ],
+        "robes": [
+          "2"
+        ],
+        "nametags": [
+          "4"
+        ]
+      },
+      "books": {
+        "goshawk": [
+          "4"
+        ],
+        "bagshot": [
+          "2"
+        ],
+        "waffling": [
+          "1"
+        ],
+        "switch": [
+          "4"
+        ],
+        "spore": [
+          "5"
+        ],
+        "jigger": [
+          "6"
+        ],
+        "scamander": [
+          "2"
+        ],
+        "trimble": [
+          "1"
+        ]
+      },
+      "equipment": {
+        "wand": [
+          "beautiful"
+        ],
+        "cauldron": [
+          "4"
+        ],
+        "phials": [
+          "Crystal phials"
+        ],
+        "telescopes": [
+          "5"
+        ],
+        "brassscales": [
+          "5"
+        ]
+      },
+      "pet": {
+        "name": [
+          "Pimpula"
+        ],
+        "species": [
+          "Cat"
+        ]
+      },
+      "id": 7
     }
   ]
 }

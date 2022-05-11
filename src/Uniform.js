@@ -154,25 +154,6 @@ function Uniform(props) {
     document.getElementById("nametagsInput").value = "";
   }
 
-  //POISTO NAMISKA
-  const deleteAll = (wizards) => {
-    try {
-      fetch(url + "/" + wizards.id, {
-        method: 'DELETE',
-      }).then(() => {
-        fetchData();
-        
-      })
-    }
-
-    catch {
-
-    }
-
-
-  };
-
-
   //HAE NAPPULAN TOIMINTO
   const getData = async () => {
     
@@ -259,7 +240,7 @@ function Uniform(props) {
                 <th>Gloves</th>
                 <th>Coat</th>
                 <th>Nametags</th>
-                <th>-</th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
@@ -309,8 +290,6 @@ function Uniform(props) {
                     onChange={searchDefine}
                   /></td>
                 <td><Button variant="light" onClick={saveChanges}>Save changes</Button></td>
-
-
               </tr>
             </tbody>
           </Table>
@@ -331,7 +310,6 @@ function Uniform(props) {
                   <th>Coat</th>
                   <th>Nametags</th>
                   <th>-</th>
-                  <th>-</th>
                 </tr>
               </thead>
               <tbody>{uniformlist.map((wizards) => {
@@ -344,8 +322,6 @@ function Uniform(props) {
                     <td>{wizards.uniform.coat}</td>
                     <td>{wizards.uniform.nametags}</td>
                     <td><Button variant="outline-dark" onClick={() => handleUpdate(wizards)}>Edit</Button></td>
-                    <td><Button variant="dark" onClick={() => deleteAll(wizards)} id={wizards.id}>Delete</Button></td>
-
                   </tr>
                 );
               })}</tbody></table>
