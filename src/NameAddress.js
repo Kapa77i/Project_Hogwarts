@@ -98,7 +98,7 @@ function Uniform(props) {
       })
     });
 
-    alert("You have succesfully updated uniform information")
+    alert("You have succesfully updated basic information")
     clearInputs();
 
   }
