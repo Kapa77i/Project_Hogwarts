@@ -71,8 +71,13 @@
         ]
       },
       "pet": {
-        "name": "Hedwig",
-        "species": "Owl"
+        "id": 2,
+        "name": [
+          "Hedwig"
+        ],
+        "species": [
+          "Owl"
+        ]
       },
       "books": {
         "id": [
@@ -284,12 +289,9 @@
         ]
       },
       "pet": {
-        "name": [
-          "Koukkujalka"
-        ],
-        "species": [
-          "Cat"
-        ]
+        "id": 5,
+        "name": "",
+        "species": ""
       },
       "id": 5
     },
