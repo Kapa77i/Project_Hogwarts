@@ -113,14 +113,12 @@ function Uniform(props) {
   //POISTO NAMISKA
   const deleteAll = (wizards) => {
     try {
-      setLoading(true)
+      
       fetch(url + "/" + wizards.id, {
         method: 'DELETE',
       }).then(() => {
         fetchData();
-        setLoading({
-          loading: false
-        })
+       
       })
     }
 

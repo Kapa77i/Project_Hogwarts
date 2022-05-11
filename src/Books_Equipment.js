@@ -13,7 +13,7 @@ function Books_Equipment(props) {
 
   const [dbBooks, setDbBooks] = useState({ id: '', goshawk: "", bagshot: "", waffling: "", switch: "", spore: "", jigger: "", scamander: "", trimble: "" });
   const [dbEquipment, setDbEquipment] = useState({ wands: "", cauldrons: "", phials: "", telescopes: "", scales: "" });
-  const [dbPets, setDbPets] = useState({ name: "", species: "" });
+  const [dbPets, setDbPets] = useState({id:"", name: "", species: "" });
 
   const handleClose = () => {
     setShow(false)
@@ -178,6 +178,29 @@ function Books_Equipment(props) {
       }
 
       //Pets
+      if (event.target.name === "wizardsIdpet") {
+        console.log("Tultiin wizardsId: " + event.target.value)
+        setDbPets({
+          ...dbPets,
+          id: [event.target.value]
+        })
+      }
+
+      if (event.target.name === "petsnameInput") {
+        console.log("Tultiin petsnameInput: " + event.target.value)
+        setDbPets({
+          ...dbPets,
+          name: [event.target.value]
+        })
+      }
+      if (event.target.name === "speciesInput") {
+        console.log("Tultiin speciesInput: " + event.target.value)
+        setDbPets({
+          ...dbPets,
+          species: [event.target.value]
+        })
+      }
+
 
     } else {
       console.log("Tultiin elseen")
@@ -257,9 +280,7 @@ function Books_Equipment(props) {
         method: 'DELETE',
       }).then(() => {
         fetchData();
-        setLoading({
-          loading: false
-        })
+        
       })
     }
     catch {
@@ -383,23 +404,35 @@ function Books_Equipment(props) {
   // funktio lemmikkitietojen muokkaamiseen
   const handlePetUpdate = (oldData) => {
     console.log(oldData)
-    document.getElementById("wizardsId").value = oldData.id;
+    document.getElementById("wizardsIdpet").value = oldData.id;
     console.log(oldData.id)
     setDbPets({
       ...dbPets,
-      id: oldData.id
-    });
-    console.log(dbPets.id)
+      id: [oldData.id]})
+
     document.getElementById("wizardsIdpet").value = oldData.id;
     document.getElementById("petsnameInput").value = oldData.pet.name;
     document.getElementById("speciesInput").value = oldData.pet.species;
+
+    setDbPets({
+      ...dbPets,
+      id: [oldData.id],
+      name: [oldData.pet.name],
+      species: [oldData.pet.species]
+    });
+    console.log("Petid: " + dbPets.id)
+   
   }
-  /*  handleShow() */
-  /*  document.getElementById("robesModal") = oldData.robes; */
+
 
   // Petsin muokkauksen tallennus
   const saveChangesPet = async (event) => {
     event.preventDefault();
+
+    console.log("Tultiin saveen: ")
+    console.log("dbpetsid: " + dbPets.id)
+    console.log("dbpetsname: " + dbPets.name)
+    console.log("dbpetsspes: " + dbPets.species)
 
     fetch(url + "/" + dbPets.id + "?", {
 
@@ -411,13 +444,11 @@ function Books_Equipment(props) {
       body: JSON.stringify({
         pet: {
           ...dbPets,
-          id: dbPets.id,
           name: dbPets.name,
           species: dbPets.species
         }
       }
       ),
-
 
       //Tietojen päivitys näkyciin
     }).then((response) => {
@@ -425,8 +456,6 @@ function Books_Equipment(props) {
       /*   setLoading({
         loading: false
       })  */
-
-
       setTimeout(() => {
         fetchData()
 
@@ -439,8 +468,8 @@ function Books_Equipment(props) {
 
   const clearInputsPets = () => {
     document.getElementById("wizardsIdpet").value = "";
-    document.getElementById("petname").value = "";
-    document.getElementById("species").value = "";
+    document.getElementById("petsnameInput").value = "";
+    document.getElementById("speciesInput").value = "";
   }
 
   return (
@@ -681,8 +710,8 @@ function Books_Equipment(props) {
               </thead>
               <tbody>
                 <tr>
-                  <td readOnly><input id="wizardsId" name="id" type="text" placeholder="id" readOnly/></td>
-                  <td><input id="petsnameInput" name="name" type="text" placeholder="(name)" onChange={searchDefine}/></td>
+                  <td readOnly><input id="wizardsIdpet" name="wizardsIdpet" type="text" placeholder="id" readOnly/></td>
+                  <td><input id="petsnameInput" name="petsnameInput" type="text" placeholder="(name)" onChange={searchDefine}/></td>
                   <td><input id="speciesInput" name="speciesInput" type="text" placeholder="(owl/cat/toad/none)" onChange={searchDefine}
                   /><br /><br /></td>
                   <td><Button variant="light" onClick={saveChangesPet}>Save changes</Button></td>
