@@ -232,7 +232,7 @@ function Uniform(props) {
 
         {/* HAKUKENTTÄ */}
         <Container id="searchInput" className="bsContaineri" margin="3em">
-          <h2>Uniform</h2>
+          <h2 id="uniformLink">Uniform</h2>
 
           <Table striped bordered hover size="sm">
             <tbody><tr><td><input

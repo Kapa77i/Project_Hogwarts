@@ -475,7 +475,7 @@ function Books_Equipment(props) {
 
   return (
     <div id="cont-2" className="bsContaineri">
-      <h2>Course books</h2>
+      <h2 id="coursebooksLink">Course books</h2>
 
       {/*  {loading && <div>Loading.... </div>} */}
 
@@ -596,7 +596,7 @@ function Books_Equipment(props) {
 
       <div id="cont-3" className="bsContaineri">
         <br /><br />
-        <h2>Other equipment</h2>
+        <h2 id="eqLink">Other equipment</h2>
 
 
         {/*           <Container id="searchEqInput" margin="3em" className="bsContaineri">
@@ -685,7 +685,7 @@ function Books_Equipment(props) {
         {/* lemmikit */}
 
         <div id="cont-2" className="bsContaineri">
-          <h2>Pets</h2>
+          <h2 id="petsLink">Pets</h2>
 
           {/* hakuloota */}
           <Container id="searchPetInput" margin="3em" className="bsContaineri">

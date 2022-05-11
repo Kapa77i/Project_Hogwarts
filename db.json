@@ -45,29 +45,66 @@
         ]
       },
       "equipment": {
-        "wands": [
-          "4"
-        ],
-        "cauldrons": [
-          "3"
-        ],
-        "phials": [
-          "Glass Phials"
-        ],
-        "telescopes": [
-          "3"
-        ],
-        "scales": [
-          "1"
-        ],
         "id": [
           2
         ],
-        "wand": [
+        "wands": [
+          [
+            [
+              "Elder, 15\", thestral tail hair"
+            ]
+          ]
+        ],
+        "cauldrons": [
+          [
+            [
+              [
+                "3"
+              ]
+            ]
+          ]
+        ],
+        "phials": [
+          [
+            [
+              [
+                "Glass Phials"
+              ]
+            ]
+          ]
+        ],
+        "telescopes": [
+          [
+            [
+              [
+                "3"
+              ]
+            ]
+          ]
+        ],
+        "scales": [
+          [
+            "4"
+          ]
+        ],
+        "brassscales": [
           "4"
         ],
+        "wand": [
+          [
+            [
+              "Elder, 15\", thestral tail hair"
+            ]
+          ]
+        ],
         "cauldron": [
-          "3"
+          [
+            [
+              [
+                "3"
+              ]
+            ]
+          ]
         ]
       },
       "pet": {
@@ -122,103 +159,6 @@
           "6"
         ]
       }
-    },
-    {
-      "name": [
-        "Elisa Alanko"
-      ],
-      "address": [
-        "Kujala"
-      ],
-      "uniform": {
-        "id": [
-          3
-        ],
-        "coat": [
-          [
-            [
-              [
-                "kok"
-              ]
-            ]
-          ]
-        ],
-        "gloves": [
-          "\tFrom dragon hide"
-        ],
-        "robes": [
-          [
-            [
-              [
-                "ko"
-              ]
-            ]
-          ]
-        ],
-        "hat": [
-          [
-            [
-              "6"
-            ]
-          ]
-        ],
-        "nametags": [
-          [
-            [
-              [
-                "ok"
-              ]
-            ]
-          ]
-        ]
-      },
-      "equipment": {
-        "wand": [
-          "7"
-        ],
-        "cauldron": [
-          "7"
-        ],
-        "phials": [
-          "Crystal phials"
-        ],
-        "telescopes": [
-          "8"
-        ],
-        "brassscales": [
-          "8"
-        ]
-      },
-      "pet": {
-        "id": [
-          3
-        ],
-        "name": [
-          "Sakke Sammakko"
-        ],
-        "species": [
-          [
-            [
-              [
-                [
-                  "Toad"
-                ]
-              ]
-            ]
-          ]
-        ]
-      },
-      "books": {
-        "goshawk": 12,
-        "bagshot": 1,
-        "waffling": 1,
-        "switch": 5,
-        "spore": 1,
-        "jigger": 7,
-        "scamander": 1,
-        "trimble": 1
-      },
-      "id": 3
     },
     {
       "name": [
@@ -297,87 +237,10 @@
     },
     {
       "name": [
-        "Petteri Punakuono"
+        "Fred Weasley"
       ],
       "address": [
-        "Korvatunturi"
-      ],
-      "uniform": {
-        "hat": [
-          "7"
-        ],
-        "gloves": [
-          "From erumpet hide"
-        ],
-        "coat": [
-          "7"
-        ],
-        "robes": [
-          "7"
-        ],
-        "nametags": [
-          "7"
-        ]
-      },
-      "books": {
-        "goshawk": [
-          "7"
-        ],
-        "bagshot": [
-          "7"
-        ],
-        "waffling": [
-          "7"
-        ],
-        "switch": [
-          "7"
-        ],
-        "spore": [
-          "7"
-        ],
-        "jigger": [
-          "7"
-        ],
-        "scamander": [
-          "7"
-        ],
-        "trimble": [
-          "7"
-        ]
-      },
-      "equipment": {
-        "wand": [
-          "7"
-        ],
-        "cauldron": [
-          "7"
-        ],
-        "phials": [
-          "Crystal phials"
-        ],
-        "telescopes": [
-          "8"
-        ],
-        "brassscales": [
-          "8"
-        ]
-      },
-      "pet": {
-        "name": [
-          "Kutka"
-        ],
-        "species": [
-          "none"
-        ]
-      },
-      "id": 20
-    },
-    {
-      "name": [
-        "Ronald Weasley"
-      ],
-      "address": [
-        "Kotikolo"
+        "Kotikolo 1"
       ],
       "uniform": {
         "hat": [
@@ -387,67 +250,67 @@
           "From dragon hide"
         ],
         "coat": [
-          "4"
+          "5"
         ],
         "robes": [
           "5"
         ],
         "nametags": [
-          "Yes, 10"
+          "5"
         ]
       },
       "books": {
         "goshawk": [
-          "1"
+          "5"
         ],
         "bagshot": [
-          "1"
+          "5"
         ],
         "waffling": [
-          "1"
+          "5"
         ],
         "switch": [
-          "1"
+          "5"
         ],
         "spore": [
-          "1"
+          "5"
         ],
         "jigger": [
-          "1"
+          "5"
         ],
         "scamander": [
-          "1"
+          "5"
         ],
         "trimble": [
-          "1"
+          "5"
         ]
       },
       "equipment": {
         "wand": [
-          "4\" long, made of willow and had a core of unicorn hair"
+          "Perfecto"
         ],
         "cauldron": [
-          "1"
+          "5"
         ],
         "phials": [
           "Glass phials"
         ],
         "telescopes": [
-          "2"
+          "5"
         ],
         "brassscales": [
-          "2"
+          "5"
         ]
       },
       "pet": {
         "name": [
-          "Scabesh"
+          "5"
         ],
         "species": [
-          "Toad"
+          "Cat"
         ]
       },
-      "id": 21
+      "id": 6
     }
   ]
 }

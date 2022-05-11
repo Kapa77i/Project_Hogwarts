@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, Col, Modal, Row, Container, Form, Table, Alert } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import './index.css';
+import Logo from './pictures/Hogwarts-Logo-rb.png';
 
 function Uniform(props) {
   const [wizardlist, setWizardlist] = useState([]);
@@ -177,10 +178,21 @@ function Uniform(props) {
     <div>
       {/*  {loading && <div>Loading.... </div>} */}
       <div id="cont-2">
-
+      <p>
+      <img src={Logo} height="200" width="200"  alt="Hogwarts"/><br/>
+      <br/><br/>On this page, the administrator can view, search, edit and delete orders placed by wizards. <br/><br/>
+Click on the "Edit" button to edit the data in selected row. <br/>This will move the data to the edit boxes above each section. <br/>Click on the "Save changes" button to save the changes to the database.<br/><br/>
+Click on the "Delete" button in the Basic information section to delete the selected wizard data. <br/>NOTE! This will delete ALL information related to the wizard from the database.<br/><br/>
+<br/>
+<h6>Jump to section:</h6> 
+<a href="#basicInformationLink">Basic Information</a> | <a href="#uniformLink">Uniform</a> | <a href="#coursebooksLink">Course books</a> |
+<a href="#eqLink">Other equipment</a> | <a href="#petsLink">Pets</a>
+<br/><br/><br/>
+</p>
+<br/><br/>
         {/* HAKUKENTTÄ */}
         <Container id="searchInput" className="bsContaineri" margin="3em">
-          <h2>Basic information</h2>
+          <h2 id="basicInformationLink">Basic information</h2>
 
           <Table striped bordered hover size="sm">
             <tbody><tr><td><input
