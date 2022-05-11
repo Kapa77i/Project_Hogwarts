@@ -116,21 +116,6 @@ function Books_Equipment(props) {
         })
       }
 
-      /* 
-                <Container id="EditEqInputs" className="bsContaineri">
-                  <input id="wizardsId" name="id" type="text" placeholder="id" hidden /* onChange={searchDefine} *//*  />
-<input id="wandInput" name="wands" type="text" placeholder="wands" onChange={searchDefine} /><br />
-<input id="cauldronInput" name="cauldrons" type="text" placeholder="cauldrons" onChange={searchDefine} /><br /> */
-
-      /* phials radio buttonit */
-      /* <input id="phialsInput" name="phialsInput" type="radio" value="glassPhials" onChange={searchDefine} />
-      <label htmlFor="glassPhials">Glass phials</label><br />
-      <input name="phialsInput" type="radio" value="crystalPhials" onChange={searchDefine} />
-      <label htmlFor="crystalPhials">Crystal phials</label><br />
-      <input id="telescopesInput" name="telescopes" type="text" placeholder="telescopes" onChange={searchDefine} /><br />
-      <input id="brassscalesInput" name="brasscales" type="text" placeholder="brass scales" onChange={searchDefine} /><br />
-      <Button onClick={saveChanges}>Save changes</Button>
-    </Container>*/
 
       //Other Equipment
       if (event.target.name === "id") {
@@ -275,13 +260,14 @@ function Books_Equipment(props) {
   // funktio kirjatietojen muokkaamiseen
   const handleBookUpdate = (oldData) => {
     console.log(oldData)
-    document.getElementById("wizardsId").value = oldData.id;
+    
     console.log(oldData.id)
     setDbBooks({
       ...dbBooks,
       id: oldData.id
     });
     console.log(dbBooks.id)
+    document.getElementById("wizardsIdBo").value = oldData.id;
     document.getElementById("goshawkInput").value = oldData.books.goshawk;
     document.getElementById("bagshotInput").value = oldData.books.bagshot;
     document.getElementById("wafflingInput").value = oldData.books.waffling;
@@ -311,7 +297,7 @@ function Books_Equipment(props) {
   // funktio equipment-tietojen muokkaamiseen
   const handleEqUpdate = (oldData) => {
     console.log(oldData)
-    document.getElementById("wizardsId").value = oldData.id;
+    
     console.log(oldData.id)
 
     setDbEquipment({
@@ -319,6 +305,7 @@ function Books_Equipment(props) {
       id: oldData.id,
     });
 
+    document.getElementById("wizardsIdEq").value = oldData.id;
     document.getElementById("wandInput").value = oldData.equipment.wand;
     document.getElementById("cauldronInput").value = oldData.equipment.cauldron;
     document.getElementById("phialsInput").value = oldData.equipment.phials;
@@ -387,14 +374,14 @@ function Books_Equipment(props) {
   // funktio lemmikkitietojen muokkaamiseen
   const handlePetUpdate = (oldData) => {
     console.log(oldData)
-    document.getElementById("wizardsIdPet").value = oldData.id;
+    //document.getElementById("wizardsIdPet").value = oldData.id;
     console.log(oldData.id)
     setDbPets({
       ...dbPets,
       id: oldData.id
     });
     console.log(dbPets.id)
-    document.getElementById("wizardsIdPet").value = oldData.id;
+    document.getElementById("wizardspetId").value = oldData.id;
     document.getElementById("petsnameInput").value = oldData.pet.name;
     document.getElementById("speciesInput").value = oldData.pet.species;
 
@@ -418,9 +405,9 @@ function Books_Equipment(props) {
     console.log("dbpetsname: " + dbPets.name)
     console.log("dbpetsspes: " + dbPets.species)
 
+    setLoading(true)
+    setTimeout(() => {
     fetch(url + "/" + dbPets.id + "?", {
-
-
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -433,55 +420,79 @@ function Books_Equipment(props) {
         }
       }
       ),
-
       //Tietojen päivitys näkyciin
     }).then((response) => {
 
       /*   setLoading({
         loading: false
       })  */
-      setTimeout(() => {
+      setLoading(false);
         fetchData()
-
-      })
     });
-
+  }, delay)
     alert("You have succesfully updated pet information!")
     clearInputsPets();
   }
 
   const clearInputsPets = () => {
-    document.getElementById("wizardsIdpet").value = "";
+    document.getElementById("wizardspetId").value = "";
     document.getElementById("petsnameInput").value = "";
     document.getElementById("speciesInput").value = "";
   }
+
+
+
+  /* BOOKS, QUIPMENT ja PETS haku */
+  const getData = async () => {
+
+    console.log(document.getElementById("idSearchBEP").value)
+    const searched = document.getElementById("idSearchBEP").value;
+    const newUrl = url + "?id_like=" + searched;
+    console.log(searched)
+    console.log(newUrl)
+    setLoading(true);
+
+    setTimeout(() => {
+      async function fetchData() {
+        let response = await fetch(newUrl);
+        console.log(url);
+        let data = await response.json();
+        setBookList(data);
+        setEqList(data);
+        setPetList(data);
+        setLoading(false);
+      }
+
+      fetchData();
+    }, delay)
+  };
+  
+  /* RETURNIT JA TAULUT */
   
   return (
     <div id="cont-2" className="bsContaineri">
-      <h2 id="coursebooksLink">Course books</h2>
 
-      {/*  {loading && <div>Loading.... </div>} */}
-
+      <div>~</div>
+     
       {/* HAKUKENTTÄ */}
-      {/*     <Container id="searchInput" className="bsContaineri" margin="3em">
-          <h2>Basic information</h2>
+      <Container id="searchInput" className="bsContaineri" margin="3em">
+          <h4>Search bar for books, equipments and pets</h4>
 
           <Table striped bordered hover size="sm">
             <tbody><tr><td><input
-              id="idSearch"
+              id="idSearchBEP"
               name="idSearch"
               type="text"
-              placeholder="Wizard id"
+              placeholder="Search wit wizard id"
             /></td>
               <td><Button variant="light" onClick={() => getData()} >Search</Button></td>
             </tr>
             </tbody>
           </Table>
-        </Container>   */}
-      {/* <Container id="EditInputs" margin="3em" className="bsContaineri">
-          <input name="id" type="text" placeholder="Wizard id" onChange={searchDefine} />
-          <button /* onClick={getData} */ /* >Search</button>
-        </Container> */}
+        </Container>   
+
+        <div>~</div>
+      <h2 id="coursebooksLink">Course books</h2>
 
 
       {/* EDITOINTI KENTTÄ  */}
@@ -503,7 +514,7 @@ function Books_Equipment(props) {
           </thead>
           <tbody>
             <tr>
-              <td readOnly><input id="wizardsId" name="id" type="text" placeholder="id" readOnly
+              <td readOnly><input id="wizardsIdBo" name="id" type="text" placeholder="id" readOnly
               /></td>
               <td> <input id="goshawkInput" name="goshawk" type="text" placeholder="(quantity)" onChange={searchDefine}
               /></td>
@@ -572,18 +583,14 @@ function Books_Equipment(props) {
 
 
 
-
+      
       {/* muut tarvikkeet */}
 
       <div id="cont-3" className="bsContaineri">
+      <div>~</div>
         <br /><br />
         <h2 id="eqLink">Other equipment</h2>
 
-
-        {/*           <Container id="searchEqInput" margin="3em" className="bsContaineri">
-            <input name="id" type="text" placeholder="Wizard id" onChange={searchDefine} />
-            <button /* onClick={getData} */ /* >Search</button>
-          </Container> */}
 
 
         {/* EDITOINTI KENTTÄ  */}
@@ -602,7 +609,7 @@ function Books_Equipment(props) {
             </thead>
             <tbody>
               <tr>
-                <td readOnly><input id="wizardsId" name="id" type="text" placeholder="id" readOnly
+                <td readOnly><input id="wizardsIdEq" name="id" type="text" placeholder="id" readOnly
                 /></td>
                 <td>  <input id="wandInput" name="wands" type="text" placeholder="(quantity)" onChange={searchDefine}
                 /></td>
@@ -652,7 +659,7 @@ function Books_Equipment(props) {
                 );
               })}</tbody></table>
           ) : error === true ? (
-            <div id="loading">VIRHE! Ethän syötä erikoismerkkejä</div>
+            <div id="loading">An Error</div>
           ) : (
             <div id="loading">Annetuilla hakuehdoilla ei löytynyt dataa</div>
           )}
@@ -665,14 +672,6 @@ function Books_Equipment(props) {
 
         <div id="cont-2" className="bsContaineri">
           <h2 id="petsLink">Pets</h2>
-
-          {/* hakuloota */}
-          <Container id="searchPetInput" margin="3em" className="bsContaineri">
-            <input name="id" type="text" placeholder="Wizard id" onChange={searchDefine} />
-            <button /*  onClick={getData} */ >Search</button>
-          </Container>
-
-
 
           {/* editointikenttä  */}
           <Container id="EditPetInputs" className="bsContaineri">
@@ -687,7 +686,7 @@ function Books_Equipment(props) {
               </thead>
               <tbody>
                 <tr>
-                  <td readOnly><input id="wizardsIdpet" name="wizardsIdpet" type="text" placeholder="id" readOnly/></td>
+                  <td readOnly><input id="wizardspetId" name="wizardsIdpet" type="text" placeholder="id" readOnly/></td>
                   <td><input id="petsnameInput" name="petsnameInput" type="text" placeholder="(name)" onChange={searchDefine}/></td>
                   <td><input id="speciesInput" name="speciesInput" type="text" placeholder="(owl/cat/toad/none)" onChange={searchDefine}
                   /><br /><br /></td>
@@ -732,7 +731,6 @@ function Books_Equipment(props) {
             )}
           </div>
         </div>
-
 
 
       </div>

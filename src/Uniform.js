@@ -179,14 +179,14 @@ function Uniform(props) {
   const handleUpdate = (oldData) => {
 
     console.log(oldData)
-    document.getElementById("wizardsId").value = oldData.id;
+    document.getElementById("wizardsIdUni").value = oldData.id;
     console.log(oldData.id)
     setDbitems({
       ...dbitem,
       id: oldData.id
     });
 
-    document.getElementById("wizardsId").value = oldData.id;
+    document.getElementById("wizardsIdUni").value = oldData.id;
     document.getElementById("robesInput").value = oldData.uniform.robes;
     document.getElementById("hatInput").value = oldData.uniform.hat;
     document.getElementById("glovesInput").value = oldData.uniform.gloves;
@@ -230,7 +230,7 @@ function Uniform(props) {
 
 
         {/* EDITOINTI KENTTÄ  */}
-        <Container id="EditInputs" margin="3em" className="bsContaineri">
+        <Container id="EditInputs" padding="50em" justify-content="center" className="bsContaineri">
           <Table striped bordered hover size="sm" variant="light">
             <thead >
               <tr variant="light">
@@ -245,28 +245,28 @@ function Uniform(props) {
             </thead>
             <tbody>
               <tr className="uniformInput">
-                <td><input className="uniformInput" width="2em" id="wizardsId"
+                <td ><input size="sm" className="uniformInput" width="2em" id="wizardsIdUni"
                   name="id"
                   type="text"
                   placeholder="id"
                   hidden
                 /* onChange={searchDefine} */
                 /></td>
-                <td> <input className="uniformInput"
+                <td> <input size="sm" className="uniformInput"
                   id="robesInput"
                   name="robes"
                   type="text"
                   placeholder="Robes"
                   onChange={searchDefine}
                 /></td>
-                <td><input className="uniformInput"
+                <td><input size="sm" className="uniformInput"
                   id="hatInput"
                   name="hat"
                   type="text"
                   placeholder="Hat..."
                   onChange={searchDefine}
                 /></td>
-                <td> <input
+                <td> <input size="lg"
                   id="glovesInput"
                   name="gloves"
                   type="text"
@@ -289,10 +289,12 @@ function Uniform(props) {
                     placeholder="Nametags..."
                     onChange={searchDefine}
                   /></td>
-                <td><Button variant="light" onClick={saveChanges}>Save changes</Button></td>
+                  <td></td>
               </tr>
             </tbody>
           </Table>
+          <Button variant="light" onClick={saveChanges}>Save changes</Button>
+          <div>~</div>
         </Container>
 
         <div id="taulukko" className="bsContaineri">
