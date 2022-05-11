@@ -2,8 +2,8 @@
 
 - käyttäjäkokemuksen kannalta suosittelemme käyttämään selaimena Firefoxia (Chromessa jostain syystä fontit pielessä)
 - seuraavat komennot kannattaa laittaa VSCoden konsoliin, jolloin kehitysympäristö ja JSON-serveri käynnistyvät yhtäaikaa
-npm i -D json-server concurrently
-npm run dev
+-   npm i -D json-server concurrently
+-   npm run dev
 
 Harjoitustyön idea lyhyesti:
 - Etusivulla on hyväksymiskirje, jonka alla listataan ensimmäisen vuoden opiskelijan tarvitsemat varusteet (koulupuku, kirjat, muut varusteet, mahdollinen mukana tuotava lemmikki)
