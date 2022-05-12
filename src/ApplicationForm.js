@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import { Button, Col, Modal, Row, Container, Alert } from 'react-bootstrap'
+import { Button } from 'react-bootstrap'
 import Logo from './pictures/Hogwarts-Logo-rb.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Link } from "react-router-dom";
 
 
 var url = "http://localhost:5000/wizards";
@@ -487,72 +486,6 @@ class Application extends React.Component {
                 </div>
             );
         }
-
-
-
-        /* function AppiModaali(props) {
-             modaali-ikkuna joka aukeaa kun käyttäjä painaa submit-nappia -> "tilausvahvistus" joka näyttää annetut tiedot taulukkomuotoisena 
-            const [show, setShow] = useState(false);
-            const handleClose = () => setShow(false);
-            const handleShow = () => setShow(true);
-            return (
-              <>
-                <Button variant="btn btn-dark btn-lg" onClick={handleShow}>Submit your order</Button>
-                <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false}>
-                  <Modal.Header closeButton>
-                    <Modal.Title>Order details</Modal.Title>
-                  </Modal.Header>
-          
-                  <Modal.Body>
-                  <h5>Please check that your order details are correct:</h5>
-                  <table>
-                    <th>Tietoa</th>
-                    <td>* Tänne tulis tilaustiedot taulukkomuodossa *</td>
-                  </table>
-                  </Modal.Body>
-                  <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>Cancel</Button>
-                    <Button variant="primary" onClick={props.addApplication}>Submit your order</Button>
-                  </Modal.Footer>
-                </Modal>
-              </>
-            );
-          }
- */
-
-        /*  function AppModaali(props) {
-             const [show, setShow] = useState(false);
-           
-             const handleClose = () => setShow(false);
-             const handleShow = () => setShow(true);
-           
-             return (
-               <>
-                 <Button variant="btn btn-dark btn-lg" onClick={handleShow}>Submit your order</Button>
-                 <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false}>
-                   <Modal.Header closeButton>
-                     <Modal.Title>Order details</Modal.Title>
-                   </Modal.Header>
-                   <Modal.Body>
-                     <h5>Please check that your order details are correct:</h5>
-                     <table>
-                       <th>Tietoa</th>
-                       <td>* Tänne tulis tilaustiedot taulukkomuodossa *</td>
-                     </table>
-                   </Modal.Body>
-           
-                   <Modal.Footer>
-                     <Button variant="secondary" onClick={handleClose}>Cancel</Button>
-                     <Button as={Col} variant="primary" onClick={this.addUniform}>Submit your order</Button>
-                   </Modal.Footer>
-           
-                 </Modal>
-               </>
-             );
-           } */
-
-
-
 
     }
 }

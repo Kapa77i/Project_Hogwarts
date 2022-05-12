@@ -248,6 +248,7 @@ function Books_Equipment(props) {
   }
 
   const clearInputsBooks = () => {
+    document.getElementById("idSearchBEP").value = "";
     document.getElementById("wizardsIdBo").value = "";
     document.getElementById("goshawkInput").value = "";
     document.getElementById("bagshotInput").value = "";
@@ -391,6 +392,7 @@ function Books_Equipment(props) {
   }
 
   const clearInputsEq = () => {
+    document.getElementById("idSearchBEP").value = "";
     document.getElementById("wizardsIdEq").value = "";
     document.getElementById("wandInput").value = "";
     document.getElementById("cauldronInput").value = "";
@@ -474,6 +476,7 @@ function Books_Equipment(props) {
   }
 
   const clearInputsPets = () => {
+    document.getElementById("idSearchBEP").value = "";
     document.getElementById("wizardspetId").value = "";
     document.getElementById("petsnameInput").value = "";
     document.getElementById("speciesInput").value = "";

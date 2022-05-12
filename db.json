@@ -52,11 +52,12 @@
         ]
       },
       "equipment": {
-        "wand": [
+        "id": 1,
+        "wands": [
           "wooden"
         ],
-        "cauldron": [
-          "4"
+        "cauldrons": [
+          "9"
         ],
         "phials": [
           "Glass phials"
@@ -64,8 +65,15 @@
         "telescopes": [
           "3"
         ],
+        "scales": "",
         "brassscales": [
           "2"
+        ],
+        "wand": [
+          "wooden"
+        ],
+        "cauldron": [
+          "9"
         ]
       },
       "pet": {
@@ -331,7 +339,7 @@
           "42"
         ],
         "hat": [
-          "72"
+          "50"
         ],
         "nametags": [
           "32"
@@ -519,11 +527,12 @@
         ]
       },
       "equipment": {
-        "wand": [
+        "id": 7,
+        "wands": [
           "none"
         ],
-        "cauldron": [
-          "4"
+        "cauldrons": [
+          "2"
         ],
         "phials": [
           "Crystal phials"
@@ -531,8 +540,15 @@
         "telescopes": [
           "4"
         ],
+        "scales": "",
         "brassscales": [
           "6"
+        ],
+        "wand": [
+          "none"
+        ],
+        "cauldron": [
+          "2"
         ]
       },
       "pet": {
