@@ -263,7 +263,12 @@ class Application extends React.Component {
         if (this.state.data == null || searchLoading == true) {
             return (
                 <div id="loading">
-                    <p>Loading the format...</p>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <p>Loading the application, please wait...</p>
                 </div>
             );
         } else if (this.state.data != null) {
