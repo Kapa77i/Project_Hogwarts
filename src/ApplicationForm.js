@@ -468,17 +468,17 @@ class Application extends React.Component {
                         <div id="pet"><br /><br /><br /><br />
                             <h3>Pet</h3>
                             <div>~<br /><br /></div>
-                            <label htmlFor="speciesInput"><large></large>Your pet's species:</label><br /><br />
+                            <label htmlFor="speciesInput">Your pet's species:</label><br /><br />
                             <input name="speciesInput" id="speciecInput" type="radio" value="Owl"
-                                onChange={this.addParameters} /><label for="Owl">Owl</label><br />
+                                onChange={this.addParameters} /><label htmlFor="Owl">Owl</label><br />
                             <input name="speciesInput" id="speciecInput" type="radio" value="Cat"
-                                onChange={this.addParameters} /><label for="Cat">Cat</label><br />
+                                onChange={this.addParameters} /><label htmlFor="Cat">Cat</label><br />
                             <input name="speciesInput" id="speciecInput" type="radio" value="Toad"
-                                onChange={this.addParameters} /><label for="Toad">Toad</label><br /><br />
+                                onChange={this.addParameters} /><label htmlFor="Toad">Toad</label><br /><br />
                             <input name="petsnameInput" type="text" id="petsnameInput" placeholder="Your pet's name" value={this.state.petsnameInput}
                                 onChange={this.addParameters} disabled /><br /><br />
                             <input name="speciesInput" id="speciecInput" type="radio" value="none"
-                                onChange={this.addParameters} /><label for="none">I'm not bringing a pet</label><br />
+                                onChange={this.addParameters} /><label htmlFor="none">I'm not bringing a pet</label><br />
                             <br /><br /><br />
                         </div>
                     </div>

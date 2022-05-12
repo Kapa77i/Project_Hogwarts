@@ -180,7 +180,6 @@ function NameAddress(props) {
   return (
 
     <div>
-      {/*  {loading && <div>Loading.... </div>} */}
       <div id="cont-2">
         <div><p>
       <img src={Logo} height="200" width="200"  alt="Hogwarts"/><br/>
@@ -325,8 +324,6 @@ Click on the "Delete" button in the Basic information section to delete the sele
                     <td>{wizards.address}</td>
                     <td><Button variant="outline-dark" onClick={() => handleUpdate(wizards)}>Edit</Button></td>
                     <td><Button variant="dark" onClick={() => deleteAll(wizards)} id={wizards.id}>Delete all</Button></td>
-                    <td><Link to={`/wizards/${wizards.id}`} id={wizards.id}>
-                <button>All info</button></Link></td>
                   </tr>
                 );
               })}</tbody></table>

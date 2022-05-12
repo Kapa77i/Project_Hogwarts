@@ -8,17 +8,8 @@ function Uniform(props) {
   const [dbitem, setDbitems] = useState({ id: '', coat: '', gloves: '', robes: '', hat: '', nametags: '' });
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
-  const [show, setShow] = useState(false);
-  const inputEl = useRef("")
 
-  //const [searched, setSearched] = useState();
 
-  const handleClose = () => {
-    setShow(false)
-  };
-  const handleShow = () => {
-    setShow(true)
-  };
 
   //Määritellään urli, jota sitten päivitellään aina hakuehtojen yms mukaan
   const url = "http://localhost:5000/wizards";
@@ -386,7 +377,7 @@ function Uniform(props) {
           <div>~</div>
         </Container> */}
 
-        <div id="taulukko" className="bsContaineri">
+        <div className="bsContaineri">
           {loading ? (
             <div id="loading">Loading...</div>
 
@@ -405,7 +396,7 @@ function Uniform(props) {
               </thead>
               <tbody>{uniformlist.map((wizards) => {
                 return (
-                  <tr data-testid="trAsiakasID" key={wizards.id}>
+                  <tr key={wizards.id}>
                     <td>{wizards.id}</td>
                     <td>{wizards.uniform.robes}</td>
                     <td>{wizards.uniform.hat}</td>

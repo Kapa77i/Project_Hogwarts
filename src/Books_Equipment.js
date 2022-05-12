@@ -603,8 +603,11 @@ function Books_Equipment(props) {
                 id="trimbleInput" name="trimble" type="number" min="0" placeholder="(quantity)" onChange={searchDefine} disabled
               />
             </Form.Group>
-            <td><Button variant="light" onClick={saveChangesBooks}>Save changes</Button></td>
+            
           </Row>
+          <Row className="mb-3">
+          <Form.Group as={Col} className="mb-3 square border border-1 p-3">
+              <Button variant="light" onClick={saveChangesBooks}>Save changes</Button></Form.Group></Row>
         </Form>
       </Container>
 
@@ -747,8 +750,14 @@ function Books_Equipment(props) {
                 <input size="lg"
                   id="brassscalesInput" name="brassscales" type="number" min="0" placeholder="(quantity)" onChange={searchDefine} disabled
                 /></Form.Group>
-              <td><Button variant="light" onClick={saveChangesEq}>Save changes</Button></td>
+                
+            
+            <Row className="mb-3">
+          <Form.Group as={Col} className="mb-3 square border border-1 p-3">
+              <Button variant="light" onClick={saveChangesEq}>Save changes</Button></Form.Group></Row>
             </Row>
+
+            
           </Form>
         </Container>
 
@@ -806,7 +815,7 @@ function Books_Equipment(props) {
               </thead>
               <tbody>{eqList.map((wizards) => {
                 return (
-                  <tr data-testid="trAsiakasID" key={wizards.id} >
+                  <tr key={wizards.id} >
                     <td>{wizards.id}</td>
                     <td>{wizards.equipment.wand}</td>
                     <td>{wizards.equipment.cauldron}</td>
@@ -859,8 +868,12 @@ function Books_Equipment(props) {
                   />
 
                 </Form.Group>
-                <td><Button variant="light" onClick={saveChangesPet}>Save changes</Button></td>
+
+                <Row className="mb-3">
+          <Form.Group as={Col} className="mb-3 square border border-1 p-3">
+              <Button variant="light" onClick={saveChangesPet}>Save changes</Button></Form.Group></Row>
               </Row>
+              
             </Form>
           </Container>
 
@@ -905,7 +918,7 @@ function Books_Equipment(props) {
                 </thead>
                 <tbody>{petList.map((wizards) => {
                   return (
-                    <tr data-testid="trAsiakasID" key={wizards.id} >
+                    <tr key={wizards.id} >
                       <td>{wizards.id}</td>
                       <td>{wizards.pet.name}</td>
                       <td>{wizards.pet.species}</td>
