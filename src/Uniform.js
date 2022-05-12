@@ -147,11 +147,18 @@ function Uniform(props) {
 
   //Input kenttien clear-editoinnin jälkeen
   const clearInputs = () => {
+    document.getElementById("wizardsIdUni").value = "";
     document.getElementById("robesInput").value = "";
     document.getElementById("hatInput").value = "";
     document.getElementById("glovesInput").value = "";
     document.getElementById("coatInput").value = "";
     document.getElementById("nametagsInput").value = "";
+    
+    document.getElementById("robesInput").disabled = true;
+    document.getElementById("hatInput").disabled = true;
+    document.getElementById("glovesInput").disabled = true;
+    document.getElementById("coatInput").disabled = true;
+    document.getElementById("nametagsInput").disabled = true;
   }
 
   //HAE NAPPULAN TOIMINTO
@@ -192,6 +199,11 @@ function Uniform(props) {
     document.getElementById("glovesInput").value = oldData.uniform.gloves;
     document.getElementById("coatInput").value = oldData.uniform.coat;
     document.getElementById("nametagsInput").value = oldData.uniform.nametags;
+    document.getElementById("robesInput").disabled = false;
+    document.getElementById("hatInput").disabled = false;
+    document.getElementById("glovesInput").disabled = false;
+    document.getElementById("coatInput").disabled = false;
+    document.getElementById("nametagsInput").disabled = false;
 
     setDbitems({
       ...dbitem,
@@ -240,7 +252,7 @@ function Uniform(props) {
                   name="id"
                   type="text"
                   placeholder="id"
-                  readOnly
+                  readOnly disabled
                 /* onChange={searchDefine} */
                 />
               </Form.Group>
@@ -250,7 +262,8 @@ function Uniform(props) {
                   id="robesInput"
                   name="robes"
                   type="text"
-                  placeholder="Robes"
+                  placeholder="(quantity)"
+                  disabled
                   onChange={searchDefine}
                 />
               </Form.Group>
@@ -260,7 +273,8 @@ function Uniform(props) {
                   id="hatInput"
                   name="hat"
                   type="text"
-                  placeholder="Hat..."
+                  placeholder="(quantity)"
+                  disabled
                   onChange={searchDefine}
                 />
               </Form.Group>
@@ -270,19 +284,19 @@ function Uniform(props) {
                   id="glovesInput"
                   name="gloves"
                   type="text"
-                  placeholder="Gloves..."
+                  placeholder="(quantity)"
+                  disabled
                   onChange={searchDefine}
                 />
               </Form.Group>
-            </Row>
-            <Row className="mb-3">
               <Form.Group as={Col} className="mb-3" controlId="formGroupWizardsIdUni">
                 <Form.Label>Cloak     </Form.Label><br/>
                 <input className="uniformInput"
                   id="coatInput"
                   name="coat"
                   type="text"
-                  placeholder="Coat..."
+                  placeholder="(quantity)"
+                  disabled
                   onChange={searchDefine}
                 />
               </Form.Group>
@@ -292,17 +306,15 @@ function Uniform(props) {
                     id="nametagsInput"
                     name="nametags"
                     type="text"
-                    placeholder="Nametags..."
+                    placeholder="(quantity)"
+                    disabled
                     onChange={searchDefine}
                   />
               </Form.Group>
-              <Form.Group as={Col} className="mb-3">
-              <Form.Label> </Form.Label><br/>
-              <Button variant="light" onClick={saveChanges}>Save changes</Button>
-              </Form.Group></Row>
-              
-          </Form>
-        </Container>
+            <td><Button variant="light" onClick={saveChanges}>Save changes</Button></td>
+          </Row>
+        </Form>
+      </Container>
 
 
        {/*  <Container id="EditInputs" padding="50em" justify-content="center" className="bsContaineri">

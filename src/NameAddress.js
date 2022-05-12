@@ -109,6 +109,8 @@ function NameAddress(props) {
     document.getElementById("wizardsId").value = "";
     document.getElementById("nameInput").value = "";
     document.getElementById("addressInput").value = "";
+    document.getElementById("nameInput").disabled = true;
+    document.getElementById("addressInput").disabled = true;
   }
 
   //POISTO NAMISKA
@@ -118,7 +120,8 @@ function NameAddress(props) {
         method: 'DELETE',
       }).then(() => {
         fetchData();
-       
+        // päivitetään sivu deleten yhteydessä
+        window.location.reload();
       })
     }
 
@@ -154,6 +157,8 @@ function NameAddress(props) {
   const handleUpdate = (oldData) => {
     document.getElementById('wizardsId').setAttribute('readOnly', true);
     console.log(oldData)
+    document.getElementById("nameInput").disabled = false;
+    document.getElementById("addressInput").disabled = false;
     document.getElementById("wizardsId").value = oldData.id;
     document.getElementById("nameInput").value = oldData.name;
     document.getElementById("addressInput").value = oldData.address;
@@ -213,6 +218,49 @@ Click on the "Delete" button in the Basic information section to delete the sele
 
 
         {/* EDITOINTI KENTTÄ  */}
+
+
+        <Container >
+          <Form>
+            <Row className="mb-3">
+              <Form.Group as={Col} className="mb-3" controlId="formGroupWizardsIdUni">
+              <Form.Label >Wizard id</Form.Label><br/>
+              <input size="sm" className="uniformInput" width="2em" id="wizardsId"
+                  name="id"
+                  type="text"
+                  placeholder="id"
+                  readOnly disabled
+                /* onChange={searchDefine} */
+                />
+              </Form.Group>
+              <Form.Group as={Col} className="mb-3">
+                <Form.Label>Wizard's full name</Form.Label> <br/>
+                <input padding="3em" className="uniformInput"
+                 id="nameInput"
+                 name="name"
+                 type="text"
+                 placeholder="(name)"
+                 disabled
+                 onChange={searchDefine}
+                />
+              </Form.Group>
+              <Form.Group as={Col} className="mb-3" controlId="formGroupWizardsIdUni">
+                <Form.Label>Wizard's address </Form.Label><br/>
+                <input size="sm" className="uniformInput"
+                  id="addressInput"
+                  name="address"
+                  type="text"
+                  placeholder="(address)"
+                  disabled
+                  onChange={searchDefine}
+                />
+              </Form.Group>
+            <td><Button variant="light" onClick={saveChanges}>Save changes</Button></td>
+          </Row>
+        </Form>
+      </Container>
+
+{/* 
         <Container id="EditInputs" className="bsContaineri">
           <Table striped bordered hover size="sm" variant="light">
             <thead >
@@ -220,7 +268,7 @@ Click on the "Delete" button in the Basic information section to delete the sele
                 <th>Wizard ID</th>
                 <th>Wizards fullname</th>
                 <th>Wizards address</th>
-                <th>-</th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
@@ -229,20 +277,22 @@ Click on the "Delete" button in the Basic information section to delete the sele
                   name="id"
                   type="text"
                   placeholder="id"
-                  readOnly
+                  readOnly disabled
                 /></td>
                 <td> <input
                   id="nameInput"
                   name="name"
                   type="text"
-                  placeholder="Name"
+                  placeholder="(name))"
+                  disabled
                   onChange={searchDefine}
                 /></td>
                 <td><input
                   id="addressInput"
                   name="address"
                   type="text"
-                  placeholder="Address"
+                  placeholder="(address)"
+                  disabled
                   onChange={searchDefine}
                 /></td>
                 <td><Button variant="light" onClick={saveChanges}>Save changes</Button></td>
@@ -250,7 +300,7 @@ Click on the "Delete" button in the Basic information section to delete the sele
               </tr>
             </tbody>
           </Table>
-        </Container>
+        </Container> */}
 
         <div id="taulukko" className="bsContaineri">
           {loading ? (
@@ -274,7 +324,7 @@ Click on the "Delete" button in the Basic information section to delete the sele
                     <td>{wizards.name}</td>
                     <td>{wizards.address}</td>
                     <td><Button variant="outline-dark" onClick={() => handleUpdate(wizards)}>Edit</Button></td>
-                    <td><Button variant="dark" onClick={() => deleteAll(wizards)} id={wizards.id}>Delete</Button></td>
+                    <td><Button variant="dark" onClick={() => deleteAll(wizards)} id={wizards.id}>Delete all</Button></td>
                     <td><Link to={`/wizards/${wizards.id}`} id={wizards.id}>
                 <button>All info</button>
               </Link></td>

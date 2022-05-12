@@ -215,6 +215,7 @@ class Application extends React.Component {
         }
     }
 
+
     async addApplication() {
         await fetch("http://localhost:5000/wizards", {
             method: "POST",
@@ -300,7 +301,6 @@ class Application extends React.Component {
                             name="nameInput"
                             type="text"
                             placeholder="Your full name..."
-                            //value={this.state.asiakasInput}
                             onChange={this.addParameters}
                         />
                         <br />
@@ -310,7 +310,6 @@ class Application extends React.Component {
                             name="addressInput"
                             type="text"
                             placeholder="Your full address..."
-                            //value={this.state.osoiteInput}
                             onChange={this.addParameters}
                         />
                     </div>
@@ -323,18 +322,16 @@ class Application extends React.Component {
                         <label htmlFor="robesInput">Plain work robes (black):</label><br />
                         <input
                             name="robesInput"
-                            type="text"
+                            type="number" min="0"
                             placeholder="(quantity)"
-                            //value={this.state.asiakasInput}
                             onChange={this.addParameters}
                         /><br /><br />
 
                         <label htmlFor="hatInput">Plain pointed hat (black) for day wear:</label><br />
                         <input
                             name="hatInput"
-                            type="text"
+                            type="number" min="0"
                             placeholder="(quantity)"
-                            //value={this.state.osoiteInput}
                             onChange={this.addParameters}
                         /><br /><br />
 
@@ -352,7 +349,7 @@ class Application extends React.Component {
                         <label htmlFor="coatInput">Winter cloak (black, with silver fastenings):</label><br />
                         <input
                             name="coatInput"
-                            type="text"
+                            type="number" min="0"
                             placeholder="(quantity)"
                             //value={this.state.osoiteInput}
                             onChange={this.addParameters}
@@ -361,7 +358,7 @@ class Application extends React.Component {
                         <label htmlFor="nametagsInput">Do you need any nametags?</label><br />
                         <input
                             name="nametagsInput"
-                            type="text"
+                            type="number" min="0"
                             placeholder="need of nametags"
                             //value={this.state.osoiteInput}
                             onChange={this.addParameters}
@@ -375,7 +372,7 @@ class Application extends React.Component {
                         <label htmlFor="goshawkInput"><b>The Standard Book of Spells (Grade 1)</b> <br />by Miranda Goshawk</label><br />
                         <input
                             name="goshawkInput"
-                            type="text"
+                            type="number" min="0"
                             placeholder="(quantity)"
                             //value={this.state.osoiteInput}
                             onChange={this.addParameters}
@@ -384,7 +381,7 @@ class Application extends React.Component {
                         <label htmlFor="bagshotInput"><b>A History of Magic</b><br />by Bathilda Bagshot</label><br />
                         <input
                             name="bagshotInput"
-                            type="text"
+                            type="number" min="0"
                             placeholder="(quantity)"
                             //value={this.state.osoiteInput}
                             onChange={this.addParameters}
@@ -393,14 +390,14 @@ class Application extends React.Component {
                         <label htmlFor="wafflingInput"><b>Magical Theory</b> <br />by Adalbert Waffling</label><br />
                         <input
                             name="wafflingInput"
-                            type="text"
+                            type="number" min="0"
                             placeholder="(quantity)"
                             //value={this.state.osoiteInput}
                             onChange={this.addParameters}
                         /><br /><br />
 
                         <label htmlFor="switchInput"><b>A Beginner's Guide to Transfiguration</b> <br />by Emeric Switch</label><br />
-                        <input name="switchInput" type="text" placeholder="(quantity)"
+                        <input name="switchInput" type="number" min="0" placeholder="(quantity)"
                             //value={this.state.osoiteInput}
                             onChange={this.addParameters}
                         /><br /><br />
@@ -408,7 +405,7 @@ class Application extends React.Component {
                         <label htmlFor="sporeInput"><b>One Thousand Magical Herbs and Fungi </b><br />by Phyllida Spore</label><br />
                         <input
                             name="sporeInput"
-                            type="text"
+                            type="number" min="0"
                             placeholder="(quantity)"
                             //value={this.state.osoiteInput}
                             onChange={this.addParameters}
@@ -417,7 +414,7 @@ class Application extends React.Component {
                         <label htmlFor="jiggerInput"><b>Magical Drafts and Potions</b> <br />by Arsenius Jigger</label><br />
                         <input
                             name="jiggerInput"
-                            type="text"
+                            type="number" min="0"
                             placeholder="(quantity)"
                             //value={this.state.osoiteInput}
                             onChange={this.addParameters}
@@ -426,7 +423,7 @@ class Application extends React.Component {
                         <label htmlFor="scamanderInput"><b>Fantastic Beasts and Where to Find Them</b> <br />by Newt Scamander</label><br />
                         <input
                             name="scamanderInput"
-                            type="text"
+                            type="number" min="0"
                             placeholder="(quantity)"
                             //value={this.state.osoiteInput}
                             onChange={this.addParameters}
@@ -435,7 +432,7 @@ class Application extends React.Component {
                         <label htmlFor="trimbleInput"><b>The Dark Forces: A Guide to Self-Protection </b><br />by Quentin Trimble</label><br />
                         <input
                             name="trimbleInput"
-                            type="text"
+                            type="number" min="0"
                             placeholder="(quantity)"
                             //value={this.state.osoiteInput}
                             onChange={this.addParameters}
@@ -460,7 +457,7 @@ class Application extends React.Component {
                         <label htmlFor="cauldronInput">Cauldrons (pewter, standard size 2):</label><br />
                         <input
                             name="cauldronInput"
-                            type="text"
+                            type="number" min="0"
                             placeholder="(quantity)"
                             //value={this.state.osoiteInput}
                             onChange={this.addParameters}
@@ -487,7 +484,7 @@ class Application extends React.Component {
                         <label htmlFor="telescopesInput">Telescopes:</label><br />
                         <input
                             name="telescopesInput"
-                            type="text"
+                            type="number" min="0"
                             placeholder="(quantity)"
                             //value={this.state.osoiteInput}
                             onChange={this.addParameters}
@@ -497,7 +494,7 @@ class Application extends React.Component {
                         <label htmlFor="brassscalesInput">Brass scales:</label><br />
                         <input
                             name="brassscalesInput"
-                            type="text"
+                            type="number" min="0"
                             placeholder="(quantity)"
                             //value={this.state.osoiteInput}
                             onChange={this.addParameters}

@@ -18,42 +18,69 @@
         "coat": [
           [
             [
-              "1"
+              [
+                [
+                  "1"
+                ]
+              ]
             ]
           ]
         ],
         "gloves": [
           [
-            "\tFrom erumpet hide"
+            "From erumpet hide"
           ]
         ],
         "robes": [
           [
             [
-              "3"
+              [
+                [
+                  "3"
+                ]
+              ]
             ]
           ]
         ],
         "hat": [
-          [
-            [
-              "1"
-            ]
-          ]
+          "2"
         ],
         "nametags": [
-          "Yes please"
+          [
+            [
+              "Yes please"
+            ]
+          ]
         ]
       },
       "books": {
-        "goshawk": 1,
-        "bagshot": 6,
-        "waffling": 1,
-        "switch": 1,
-        "spore": 3,
-        "jigger": 1,
-        "scamander": 1,
-        "trimble": 0
+        "id": [
+          5
+        ],
+        "goshawk": [
+          1
+        ],
+        "bagshot": [
+          6
+        ],
+        "waffling": [
+          1
+        ],
+        "switch": [
+          1
+        ],
+        "spore": [
+          3
+        ],
+        "jigger": [
+          1
+        ],
+        "scamander": [
+          1
+        ],
+        "trimble": [
+          0
+        ]
       },
       "equipment": {
         "id": [
@@ -61,35 +88,50 @@
         ],
         "wands": [
           [
-            "10¾\" long, made of vine wood, and possessed a dragon heartstring core"
+            [
+              "10¾\" long, made of vine wood, and possessed a dragon heartstring core"
+            ]
           ]
         ],
         "cauldrons": [
           [
-            "7"
+            [
+              "7"
+            ]
           ]
         ],
         "phials": [
           [
-            "Crystal phials"
+            [
+              "Crystal phials"
+            ]
           ]
         ],
         "telescopes": [
-          "84"
+          [
+            "84"
+          ]
         ],
+        "scales": "",
         "brassscales": [
           [
-            "8"
+            [
+              "8"
+            ]
           ]
         ],
         "wand": [
           [
-            "10¾\" long, made of vine wood, and possessed a dragon heartstring core"
+            [
+              "10¾\" long, made of vine wood, and possessed a dragon heartstring core"
+            ]
           ]
         ],
         "cauldron": [
           [
-            "7"
+            [
+              "7"
+            ]
           ]
         ]
       },
@@ -98,20 +140,28 @@
           5
         ],
         "name": [
-          "Kutka"
+          "Otto"
         ],
         "species": [
-          "Cat"
+          [
+            [
+              "Cat"
+            ]
+          ]
         ]
       },
       "id": 5
     },
     {
       "name": [
-        "Fred Weasley"
+        [
+          [
+            "Fred Weasley"
+          ]
+        ]
       ],
       "address": [
-        "Kotikolo 1"
+        "Kotikolo 123"
       ],
       "uniform": {
         "id": [
@@ -148,50 +198,68 @@
         "goshawk": [
           [
             [
-              "5"
+              [
+                [
+                  "5"
+                ]
+              ]
             ]
           ]
         ],
         "bagshot": [
           [
-            "4"
+            [
+              [
+                "4"
+              ]
+            ]
           ]
         ],
         "waffling": [
           [
             [
-              "5"
+              [
+                [
+                  "5"
+                ]
+              ]
             ]
           ]
         ],
         "switch": [
-          "3"
+          [
+            [
+              "3"
+            ]
+          ]
         ],
         "spore": [
           [
             [
-              "5"
+              [
+                [
+                  "5"
+                ]
+              ]
             ]
           ]
         ],
         "jigger": [
-          [
-            [
-              "5"
-            ]
-          ]
+          "55"
         ],
         "scamander": [
           [
-            [
-              "5"
-            ]
+            "6"
           ]
         ],
         "trimble": [
           [
             [
-              "5"
+              [
+                [
+                  "5"
+                ]
+              ]
             ]
           ]
         ]
@@ -201,35 +269,45 @@
           6
         ],
         "wands": [
-          "Bueno"
+          [
+            "Bueno"
+          ]
         ],
         "cauldrons": [
           [
-            "5"
+            [
+              "5"
+            ]
           ]
         ],
         "phials": [
           [
-            "Glass phials"
+            [
+              "Glass phials"
+            ]
           ]
         ],
         "telescopes": [
-          [
-            "5"
-          ]
+          "7"
         ],
         "scales": "",
         "brassscales": [
           [
-            "5"
+            [
+              "5"
+            ]
           ]
         ],
         "wand": [
-          "Bueno"
+          [
+            "Bueno"
+          ]
         ],
         "cauldron": [
           [
-            "5"
+            [
+              "5"
+            ]
           ]
         ]
       },
@@ -243,7 +321,13 @@
         "species": [
           [
             [
-              "Cat"
+              [
+                [
+                  [
+                    "Cat"
+                  ]
+                ]
+              ]
             ]
           ]
         ]
@@ -252,59 +336,212 @@
     },
     {
       "name": [
-        [
-          "Mikko Makkonen"
-        ]
+        "Mikki Hiiri"
       ],
       "address": [
-        "Makkosentie 55"
+        "Mikkola"
       ],
       "uniform": {
-        "hat": [
-          "3"
-        ],
-        "gloves": [
-          "From dragon hide"
+        "id": [
+          8
         ],
         "coat": [
-          "2"
+          [
+            [
+              "3"
+            ]
+          ]
+        ],
+        "gloves": [
+          [
+            "From dragon hide"
+          ]
         ],
         "robes": [
-          "2"
+          [
+            [
+              [
+                "5"
+              ]
+            ]
+          ]
+        ],
+        "hat": [
+          "5"
         ],
         "nametags": [
-          "4"
+          [
+            [
+              "7"
+            ]
+          ]
         ]
       },
       "books": {
+        "id": [
+          8
+        ],
         "goshawk": [
+          "5"
+        ],
+        "bagshot": [
+          "7"
+        ],
+        "waffling": [
+          "8"
+        ],
+        "switch": [
+          "3"
+        ],
+        "spore": [
+          "6"
+        ],
+        "jigger": [
+          "7"
+        ],
+        "scamander": [
+          "3"
+        ],
+        "trimble": [
+          "3"
+        ]
+      },
+      "equipment": {
+        "id": [
+          8
+        ],
+        "wands": [
+          "nice nice nice"
+        ],
+        "cauldrons": [
+          [
+            [
+              "6"
+            ]
+          ]
+        ],
+        "phials": [
+          [
+            [
+              "3"
+            ]
+          ]
+        ],
+        "telescopes": [
+          [
+            [
+              "2"
+            ]
+          ]
+        ],
+        "scales": "",
+        "brassscales": [
+          [
+            [
+              "66"
+            ]
+          ]
+        ],
+        "wand": [
+          "nice nice nice"
+        ],
+        "cauldron": [
+          [
+            [
+              "6"
+            ]
+          ]
+        ]
+      },
+      "pet": {
+        "id": [
+          8
+        ],
+        "name": [
+          "Koiruli"
+        ],
+        "species": [
+          [
+            [
+              [
+                [
+                  "Cat"
+                ]
+              ]
+            ]
+          ]
+        ]
+      },
+      "id": 8
+    },
+    {
+      "name": [
+        "Harry Potter"
+      ],
+      "address": [
+        "Likusteritie 4, komero portaiden alla"
+      ],
+      "uniform": {
+        "hat": [
           "4"
+        ],
+        "gloves": [
+          "From erumpet hide"
+        ],
+        "coat": [
+          "3"
+        ],
+        "robes": [
+          "5"
+        ],
+        "nametags": [
+          "6"
+        ]
+      },
+      "books": {
+        "id": [
+          9
+        ],
+        "goshawk": [
+          [
+            "7"
+          ]
         ],
         "bagshot": [
           "2"
         ],
         "waffling": [
-          "1"
+          [
+            "4"
+          ]
         ],
         "switch": [
-          "4"
+          [
+            "3"
+          ]
         ],
         "spore": [
-          "5"
+          [
+            "2"
+          ]
         ],
         "jigger": [
-          "6"
+          [
+            "2"
+          ]
         ],
         "scamander": [
-          "2"
+          [
+            "3"
+          ]
         ],
         "trimble": [
-          "1"
+          "5"
         ]
       },
       "equipment": {
         "wand": [
-          "beautiful"
+          "made of wood (not oliver)"
         ],
         "cauldron": [
           "4"
@@ -313,21 +550,278 @@
           "Crystal phials"
         ],
         "telescopes": [
-          "5"
+          "7"
         ],
         "brassscales": [
-          "5"
+          "3"
         ]
       },
       "pet": {
         "name": [
-          "Pimpula"
+          "Hedwig"
+        ],
+        "species": [
+          "Owl"
+        ]
+      },
+      "id": 9
+    },
+    {
+      "name": [
+        "Rubeus Hagrid"
+      ],
+      "address": [
+        "Hagrid's hut"
+      ],
+      "uniform": {
+        "id": [
+          10
+        ],
+        "coat": [
+          [
+            "2"
+          ]
+        ],
+        "gloves": [
+          [
+            "From dragon hide"
+          ]
+        ],
+        "robes": [
+          [
+            "3"
+          ]
+        ],
+        "hat": [
+          [
+            "2"
+          ]
+        ],
+        "nametags": [
+          "4"
+        ]
+      },
+      "books": {
+        "goshawk": [
+          "13"
+        ],
+        "bagshot": [
+          "3"
+        ],
+        "waffling": [
+          "5"
+        ],
+        "switch": [
+          "6"
+        ],
+        "spore": [
+          "32"
+        ],
+        "jigger": [
+          "4"
+        ],
+        "scamander": [
+          "3"
+        ],
+        "trimble": [
+          "6"
+        ]
+      },
+      "equipment": {
+        "wand": [
+          "3"
+        ],
+        "cauldron": [
+          "3"
+        ],
+        "phials": [
+          "Crystal phials"
+        ],
+        "telescopes": [
+          "5"
+        ],
+        "brassscales": [
+          "2"
+        ]
+      },
+      "pet": {
+        "name": [
+          "Kihuli"
         ],
         "species": [
           "Cat"
         ]
       },
-      "id": 7
+      "id": 10
+    },
+    {
+      "name": [
+        "You-Know-Who"
+      ],
+      "address": [
+        "(top secret)"
+      ],
+      "uniform": {
+        "hat": [
+          "2"
+        ],
+        "gloves": [
+          "From dragon hide"
+        ],
+        "coat": [
+          "4"
+        ],
+        "robes": [
+          "3"
+        ],
+        "nametags": [
+          "5"
+        ]
+      },
+      "books": {
+        "id": [
+          11
+        ],
+        "goshawk": [
+          [
+            "2"
+          ]
+        ],
+        "bagshot": [
+          [
+            "2"
+          ]
+        ],
+        "waffling": [
+          [
+            "5"
+          ]
+        ],
+        "switch": [
+          "5"
+        ],
+        "spore": [
+          "3"
+        ],
+        "jigger": [
+          [
+            "5"
+          ]
+        ],
+        "scamander": [
+          [
+            "5"
+          ]
+        ],
+        "trimble": [
+          [
+            "3"
+          ]
+        ]
+      },
+      "equipment": {
+        "wand": [
+          "perfect"
+        ],
+        "cauldron": [
+          "55"
+        ],
+        "phials": [
+          "Glass phials"
+        ],
+        "telescopes": [
+          "4"
+        ],
+        "brassscales": [
+          "3"
+        ]
+      },
+      "pet": {
+        "name": [
+          "Puhmuska"
+        ],
+        "species": [
+          "Cat"
+        ]
+      },
+      "id": 11
+    },
+    {
+      "name": [
+        "Colin Creevey"
+      ],
+      "address": [
+        "823 Creevey Road "
+      ],
+      "uniform": {
+        "hat": [
+          "7"
+        ],
+        "gloves": [
+          "From dragon hide"
+        ],
+        "coat": [
+          "3"
+        ],
+        "robes": [
+          "5"
+        ],
+        "nametags": [
+          "2"
+        ]
+      },
+      "books": {
+        "goshawk": [
+          "5"
+        ],
+        "bagshot": [
+          "3"
+        ],
+        "waffling": [
+          "1"
+        ],
+        "switch": [
+          "5"
+        ],
+        "spore": [
+          "1"
+        ],
+        "jigger": [
+          "3"
+        ],
+        "scamander": [
+          "6"
+        ],
+        "trimble": [
+          "6"
+        ]
+      },
+      "equipment": {
+        "wand": [
+          "1"
+        ],
+        "cauldron": [
+          "6"
+        ],
+        "phials": [
+          "Crystal phials"
+        ],
+        "telescopes": [
+          "2"
+        ],
+        "brassscales": [
+          "6"
+        ]
+      },
+      "pet": {
+        "name": [
+          "Owlie"
+        ],
+        "species": [
+          "Owl"
+        ]
+      },
+      "id": 12
     }
   ]
 }
