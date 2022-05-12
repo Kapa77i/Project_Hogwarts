@@ -98,8 +98,9 @@ function NameAddress(props) {
 
       })
     });
-
-    alert("You have succesfully updated basic information")
+    if (document.getElementById("wizardsId").value != "") {
+      alert("You have succesfully updated basic information")
+    }
     clearInputs();
 
   }
@@ -129,7 +130,6 @@ function NameAddress(props) {
 
     }
 
-
   };
 
 
@@ -157,11 +157,11 @@ function NameAddress(props) {
   const handleUpdate = (oldData) => {
     document.getElementById('wizardsId').setAttribute('readOnly', true);
     console.log(oldData)
-    document.getElementById("nameInput").disabled = false;
-    document.getElementById("addressInput").disabled = false;
     document.getElementById("wizardsId").value = oldData.id;
     document.getElementById("nameInput").value = oldData.name;
+    document.getElementById("nameInput").disabled = false;
     document.getElementById("addressInput").value = oldData.address;
+    document.getElementById("addressInput").disabled = false;
     console.log(oldData.id);
 
     setDbitems({
@@ -190,18 +190,18 @@ Click on the "Delete" button in the Basic information section to delete the sele
 <br/></p></div>
 
   <div>
-<h6>Jump to section:</h6> 
+<h5>Jump to section:</h5> <br/>
 <p>
 <a href="#basicInformationLink">Basic Information</a> | <a href="#uniformLink">Uniform</a> | <a href="#coursebooksLink">Course books</a> |
 <a href="#eqLink">Other equipment</a> | <a href="#petsLink">Pets</a>
-<br/><br/><br/>
-</p>
-<br/><br/></div>    
+<br/><br/>
+</p></div>    
 
         {/* HAKUKENTTÄ */}
         <Container id="searchInput" className="bsContaineri" margin="3em">
-          <h2 id="basicInformationLink">Basic information</h2>
-
+        <br /><br /><br />
+        <h2 id="basicInformationLink">Basic information</h2>
+        <div>~<br /><br /><br/></div>
           <Table striped bordered hover size="sm">
             <tbody><tr><td><input
               id="idSearch"
@@ -326,9 +326,7 @@ Click on the "Delete" button in the Basic information section to delete the sele
                     <td><Button variant="outline-dark" onClick={() => handleUpdate(wizards)}>Edit</Button></td>
                     <td><Button variant="dark" onClick={() => deleteAll(wizards)} id={wizards.id}>Delete all</Button></td>
                     <td><Link to={`/wizards/${wizards.id}`} id={wizards.id}>
-                <button>All info</button>
-              </Link></td>
-
+                <button>All info</button></Link></td>
                   </tr>
                 );
               })}</tbody></table>

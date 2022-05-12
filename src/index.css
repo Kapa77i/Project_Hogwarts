@@ -169,14 +169,12 @@ p{
    font-size: large;
 }
 
-input{
-  width: min-content;
-}
+
 input::placeholder {
-    font-size: 10px;
+    font-size: 13px;
 }
 
 .bsContaineri{
   font-family: fantasy, papyrus;
-  width:fit-content;
+  width: fit-content;
 }

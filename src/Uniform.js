@@ -139,8 +139,9 @@ function Uniform(props) {
 
       })
     });
-
-    alert("You have succesfully updated uniform information")
+    if (document.getElementById("wizardsIdUni").value != "") {
+      alert("You have succesfully updated uniform information")
+    }
     clearInputs();
 
   }
@@ -225,8 +226,9 @@ function Uniform(props) {
 
         {/* HAKUKENTTÄ */}
         <Container id="searchInput" className="bsContaineri" margin="3em">
-          <h2 id="uniformLink">Uniform</h2>
-
+        <br /><br /><br/>
+        <h2 id="uniformLink">Uniform</h2>
+        <div>~<br /><br /><br/></div>
           <Table striped bordered hover size="sm">
             <tbody><tr><td><input
               id="idSeacrhUniform"
@@ -261,7 +263,7 @@ function Uniform(props) {
                 <input padding="3em" className="uniformInput"
                   id="robesInput"
                   name="robes"
-                  type="text"
+                  type="number" min="0"
                   placeholder="(quantity)"
                   disabled
                   onChange={searchDefine}
@@ -272,7 +274,7 @@ function Uniform(props) {
                 <input size="sm" className="uniformInput"
                   id="hatInput"
                   name="hat"
-                  type="text"
+                  type="number" min="0"
                   placeholder="(quantity)"
                   disabled
                   onChange={searchDefine}
@@ -284,7 +286,7 @@ function Uniform(props) {
                   id="glovesInput"
                   name="gloves"
                   type="text"
-                  placeholder="(quantity)"
+                  placeholder="(dragon hide/erumpet hide)"
                   disabled
                   onChange={searchDefine}
                 />
@@ -294,7 +296,7 @@ function Uniform(props) {
                 <input className="uniformInput"
                   id="coatInput"
                   name="coat"
-                  type="text"
+                  type="number" min="0"
                   placeholder="(quantity)"
                   disabled
                   onChange={searchDefine}
@@ -305,7 +307,7 @@ function Uniform(props) {
                 <input
                     id="nametagsInput"
                     name="nametags"
-                    type="text"
+                    type="number" min="0"
                     placeholder="(quantity)"
                     disabled
                     onChange={searchDefine}
@@ -398,7 +400,7 @@ function Uniform(props) {
                   <th>Gloves</th>
                   <th>Coat</th>
                   <th>Nametags</th>
-                  <th>-</th>
+                  <th></th>
                 </tr>
               </thead>
               <tbody>{uniformlist.map((wizards) => {

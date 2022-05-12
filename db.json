@@ -27,22 +27,22 @@
       "books": {
         "id": 1,
         "goshawk": [
-          "4"
+          "1"
         ],
         "bagshot": [
-          "4"
+          "1"
         ],
         "waffling": [
           "1"
         ],
         "switch": [
-          "2"
+          "1"
         ],
         "spore": [
-          "5"
+          "1"
         ],
         "jigger": [
-          "4"
+          "1"
         ],
         "scamander": [
           "3"
@@ -104,8 +104,9 @@
         ]
       },
       "books": {
+        "id": 2,
         "goshawk": [
-          "1"
+          "5"
         ],
         "bagshot": [
           "5"
@@ -114,19 +115,19 @@
           "5"
         ],
         "switch": [
-          "2"
+          "5"
         ],
         "spore": [
-          "1"
+          "5"
         ],
         "jigger": [
           "5"
         ],
         "scamander": [
-          "4"
+          "5"
         ],
         "trimble": [
-          "0"
+          "5"
         ]
       },
       "equipment": {
@@ -181,6 +182,7 @@
         ]
       },
       "books": {
+        "id": 3,
         "goshawk": [
           "5"
         ],
@@ -200,7 +202,7 @@
           "3"
         ],
         "scamander": [
-          "5"
+          "4"
         ],
         "trimble": [
           "3"
@@ -309,6 +311,234 @@
         ]
       },
       "id": 4
+    },
+    {
+      "name": [
+        "Draco Malfoy"
+      ],
+      "address": [
+        "Malfoy Road"
+      ],
+      "uniform": {
+        "id": 5,
+        "coat": [
+          "42"
+        ],
+        "gloves": [
+          "From dragon hide"
+        ],
+        "robes": [
+          "42"
+        ],
+        "hat": [
+          "72"
+        ],
+        "nametags": [
+          "32"
+        ]
+      },
+      "books": {
+        "goshawk": [
+          "6"
+        ],
+        "bagshot": [
+          "4"
+        ],
+        "waffling": [
+          "3"
+        ],
+        "switch": [
+          "7"
+        ],
+        "spore": [
+          "4"
+        ],
+        "jigger": [
+          "6"
+        ],
+        "scamander": [
+          "6"
+        ],
+        "trimble": [
+          "3"
+        ]
+      },
+      "equipment": {
+        "wand": [
+          "346346"
+        ],
+        "cauldron": [
+          "345"
+        ],
+        "phials": [
+          "Crystal phials"
+        ],
+        "telescopes": [
+          "4"
+        ],
+        "brassscales": [
+          "3"
+        ]
+      },
+      "pet": {
+        "name": [
+          "Carolus"
+        ],
+        "species": [
+          "Cat"
+        ]
+      },
+      "id": 5
+    },
+    {
+      "name": [
+        "Puhmuska"
+      ],
+      "address": [
+        "Puhpallerontie 53"
+      ],
+      "uniform": {
+        "hat": [
+          "4"
+        ],
+        "gloves": [
+          "From erumpet hide"
+        ],
+        "coat": [
+          "3"
+        ],
+        "robes": [
+          "2"
+        ],
+        "nametags": [
+          "2"
+        ]
+      },
+      "books": {
+        "goshawk": [
+          "5"
+        ],
+        "bagshot": [
+          "2"
+        ],
+        "waffling": [
+          "1"
+        ],
+        "switch": [
+          "5"
+        ],
+        "spore": [
+          "6"
+        ],
+        "jigger": [
+          "3"
+        ],
+        "scamander": [
+          "1"
+        ],
+        "trimble": [
+          "4"
+        ]
+      },
+      "equipment": {
+        "wand": [
+          "don't have any"
+        ],
+        "cauldron": [
+          "4"
+        ],
+        "phials": [
+          "Crystal phials"
+        ],
+        "telescopes": [
+          "5"
+        ],
+        "brassscales": [
+          "3"
+        ]
+      },
+      "pet": {
+        "id": 6,
+        "name": [
+          "Puh"
+        ],
+        "species": [
+          "Toad"
+        ]
+      },
+      "id": 6
+    },
+    {
+      "name": [
+        "Dobby"
+      ],
+      "address": [
+        "Dobbyntie"
+      ],
+      "uniform": {
+        "hat": [
+          "6"
+        ],
+        "gloves": [
+          "From erumpet hide"
+        ],
+        "coat": [
+          "3"
+        ],
+        "robes": [
+          "4"
+        ],
+        "nametags": [
+          "7"
+        ]
+      },
+      "books": {
+        "goshawk": [
+          "3"
+        ],
+        "bagshot": [
+          "4"
+        ],
+        "waffling": [
+          "6"
+        ],
+        "switch": [
+          "7"
+        ],
+        "spore": [
+          "3"
+        ],
+        "jigger": [
+          "2"
+        ],
+        "scamander": [
+          "6"
+        ],
+        "trimble": [
+          "4"
+        ]
+      },
+      "equipment": {
+        "wand": [
+          "none"
+        ],
+        "cauldron": [
+          "4"
+        ],
+        "phials": [
+          "Crystal phials"
+        ],
+        "telescopes": [
+          "4"
+        ],
+        "brassscales": [
+          "6"
+        ]
+      },
+      "pet": {
+        "species": ""
+      },
+      "id": 7
     }
   ]
 }

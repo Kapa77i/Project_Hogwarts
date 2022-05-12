@@ -17,7 +17,6 @@ class Application extends React.Component {
 
         this.addParameters = this.addParameters.bind(this);
         this.addApplication = this.addApplication.bind(this);
-        //this.poista = this.poista.bind(this);
 
         //Datan käsittely tilamuuttujassa
         this.state = {
@@ -27,6 +26,8 @@ class Application extends React.Component {
             id: "",
             name: "",
             address: "",
+
+            //tarvikkeet
             coat: "",
             gloves: "",
             robes: "",
@@ -57,16 +58,6 @@ class Application extends React.Component {
             handleClose: false,
         };
     }
-
-
-
-    
-    // lemmikinvalinta-radiobuttonit/nimiloota
-    handleChange = (e) => {
-        this.setState({
-            [e.target.name]: e.target.value
-        });
-    };
 
     //Jos halutaan heti luonnin jälkeen hakea data, ajetaan heti sen jälkeen kun dokumenttipuu on luotu tämän dokun osalta
     componentDidMount() {
@@ -195,7 +186,7 @@ class Application extends React.Component {
             // lemmikit 
             if (event.target.name === "speciesInput") { // 
                 this.setState({ petspecies: event.target.value });
-                
+
                 if (event.target.value !== "none") {
                     document.getElementById("petsnameInput").disabled = false; // enabloidaan nimikenttä kun laji valittu
                     this.petspecies = [event.target.value];
@@ -206,12 +197,9 @@ class Application extends React.Component {
                 }
             }
             if (event.target.name === "petsnameInput") {
-                    this.setState({ petname: event.target.value });
-                    this.petname = [event.target.value];
+                this.setState({ petname: event.target.value });
+                this.petname = [event.target.value];
             };
-
-
-
         }
     }
 
@@ -228,7 +216,7 @@ class Application extends React.Component {
                 address: this.address,
                 uniform: {
                     hat: this.hat,
-                    gloves: this.gloves, 
+                    gloves: this.gloves,
                     coat: this.coat,
                     robes: this.robes,
                     nametags: this.nametags
@@ -246,7 +234,7 @@ class Application extends React.Component {
                 equipment: {
                     wand: this.wand,
                     cauldron: this.cauldron,
-                    phials: this.phials, 
+                    phials: this.phials,
                     telescopes: this.telescopes,
                     brassscales: this.brassscales
                 },
@@ -263,18 +251,13 @@ class Application extends React.Component {
             this.setState({
                 searchLoading: true
             });
-            
+
         });
-        alert("Thank you for your order! We look forward to seeing you on 1 September.");
+        alert("Thank you for your order! \nWe look forward to seeing you on 1 September.");
     }
-
-    
-
-
 
     /* RENDERÖINTI JA RETURNIT */
     render() {
-
 
         const { error, searchLoading } = this.state;
         //Tarkistellaan data
@@ -285,9 +268,6 @@ class Application extends React.Component {
                 </div>
             );
         } else if (this.state.data != null) {
-
-
-
             return (
 
                 <div id="cont-application">
@@ -295,7 +275,9 @@ class Application extends React.Component {
 
                     {/* henkilötiedot */}
                     <div id="WizardNameInputFields"><br /><br />
-                        <h2>Your book and equipment preorder</h2><br /><br />
+                        <h2>Your book and equipment preorder</h2><br /><br /><br />
+                        <h4>Basic Information</h4>
+                        <div>~<br /><br /><br /></div>
                         <h6>Give us your full name: </h6>
                         <input
                             name="nameInput"
@@ -316,8 +298,9 @@ class Application extends React.Component {
 
 
                     {/* koulupuku */}
-                    <div id="UniformInputFields"><br /><br />~<br /><br />
+                    <div id="UniformInputFields"><br /><br /><br /><br />
                         <h3>Uniform</h3>
+                        <div>~<br /><br /></div>
                         <h6>Next give us your uniforms information:</h6><br />
                         <label htmlFor="robesInput">Plain work robes (black):</label><br />
                         <input
@@ -336,12 +319,10 @@ class Application extends React.Component {
                         /><br /><br />
 
                         <label htmlFor="glovesInput">Pair of protective gloves:</label><br />
-                        <input name="glovesInput" type="radio" value="From dragon hide" 
-                            //value={this.state.osoiteInput}
+                        <input name="glovesInput" type="radio" value="From dragon hide"
                             onChange={this.addParameters} /> <label htmlFor="From dragon hide">From dragon hides</label><br />
 
-                        <input name="glovesInput" type="radio" value="From erumpet hide" 
-                            //value={this.state.osoiteInput}
+                        <input name="glovesInput" type="radio" value="From erumpet hide"
                             onChange={this.addParameters} /> <label htmlFor="From erumpet hide">From erumpet hide</label><br />
 
                         <br /><br />
@@ -351,7 +332,6 @@ class Application extends React.Component {
                             name="coatInput"
                             type="number" min="0"
                             placeholder="(quantity)"
-                            //value={this.state.osoiteInput}
                             onChange={this.addParameters}
                         /><br /><br />
 
@@ -360,21 +340,20 @@ class Application extends React.Component {
                             name="nametagsInput"
                             type="number" min="0"
                             placeholder="need of nametags"
-                            //value={this.state.osoiteInput}
                             onChange={this.addParameters}
                         />
                     </div>
 
                     {/* oppikirjat */}
-                    <div id="books"><br /><br />~<br /><br />
+                    <div id="books"><br /><br /><br /><br />
                         <h3>Books</h3>
+                        <div>~<br /><br /></div>
                         <h6>Please select your course books:</h6><br />
                         <label htmlFor="goshawkInput"><b>The Standard Book of Spells (Grade 1)</b> <br />by Miranda Goshawk</label><br />
                         <input
                             name="goshawkInput"
                             type="number" min="0"
                             placeholder="(quantity)"
-                            //value={this.state.osoiteInput}
                             onChange={this.addParameters}
                         /><br /><br />
 
@@ -383,7 +362,6 @@ class Application extends React.Component {
                             name="bagshotInput"
                             type="number" min="0"
                             placeholder="(quantity)"
-                            //value={this.state.osoiteInput}
                             onChange={this.addParameters}
                         /><br /><br />
 
@@ -392,13 +370,11 @@ class Application extends React.Component {
                             name="wafflingInput"
                             type="number" min="0"
                             placeholder="(quantity)"
-                            //value={this.state.osoiteInput}
                             onChange={this.addParameters}
                         /><br /><br />
 
                         <label htmlFor="switchInput"><b>A Beginner's Guide to Transfiguration</b> <br />by Emeric Switch</label><br />
                         <input name="switchInput" type="number" min="0" placeholder="(quantity)"
-                            //value={this.state.osoiteInput}
                             onChange={this.addParameters}
                         /><br /><br />
 
@@ -407,7 +383,6 @@ class Application extends React.Component {
                             name="sporeInput"
                             type="number" min="0"
                             placeholder="(quantity)"
-                            //value={this.state.osoiteInput}
                             onChange={this.addParameters}
                         /><br /><br />
 
@@ -416,7 +391,6 @@ class Application extends React.Component {
                             name="jiggerInput"
                             type="number" min="0"
                             placeholder="(quantity)"
-                            //value={this.state.osoiteInput}
                             onChange={this.addParameters}
                         /><br /><br />
 
@@ -425,7 +399,6 @@ class Application extends React.Component {
                             name="scamanderInput"
                             type="number" min="0"
                             placeholder="(quantity)"
-                            //value={this.state.osoiteInput}
                             onChange={this.addParameters}
                         /><br /><br />
 
@@ -434,14 +407,14 @@ class Application extends React.Component {
                             name="trimbleInput"
                             type="number" min="0"
                             placeholder="(quantity)"
-                            //value={this.state.osoiteInput}
                             onChange={this.addParameters}
                         /><br />
                     </div>
 
                     {/* muut tarvikkeet */}
-                    <div id="otherEquipment"><br /><br />~<br /><br />
+                    <div id="otherEquipment"><br /><br /><br /><br />
                         <h3>Other equipment</h3>
+                        <div>~<br /><br /></div>
                         <h6>Next inform us about other equipment needed:</h6><br />
 
                         <label htmlFor="wandInput">Wand:</label><br />
@@ -450,7 +423,6 @@ class Application extends React.Component {
                             name="wandInput"
                             type="text"
                             placeholder="(description)"
-                            //value={this.state.osoiteInput}
                             onChange={this.addParameters}
                         /><br /><br />
 
@@ -459,24 +431,20 @@ class Application extends React.Component {
                             name="cauldronInput"
                             type="number" min="0"
                             placeholder="(quantity)"
-                            //value={this.state.osoiteInput}
                             onChange={this.addParameters}
                         /><br /><br /><br />
 
                         <h5>Phials:</h5>
-                        {/* <label htmlFor="phialsInput">Choose one</label><br /> */}
                         <input
                             name="phialsInput"
                             type="radio"
                             value="Glass phials"
-                            //value={this.state.osoiteInput}
                             onChange={this.addParameters}
                         /><label htmlFor="Glass phials">Glass phials</label><br />
                         <input
                             name="phialsInput"
                             type="radio"
                             value="Crystal phials"
-                            //value={this.state.osoiteInput}
                             onChange={this.addParameters}
                         /><label htmlFor="Crystal Phials">Crystal phials</label><br /><br /><br />
 
@@ -486,119 +454,36 @@ class Application extends React.Component {
                             name="telescopesInput"
                             type="number" min="0"
                             placeholder="(quantity)"
-                            //value={this.state.osoiteInput}
                             onChange={this.addParameters}
                         /><br /><br />
-
 
                         <label htmlFor="brassscalesInput">Brass scales:</label><br />
                         <input
                             name="brassscalesInput"
                             type="number" min="0"
                             placeholder="(quantity)"
-                            //value={this.state.osoiteInput}
                             onChange={this.addParameters}
                         />
 
                         {/* lemmikki */}
-                        <div id="pet"><br /><br />~<br /><br />
+                        <div id="pet"><br /><br /><br /><br />
                             <h3>Pet</h3>
-                            <br />
-
-                            <label htmlFor="speciesInput">Your pet's species:</label><br />
-
+                            <div>~<br /><br /></div>
+                            <label htmlFor="speciesInput"><large></large>Your pet's species:</label><br /><br />
                             <input name="speciesInput" id="speciecInput" type="radio" value="Owl"
                                 onChange={this.addParameters} /><label for="Owl">Owl</label><br />
                             <input name="speciesInput" id="speciecInput" type="radio" value="Cat"
                                 onChange={this.addParameters} /><label for="Cat">Cat</label><br />
                             <input name="speciesInput" id="speciecInput" type="radio" value="Toad"
-                                onChange={this.addParameters} /><label for="Toad">Toad</label><br />
-                            <input name="speciesInput" id="speciecInput" type="radio" value="none"
-                                onChange={this.addParameters} /><label for="none">I'm not bringing a pet</label><br /><br /><br />
-
+                                onChange={this.addParameters} /><label for="Toad">Toad</label><br /><br />
                             <input name="petsnameInput" type="text" id="petsnameInput" placeholder="Your pet's name" value={this.state.petsnameInput}
-                                onChange={this.addParameters} disabled />
-
-                            <br /><br /><br /><br />
+                                onChange={this.addParameters} disabled /><br /><br />
+                            <input name="speciesInput" id="speciecInput" type="radio" value="none"
+                                onChange={this.addParameters} /><label for="none">I'm not bringing a pet</label><br />
+                            <br /><br /><br />
                         </div>
                     </div>
-
-                    <Button variant="btn btn-dark btn-lg" onClick={this.addApplication}>Submit your order</Button> 
-                    
-                    {/* jos ei saada modaalia toimimaan niin tänne vielä joku pop-up-ikkuna joka kertoo että submit onnistui */}
-
-
-
-                    {/* <AppiModaali /> */}
-
-                    {/* <AppModaali tiedot={this.addApplication}/> */}
-
-
-
-
-                    {/* <AppModaali /> */}
-
-                    {/*   <!-- Modaalinavausnappi --> */}
-                    {/*                     <Row className="mx-0"> */}
-                    {/* <Button as={Col} variant="secondary" onClick={<AppModaali/>}>Submit your order</Button> */}
-                    {/*                     </Row> */}
-
-
-
-
-
-
-
-                    {/*  <button type="button" class="btn btn-info btn-lg"
-                        data-bs-toggle="modal" data-bs-target="#myModal">Open
-                        Modal</button>
-
-                    <>
-                        <Button variant="primary" onClick={this.handleShow} >
-                            Launch demo modal
-                        </Button>
-
-                        <Modal show={this.show} onHide={this.handleClose}>
-                            <Modal.Header closeButton>
-                                <Modal.Title>Modal heading</Modal.Title>
-                            </Modal.Header>
-                            <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
-                            <Modal.Footer>
-                                <Button variant="secondary" onClick={this.handleClose}>
-                                    Close
-                                </Button>
-                                <Button variant="primary" onClick={this.handleClose}>
-                                    Save Changes
-                                </Button>
-                            </Modal.Footer>
-                        </Modal>
-                    </> */}
-
-                    {/*      <table>
-            <thead>
-              <tr>
-                <th>Robes</th>
-                <th>Hat</th>
-                <th>Gloves</th>
-                <th>Coat</th>
-                <th>Name tags</th>
-              </tr>
-            </thead>
-            <tbody>{dataObjects}</tbody>
-            {error ? (
-              <tbody>
-                <tr>
-                  <td>{error}</td>
-                </tr>
-              </tbody>
-            ) : dataObjects.length > 0 ? (
-              <tbody>
-                <tr></tr>
-              </tbody>
-            ) : (
-              <p>Hakusi ei osunut oikeaan, kokeile uudelleen!</p>
-            )}
-          </table> */}
+                    <Button variant="btn btn-dark btn-lg" onClick={this.addApplication}>Submit your order</Button>
                 </div>
             );
         }
@@ -635,36 +520,36 @@ class Application extends React.Component {
           }
  */
 
-       /*  function AppModaali(props) {
-            const [show, setShow] = useState(false);
-          
-            const handleClose = () => setShow(false);
-            const handleShow = () => setShow(true);
-          
-            return (
-              <>
-                <Button variant="btn btn-dark btn-lg" onClick={handleShow}>Submit your order</Button>
-                <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false}>
-                  <Modal.Header closeButton>
-                    <Modal.Title>Order details</Modal.Title>
-                  </Modal.Header>
-                  <Modal.Body>
-                    <h5>Please check that your order details are correct:</h5>
-                    <table>
-                      <th>Tietoa</th>
-                      <td>* Tänne tulis tilaustiedot taulukkomuodossa *</td>
-                    </table>
-                  </Modal.Body>
-          
-                  <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>Cancel</Button>
-                    <Button as={Col} variant="primary" onClick={this.addUniform}>Submit your order</Button>
-                  </Modal.Footer>
-          
-                </Modal>
-              </>
-            );
-          } */
+        /*  function AppModaali(props) {
+             const [show, setShow] = useState(false);
+           
+             const handleClose = () => setShow(false);
+             const handleShow = () => setShow(true);
+           
+             return (
+               <>
+                 <Button variant="btn btn-dark btn-lg" onClick={handleShow}>Submit your order</Button>
+                 <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false}>
+                   <Modal.Header closeButton>
+                     <Modal.Title>Order details</Modal.Title>
+                   </Modal.Header>
+                   <Modal.Body>
+                     <h5>Please check that your order details are correct:</h5>
+                     <table>
+                       <th>Tietoa</th>
+                       <td>* Tänne tulis tilaustiedot taulukkomuodossa *</td>
+                     </table>
+                   </Modal.Body>
+           
+                   <Modal.Footer>
+                     <Button variant="secondary" onClick={handleClose}>Cancel</Button>
+                     <Button as={Col} variant="primary" onClick={this.addUniform}>Submit your order</Button>
+                   </Modal.Footer>
+           
+                 </Modal>
+               </>
+             );
+           } */
 
 
 

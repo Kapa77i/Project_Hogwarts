@@ -241,11 +241,14 @@ function Books_Equipment(props) {
 
       })
     });
-    alert("You have succesfully updated book information!");
+    if (document.getElementById("wizardsIdBo").value != "") {
+      alert("You have succesfully updated book information!");
+    }
     clearInputsBooks();
   }
 
   const clearInputsBooks = () => {
+    document.getElementById("wizardsIdBo").value = "";
     document.getElementById("goshawkInput").value = "";
     document.getElementById("bagshotInput").value = "";
     document.getElementById("wafflingInput").value = "";
@@ -261,6 +264,7 @@ function Books_Equipment(props) {
     document.getElementById("switchInput").disabled = true;
     document.getElementById("sporeInput").disabled = true;
     document.getElementById("jiggerInput").disabled = true;
+    document.getElementById("scamanderInput").disabled = true;
     document.getElementById("trimbleInput").disabled = true;
   }
 
@@ -291,6 +295,7 @@ function Books_Equipment(props) {
     document.getElementById("switchInput").disabled = false;
     document.getElementById("sporeInput").disabled = false;
     document.getElementById("jiggerInput").disabled = false;
+    document.getElementById("scamanderInput").disabled = false;
     document.getElementById("trimbleInput").disabled = false;
 
     setDbBooks({
@@ -310,10 +315,9 @@ function Books_Equipment(props) {
 
 
 
-  // funktio equipment-tietojen muokkaamiseen
+  // tarvikkeiden muokkaus
   const handleEqUpdate = (oldData) => {
     console.log(oldData)
-
     console.log(oldData.id)
 
     setDbEquipment({
@@ -380,8 +384,9 @@ function Books_Equipment(props) {
 
       })
     });
-
-    alert("You have succesfully updated equipment information!")
+    if (document.getElementById("wizardsIdEq").value != "") {
+      alert("You have succesfully updated equipment information!")
+    }
     clearInputsEq();
   }
 
@@ -425,7 +430,6 @@ function Books_Equipment(props) {
       species: oldData.pet.species
     });
     console.log("Petid: " + dbPets.id)
-
   }
 
 
@@ -499,7 +503,6 @@ function Books_Equipment(props) {
         setPetList(data);
         setLoading(false);
       }
-
       fetchData();
     }, delay)
   };
@@ -509,11 +512,11 @@ function Books_Equipment(props) {
   return (
     <div id="cont-2" className="bsContaineri">
 
-      <div><br /><br /><br />~<br /><br /><br /></div>
+      <div><br /><br />~<br /><br /><br /><br /></div>
 
       {/* HAKUKENTTÄ */}
       <Container id="searchInput" className="bsContaineri" margin="3em">
-        <h4>Search bar for books, equipments and pets</h4>
+        <h3>Search bar for books, equipments and pets</h3>
 
         <Table striped bordered hover size="sm">
           <tbody><tr><td><input
@@ -528,9 +531,9 @@ function Books_Equipment(props) {
         </Table>
       </Container>
 
-      <div><br /><br />~<br /><br /></div>
-      <h2 id="coursebooksLink">Course books<br /><br /></h2>
-
+      <div><br /><br /><br /><br /><br /><br /></div>
+      <h2 id="coursebooksLink">Course books</h2>
+      <div>~<br /><br /><br /></div>
 
       {/* EDITOINTI KENTTÄ  */}
 
@@ -550,25 +553,25 @@ function Books_Equipment(props) {
             <Form.Group as={Col} className="mb-3">
               <Form.Label>The Standard Book of Spells (Grade 1)</Form.Label> <br />
               <input padding="3em" className="uniformInput"
-                id="goshawkInput" name="goshawk" type="text" placeholder="(quantity)" onChange={searchDefine} disabled
+                id="goshawkInput" name="goshawk" type="number" placeholder="(quantity)" onChange={searchDefine} disabled
               />
             </Form.Group>
             <Form.Group as={Col} className="mb-3" controlId="formGroupWizardsIdUni">
               <Form.Label>A History <br />of Magic</Form.Label><br />
               <input size="sm" className="uniformInput"
-                id="bagshotInput" name="bagshot" type="text" placeholder="(quantity)" onChange={searchDefine} disabled
+                id="bagshotInput" name="bagshot" type="number" placeholder="(quantity)" onChange={searchDefine} disabled
               />
             </Form.Group>
             <Form.Group as={Col} className="mb-3">
               <Form.Label>Magical <br />Theory</Form.Label><br />
               <input size="lg"
-                id="wafflingInput" name="waffling" type="text" placeholder="(quantity)" onChange={searchDefine} disabled
+                id="wafflingInput" name="waffling" type="number" placeholder="(quantity)" onChange={searchDefine} disabled
               />
             </Form.Group>
             <Form.Group as={Col} className="mb-3" controlId="formGroupWizardsIdUni">
               <Form.Label>A Beginner's Guide to Transfiguration</Form.Label><br />
               <input className="uniformInput"
-                id="switchInput" name="switch" type="text" placeholder="(quantity)" onChange={searchDefine} disabled
+                id="switchInput" name="switch" type="number" placeholder="(quantity)" onChange={searchDefine} disabled
               />
             </Form.Group>
           </Row>
@@ -576,25 +579,25 @@ function Books_Equipment(props) {
             <Form.Group as={Col} className="mb-3">
               <Form.Label>One Thousand Magical Herbs and Fungi</Form.Label><br />
               <input
-                id="sporeInput" name="spore" type="text" placeholder="(quantity)" onChange={searchDefine} disabled
+                id="sporeInput" name="spore" type="number" min="0" placeholder="(quantity)" onChange={searchDefine} disabled
               />
             </Form.Group>
             <Form.Group as={Col} className="mb-3">
               <Form.Label>Magical Drafts and Potions</Form.Label> <br />
               <input padding="3em" className="uniformInput"
-                id="jiggerInput" name="jigger" type="text" placeholder="(quantity)" onChange={searchDefine} disabled
+                id="jiggerInput" name="jigger" type="number" min="0" placeholder="(quantity)" onChange={searchDefine} disabled
               />
             </Form.Group>
             <Form.Group as={Col} className="mb-3">
               <Form.Label>Fantastic Beasts and Where to Find Them</Form.Label> <br />
               <input padding="3em" className="uniformInput"
-                id="scamanderInput" name="scamander" type="text" placeholder="(quantity)" onChange={searchDefine} disabled
+                id="scamanderInput" name="scamander" type="number" min="0" placeholder="(quantity)" onChange={searchDefine} disabled
               />
             </Form.Group>
             <Form.Group as={Col} className="mb-3">
               <Form.Label><small>The Dark Forces: A Guide to Self-Protection</small></Form.Label> <br />
               <input padding="3em" className="uniformInput"
-                id="trimbleInput" name="trimble" type="text" placeholder="(quantity)" onChange={searchDefine} disabled
+                id="trimbleInput" name="trimble" type="number" min="0" placeholder="(quantity)" onChange={searchDefine} disabled
               />
             </Form.Group>
             <td><Button variant="light" onClick={saveChangesBooks}>Save changes</Button></td>
@@ -695,11 +698,9 @@ function Books_Equipment(props) {
       {/* muut tarvikkeet */}
 
       <div id="cont-3" className="bsContaineri">
-        <div><br /><br /><br /><br />~<br /><br /></div>
-        <br /><br />
-        <h2 id="eqLink">Other equipment</h2><br /><br />
-
-
+        <div><br /><br /><br /><br /><br /></div>
+        <h2 id="eqLink">Other equipment</h2>
+        <div>~<br /><br /><br /></div>
 
         {/* EDITOINTI KENTTÄ  */}
 
@@ -725,7 +726,7 @@ function Books_Equipment(props) {
               <Form.Group as={Col} className="mb-3" controlId="formGroupWizardsIdUni">
                 <Form.Label>Cauldrons</Form.Label><br />
                 <input size="sm" className="uniformInput"
-                  id="cauldronInput" name="cauldrons" type="text" placeholder="(quantity)" onChange={searchDefine} disabled
+                  id="cauldronInput" name="cauldrons" type="number" min="0" placeholder="(quantity)" onChange={searchDefine} disabled
                 />
               </Form.Group>
               <Form.Group as={Col} className="mb-3">
@@ -736,16 +737,15 @@ function Books_Equipment(props) {
               <Form.Group as={Col} className="mb-3">
                 <Form.Label>Telescopes</Form.Label><br />
                 <input size="lg"
-                  id="telescopesInput" name="telescopes" type="text" placeholder="(quantity)" onChange={searchDefine} disabled
+                  id="telescopesInput" name="telescopes" type="number" min="0" placeholder="(quantity)" onChange={searchDefine} disabled
                 /></Form.Group>
               <Form.Group as={Col} className="mb-3">
                 <Form.Label>Brass scales</Form.Label><br />
                 <input size="lg"
-                  id="brassscalesInput" name="brassscales" type="text" placeholder="(quantity)" onChange={searchDefine} disabled
+                  id="brassscalesInput" name="brassscales" type="number" min="0" placeholder="(quantity)" onChange={searchDefine} disabled
                 /></Form.Group>
               <td><Button variant="light" onClick={saveChangesEq}>Save changes</Button></td>
             </Row>
-
           </Form>
         </Container>
 
@@ -785,7 +785,7 @@ function Books_Equipment(props) {
           </Table>
         </Container> */}
 
-        <div id="eqTable">
+        <div id="eqTable" className="bsContaineri"><br />
           {loading ? (
             <div id="loading">Loading...</div>
           ) : eqList.length > 0 ? (
@@ -827,9 +827,9 @@ function Books_Equipment(props) {
         {/* lemmikit */}
 
         <div id="cont-2" className="bsContaineri">
+          <div><br /><br /><br /></div>
           <h2 id="petsLink">Pets</h2>
-
-
+          <div>~<br /><br /><br /></div>
           <Container >
             <Form>
               <Row className="mb-3">
@@ -887,7 +887,7 @@ function Books_Equipment(props) {
           </Table>
         </Container> */}
           <br />
-          <div id="petTable">
+          <div id="petTable" className="bsContaineri"><br />
             {loading ? (
               <div id="loading">Loading...</div>
             ) : petList.length > 0 ? (
@@ -900,9 +900,6 @@ function Books_Equipment(props) {
                     <th></th>
                   </tr>
                 </thead>
-
-
-
                 <tbody>{petList.map((wizards) => {
                   return (
                     <tr data-testid="trAsiakasID" key={wizards.id} >
@@ -910,7 +907,6 @@ function Books_Equipment(props) {
                       <td>{wizards.pet.name}</td>
                       <td>{wizards.pet.species}</td>
                       <td><Button variant="outline-dark" onClick={() => handlePetUpdate(wizards)}>Edit</Button></td>
-
                     </tr>
                   );
                 })}</tbody></table>
@@ -921,11 +917,8 @@ function Books_Equipment(props) {
             )}
           </div>
         </div>
-
-
       </div>
-
     </div >
   );
 }
-export default Books_Equipment
+export default Books_Equipment;
