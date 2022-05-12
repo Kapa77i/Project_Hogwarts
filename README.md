@@ -10,7 +10,6 @@ Harjoitustyön idea lyhyesti:
 - Application-sivulla opiskelija täyttää tilauslomakkeen, joka kirjautuu JSON-serverille "Submit your order"-nappia painamalla
 - Books and equipments -sivu tarkoitettu tilaustietojen hallintaan, eli siellä ylläpitäjä pystyy muokkaamaan ja poistamaan annettuja tietoja sekä etsimään tietoja wizard-id:llä
 - Haku onnistuu pelkästään wizard-id:llä, koska emme nähneet mitään järkeä yksittäiselle sanahaulle. Koska jos pitää päivittää jonkun tietoja, ensin pitää tietää Wizard-id ja sen jälkeen osio mistä haluu mitäkin päivittää.
-- Testit on tehty karkeina ja osa ei mene läpi. Yritetty kuitenkin on.
 
 
 
