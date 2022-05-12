@@ -304,7 +304,10 @@ function Uniform(props) {
                     onChange={searchDefine}
                   />
               </Form.Group>
-            <td><Button variant="light" onClick={saveChanges}>Save changes</Button></td>
+
+            <Row className="mb-3">
+          <Form.Group as={Col} className="mb-3 square border border-1 p-3">
+              <Button variant="light" onClick={saveChanges}>Save changes</Button></Form.Group></Row>
           </Row>
         </Form>
       </Container>
