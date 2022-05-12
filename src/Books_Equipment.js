@@ -586,7 +586,7 @@ function Books_Equipment(props) {
               />
             </Form.Group>
             <Form.Group as={Col} className="mb-3">
-              <Form.Label>Magical Drafts and Potions</Form.Label> <br />
+              <Form.Label>Magical Drafts and Potions <br/> <br/> </Form.Label> <br />
               <input padding="3em" className="uniformInput"
                 id="jiggerInput" name="jigger" type="number" min="0" placeholder="(quantity)" onChange={searchDefine} disabled
               />
@@ -833,12 +833,14 @@ function Books_Equipment(props) {
           )}
         </div><br /><br />
 
-
+        
 
 
         {/* lemmikit */}
 
         <div id="cont-2" className="bsContaineri">
+        <br />
+        <br />
           <div><br /><br /><br /></div>
           <h2 id="petsLink">Pets</h2>
           <div>~<br /><br /><br /></div>

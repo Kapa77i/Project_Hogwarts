@@ -7,17 +7,21 @@ class Welcome_Hogwarts extends React.Component {
   render() {
     return (
       <div id="cont-acceptanceletter">
-        <img src={Logo} height="250" width="250"  alt="Lucindas signature"/>
-        
+     
+        <img src={Logo} height="250" width="250" alt="Lucindas signature" />
+
         <div id="cont-al-1">
-        <br />
+          <br />
           <br />
           <h1>HOGWARTS SCHOOL of WITCHCRAFT and WIZARDRY</h1>
+          <br />
           <h4>Headmaster: Albus Dumbledore
             (Order of Merlin, First Class, Grand Sorc., Chf. Warlock,
             Supreme Mugwump, International Confed. of Wizards)</h4>
+          <br />
+          <br />
 
-          <p>    Dear Mr/Ms [Surname],<br />
+          <p>    Dear Mr/Ms,<br />
             <br />
             We are pleased to inform you that you have been accepted at Hogwarts School of Witchcraft and Wizardry. Please find enclosed a list of all necessary books and equipment.
             <br />
@@ -25,27 +29,34 @@ class Welcome_Hogwarts extends React.Component {
             Term begins on 1 September. We await your owl by no later than 31 July.
             <br />
             <br />
+            <br />
+            <br />
             Yours sincerely,</p>
 
-            <img src={Minerva} height="100" width="200"  alt="Lucindas signature"/>
+          <img src={Minerva} height="100" width="200" alt="Lucindas signature" />
 
           <br />
 
           Minerva McGonagall
           <br />
           <br />
-          Deputy Headmistress
+          <h6>Deputy Headmistress</h6>
         </div>
 
 
         <div id="cont-al-2">
-        <br/>
-<br/>
-<br/>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
           <h2>HOGWARTS SCHOOL of WITCHCRAFT and WIZARDRY</h2>
-          <br/>
+          <br />
+          <br />
+          <br />
+          <br />
           <h4>UNIFORM</h4>
-          <br/>
+          <br />
           <p>    First-year students will require:</p>
 
           <ol>
@@ -55,9 +66,11 @@ class Welcome_Hogwarts extends React.Component {
             <li> One winter cloak (black, with silver fastenings)</li>
           </ol>
           <p> Please note that all pupil's clothes should carry name tags.</p>
-<br/>
+          <br />
+          <br />
+          <br />
           <h4>COURSE BOOKS</h4>
-          <br/>
+          <br />
           <p>  All students should have a copy of each of the following:</p>
           <dl>
             <dt id="cb"> The Standard Book of Spells (Grade 1)</dt>
@@ -77,9 +90,11 @@ class Welcome_Hogwarts extends React.Component {
             <dt id="cb">The Dark Forces: A Guide to Self-Protection</dt>
             <dd> by Quentin Trimble</dd>
           </dl>
-<br/>
+          <br />
+          <br />
+          <br />
           <h4>OTHER EQUIPMENT</h4>
-          <br/>
+          <br />
           <dl>
             <dt>1 wand</dt>
             <dt>1 cauldron (pewter, standard size 2)</dt>
@@ -87,17 +102,28 @@ class Welcome_Hogwarts extends React.Component {
             <dt>1 telescope</dt>
             <dt>1 set brass scales</dt>
           </dl>
-              <br/>
+          <br />
           <p> Students may also bring, if they desire, an owl OR a cat OR a toad.</p>
           <p>PARENTS ARE REMINDED THAT FIRST YEARS ARE NOT ALLOWED THEIR OWN BROOMSTICK</p>
 
-<p>Yours sincerely,</p>
+          <br />
+          <br />
+          <p>Yours sincerely,</p>
 
-<img src={Lucinda} height="100" width="200"  alt="Lucindas signature"/>
-
+          <img src={Lucinda} height="100" width="200" alt="Lucindas signature" />
+          <br />
+          Lucinda Thomsonicle-Pocus
+          <br />
+          <br />
+          <h6>Chief Attendant of Witchcraft Provisions</h6>
         </div>
 
-        <div><a href="http://localhost:3000/ApplicationForm">Click here to start the book and equipment preorder now</a></div>
+
+        
+        <div><br />
+          <br />
+          <br />
+          <br /><a href="http://localhost:3000/ApplicationForm">Click here to start the book and equipment preorder now</a></div>
       </div>
 
     );
