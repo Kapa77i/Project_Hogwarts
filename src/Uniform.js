@@ -207,12 +207,12 @@ function Uniform(props) {
 
     setDbitems({
       ...dbitem,
-      id: [oldData.id],
-      robes: [oldData.uniform.robes],
-      hat: [oldData.uniform.hat],
-      gloves: [oldData.uniform.gloves],
-      coat: [oldData.uniform.coat],
-      nametags: [oldData.uniform.nametags]
+      id: oldData.id,
+      robes: oldData.uniform.robes,
+      hat: oldData.uniform.hat,
+      gloves: oldData.uniform.gloves,
+      coat: oldData.uniform.coat,
+      nametags: oldData.uniform.nametags
     });
 
   }
@@ -417,7 +417,7 @@ function Uniform(props) {
           ) : error === true ? (
             <div id="loading">ERROR</div>
           ) : (
-            <div id="loading">Your search didn't made anything...</div>
+            <div id="loading">Your search didn't match anything...</div>
           )}
         </div>
       </div>

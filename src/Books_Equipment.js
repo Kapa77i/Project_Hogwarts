@@ -295,15 +295,15 @@ function Books_Equipment(props) {
 
     setDbBooks({
       ...dbBooks,
-      id: [oldData.id],
-      goshawk: [oldData.books.goshawk],
-      bagshot: [oldData.books.bagshot],
-      waffling: [oldData.books.waffling],
-      switch: [oldData.books.switch],
-      spore: [oldData.books.spore],
-      jigger: [oldData.books.jigger],
-      scamander: [oldData.books.scamander],
-      trimble: [oldData.books.trimble]
+      id: oldData.id,
+      goshawk: oldData.books.goshawk,
+      bagshot: oldData.books.bagshot,
+      waffling: oldData.books.waffling,
+      switch: oldData.books.switch,
+      spore: oldData.books.spore,
+      jigger: oldData.books.jigger,
+      scamander: oldData.books.scamander,
+      trimble: oldData.books.trimble
     });
 
   }
@@ -337,12 +337,12 @@ function Books_Equipment(props) {
     console.log("Old data wand: " + oldData.equipment.wand)
     setDbEquipment({
       ...dbEquipment,
-      id: [oldData.id],
-      wands: [oldData.equipment.wand],
-      cauldrons: [oldData.equipment.cauldron],
-      phials: [oldData.equipment.phials],
-      telescopes: [oldData.equipment.telescopes],
-      brassscales: [oldData.equipment.brassscales]
+      id: oldData.id,
+      wands: oldData.equipment.wand,
+      cauldrons: oldData.equipment.cauldron,
+      phials: oldData.equipment.phials,
+      telescopes: oldData.equipment.telescopes,
+      brassscales: oldData.equipment.brassscales
     });
 
     console.log("db wand: " + dbEquipment.wands)
@@ -420,9 +420,9 @@ function Books_Equipment(props) {
 
     setDbPets({
       ...dbPets,
-      id: [oldData.id],
-      name: [oldData.pet.name],
-      species: [oldData.pet.species]
+      id: oldData.id,
+      name: oldData.pet.name,
+      species: oldData.pet.species
     });
     console.log("Petid: " + dbPets.id)
 
@@ -683,9 +683,9 @@ function Books_Equipment(props) {
               );
             })}</tbody></table>
         ) : error === true ? (
-          <div id="loading">VIRHE! Ethän syötä erikoismerkkejä</div>
+          <div id="loading">ERROR</div>
         ) : (
-          <div id="loading">Annetuilla hakuehdoilla ei löytynyt dataa</div>
+          <div id="loading">Your search didn't match anything...</div>
         )}
       </div>
 
@@ -815,9 +815,9 @@ function Books_Equipment(props) {
                 );
               })}</tbody></table>
           ) : error === true ? (
-            <div id="loading">An Error</div>
+            <div id="loading">Error</div>
           ) : (
-            <div id="loading">Annetuilla hakuehdoilla ei löytynyt dataa</div>
+            <div id="loading">Your search didn't match anything...</div>
           )}
         </div><br /><br />
 
@@ -915,9 +915,9 @@ function Books_Equipment(props) {
                   );
                 })}</tbody></table>
             ) : error === true ? (
-              <div id="loading">VIRHE! Ethän syötä erikoismerkkejä</div>
+              <div id="loading">ERROR</div>
             ) : (
-              <div id="loading">Annetuilla hakuehdoilla ei löytynyt dataa</div>
+              <div id="loading">Your search didn't match anything...</div>
             )}
           </div>
         </div>

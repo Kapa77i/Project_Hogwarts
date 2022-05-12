@@ -166,9 +166,9 @@ function NameAddress(props) {
 
     setDbitems({
       ...dbitem,
-      id: [oldData.id],
-      name: [oldData.name],
-      address: [oldData.address]
+      id: oldData.id,
+      name: oldData.name,
+      address: oldData.address
     });
 
     console.log("Name: " + dbitem.name)
