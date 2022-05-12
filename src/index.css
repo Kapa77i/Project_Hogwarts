@@ -177,4 +177,6 @@ input::placeholder {
 .bsContaineri{
   font-family: fantasy, papyrus;
   width: fit-content;
+  justify-content: center;
+  align-items: center;
 }

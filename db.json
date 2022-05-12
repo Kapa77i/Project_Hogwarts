@@ -173,17 +173,18 @@
         "Kotikolo 3"
       ],
       "uniform": {
-        "hat": [
-          "2"
+        "id": 3,
+        "coat": [
+          "7"
         ],
         "gloves": [
           "From dragon hide"
         ],
-        "coat": [
-          "7"
-        ],
         "robes": [
-          "5"
+          "6"
+        ],
+        "hat": [
+          "2"
         ],
         "nametags": [
           "3"
@@ -207,7 +208,7 @@
           "6"
         ],
         "jigger": [
-          "3"
+          "5"
         ],
         "scamander": [
           "4"

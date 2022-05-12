@@ -703,7 +703,7 @@ function Books_Equipment(props) {
 
       {/* muut tarvikkeet */}
 
-      <div id="cont-3" className="bsContaineri">
+      <div id="cont-2" className="bsContaineri">
         <div><br /><br /><br /><br /><br /></div>
         <h2 id="eqLink">Other equipment</h2>
         <div>~<br /><br /><br /></div>
@@ -797,7 +797,7 @@ function Books_Equipment(props) {
           </Table>
         </Container> */}
 
-        <div id="eqTable" className="bsContaineri"><br />
+        <div id="bookTable" className="bsContaineri"><br />
           {loading ? (
             <div id="loading">Loading...</div>
           ) : eqList.length > 0 ? (
