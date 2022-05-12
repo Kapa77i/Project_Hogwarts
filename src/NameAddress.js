@@ -319,7 +319,7 @@ Click on the "Delete" button in the Basic information section to delete the sele
               </thead>
               <tbody>{wizardlist.map((wizards) => {
                 return (
-                  <tr data-testid="trAsiakasID" key={wizards.id}>
+                  <tr data-testid="trWizardID" key={wizards.id}>
                     <td>{wizards.id}</td>
                     <td>{wizards.name}</td>
                     <td>{wizards.address}</td>
